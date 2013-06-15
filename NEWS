@@ -1,0 +1,3 @@
+0.2.3
+    Initial import from https://github.com/killbill/killbill
+    Added the sort pom plugin as part of the build (https://code.google.com/p/sortpom/)

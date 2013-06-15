@@ -1,7 +1,7 @@
 killbill-oss-parent
 ===================
 
-Killbill OSS Parent: base pom for the various Killbill projects.
+Kill Bill OSS Parent: base pom for the various Kill Bill projects.
 
 Installation
 ------------

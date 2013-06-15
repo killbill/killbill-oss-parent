@@ -6,3 +6,6 @@ target
 *.jar
 *.war
 *.ear
+pom.xml.bak
+pom.xml.releaseBackup
+release.properties
