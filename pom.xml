@@ -85,19 +85,36 @@
         <url>https://github.com/killbill/killbill-oss-parent/issues</url>
     </issueManagement>
     <properties>
+        <async-http-client.version>1.7.1</async-http-client.version>
         <ehcache.version>2.6.2</ehcache.version>
         <guava.version>14.0.1</guava.version>
         <guice.version>3.0</guice.version>
+        <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-api.version>0.2.3</killbill-api.version>
         <killbill-commons.version>0.1.5</killbill-commons.version>
         <killbill-plugin-api.version>0.2.3</killbill-plugin-api.version>
         <killbill.version>0.2.2</killbill.version>
+        <logback.version>1.0.1</logback.version>
+        <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skeleton.version>0.1.7</skeleton.version>
         <slf4j.version>1.7.5</slf4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+                <scope>runtime</scope>
+            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
@@ -441,14 +458,39 @@
                 <version>${killbill-plugin-api.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.ning.jetty</groupId>
+                <artifactId>ning-service-skeleton-base</artifactId>
+                <version>${skeleton.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.jetty</groupId>
+                <artifactId>ning-service-skeleton-jdbi</artifactId>
+                <version>${skeleton.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.samskivert</groupId>
                 <artifactId>jmustache</artifactId>
                 <version>1.5</version>
             </dependency>
             <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-guice</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.yammer.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
-                <version>2.1.2</version>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yammer.metrics</groupId>
+                <artifactId>metrics-guice</artifactId>
+                <version>${metrics.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
@@ -529,6 +571,41 @@
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
                 <version>1.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-deploy</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jmx</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-xml</artifactId>
+                <version>${jetty.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jdbi</groupId>
