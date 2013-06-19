@@ -890,6 +890,7 @@
                                     <exclude>README.*</exclude>
                                     <exclude>TODO</exclude>
                                     <exclude>logs/**</exclude>
+                                    <exclude>**/*.bak</exclude>
                                     <exclude>**/*.xsd</exclude>
                                     <exclude>**/*.xml</exclude>
                                     <exclude>**/*.stg</exclude>
