@@ -786,6 +786,9 @@
                             </goals>
                         </execution>
                     </executions>
+                    <configuration>
+                        <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1284,6 +1287,9 @@
                                 </configuration>
                             </execution>
                         </executions>
+                        <configuration>
+                            <skipIfEmpty>true</skipIfEmpty>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
