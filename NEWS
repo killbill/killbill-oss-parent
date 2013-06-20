@@ -1,3 +1,6 @@
+0.2.5
+    Update killbill-api to 0.3.0
+
 0.2.4
     Added dependencies for killbill-server
     Fix build warnings by skipping the maven-jar-plugin if needed

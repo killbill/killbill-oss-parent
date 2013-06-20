@@ -91,7 +91,7 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
-        <killbill-api.version>0.2.3</killbill-api.version>
+        <killbill-api.version>0.3.0</killbill-api.version>
         <killbill-commons.version>0.1.5</killbill-commons.version>
         <killbill-plugin-api.version>0.2.3</killbill-plugin-api.version>
         <killbill.version>0.2.2</killbill.version>
