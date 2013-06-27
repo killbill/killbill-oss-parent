@@ -87,12 +87,12 @@
     <properties>
         <async-http-client.version>1.7.1</async-http-client.version>
         <ehcache.version>2.6.2</ehcache.version>
-        <guava.version>14.0.1</guava.version>
+        <guava.version>12.0.0</guava.version>
         <guice.version>3.0</guice.version>
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-api.version>0.3.0</killbill-api.version>
-        <killbill-commons.version>0.1.5</killbill-commons.version>
+        <killbill-commons.version>0.1.6-SNAPSHOT</killbill-commons.version>
         <killbill-plugin-api.version>0.2.4</killbill-plugin-api.version>
         <killbill.version>0.2.2</killbill.version>
         <logback.version>1.0.1</logback.version>
@@ -441,6 +441,30 @@
                 <groupId>com.ning.billing.commons</groupId>
                 <artifactId>killbill-locker</artifactId>
                 <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-queue</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-queue</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-util</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-util</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing.plugin</groupId>
@@ -847,7 +871,7 @@
                             </goals>
                             <configuration>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"></licenseFamily>
                                     <!-- Hack, rat 0.9 will have org.apache.rat.analysis.license.MITLicense -->
                                     <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
                                         <familyName>The MIT License</familyName>
