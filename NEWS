@@ -1,3 +1,9 @@
+0.3.0
+    Update killbill to 0.3.1
+    Remove com.ning.billing:killbill-analytics (now deprecated)
+    Update com.ning.billing:killbill-osgi-bundles-analytics to 0.3.2
+    Update com.ning.billing:killbill-osgi-bundles-meter to 0.3.1 (now extracted from core)
+
 0.2.6
     Update killbill-plugin-api to 0.2.4
 

@@ -94,7 +94,7 @@
         <killbill-api.version>0.3.0</killbill-api.version>
         <killbill-commons.version>0.1.5</killbill-commons.version>
         <killbill-plugin-api.version>0.2.4</killbill-plugin-api.version>
-        <killbill.version>0.2.2</killbill.version>
+        <killbill.version>0.3.1</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -226,11 +226,6 @@
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-analytics</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-api</artifactId>
                 <version>${killbill-api.version}</version>
             </dependency>
@@ -324,7 +319,7 @@
             <dependency>
                 <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-osgi-bundles-analytics</artifactId>
-                <version>${killbill.version}</version>
+                <version>0.3.2</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>
@@ -354,7 +349,7 @@
             <dependency>
                 <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-osgi-bundles-meter</artifactId>
-                <version>${killbill.version}</version>
+                <version>0.3.1</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>
