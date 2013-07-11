@@ -91,10 +91,10 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
-        <killbill-api.version>0.3.0</killbill-api.version>
-        <killbill-commons.version>0.1.6-SNAPSHOT</killbill-commons.version>
-        <killbill-plugin-api.version>0.2.4</killbill-plugin-api.version>
-        <killbill.version>0.3.1</killbill.version>
+        <killbill-api.version>0.3.1</killbill-api.version>
+        <killbill-commons.version>0.1.6</killbill-commons.version>
+        <killbill-plugin-api.version>0.2.5</killbill-plugin-api.version>
+        <killbill.version>0.3.2</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

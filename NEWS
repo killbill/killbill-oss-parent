@@ -1,3 +1,7 @@
+0.3.1
+    Increment mysql-connector-java to 5.1.22
+    Remove provided scope for javax.inject to fix Kill Bill in 5 minutes (go script)
+
 0.3.0
     Update killbill to 0.3.1
     Remove com.ning.billing:killbill-analytics (now deprecated)
