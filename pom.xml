@@ -94,7 +94,7 @@
         <killbill-api.version>0.3.2-SNAPSHOT</killbill-api.version>
         <killbill-commons.version>0.1.7</killbill-commons.version>
         <killbill-plugin-api.version>0.2.5</killbill-plugin-api.version>
-        <killbill.version>0.3.2</killbill.version>
+        <killbill.version>0.3.4-SNAPSHOT</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -256,6 +256,18 @@
             <dependency>
                 <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-catalog</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing</groupId>
+                <artifactId>killbill-entitlement</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing</groupId>
+                <artifactId>killbill-entitlement</artifactId>
                 <version>${killbill.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
