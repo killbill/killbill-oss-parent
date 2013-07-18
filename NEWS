@@ -1,3 +1,9 @@
+0.3.3
+    New killbill-api version (0.3.2). Renaming Entitlement -> Subscription. Create new Entitlement module (replace JunctionApi)
+    New killbill-commons version (0.1.8). Bus/NotificationQ code reveiew comments
+    New killbil version (0.3.4). Fix flaky unit tests
+    Check-in IntelliJ .idea .iml
+
 0.3.2
     Extract Notification queue and clock into commons (add artifacts in oss-parent)
 
