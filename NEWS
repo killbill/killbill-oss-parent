@@ -1,3 +1,8 @@
+0.3.5
+    Update killbill-api to 0.3.3 (support for all ISO currencies)
+    Update killbill-plugin-api to 0.2.6 (api dependency)
+    Update analytics plugin to 0.3.4 (api dependency)
+
 0.3.4
     Upgrade latest analytics plugin
 
