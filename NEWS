@@ -1,3 +1,7 @@
+0.3.7
+    Update killbill-api to 0.4.0 (search APIs)
+    Update killbill-plugin-api to 0.3.0 (search APIs)
+
 0.3.6
     Fix typo in analytics plugin version
 
