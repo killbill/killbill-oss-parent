@@ -1,3 +1,8 @@
+0.3.8
+    Update killbill-commons to 0.2.0
+    Update killbill-analytics-plugin to 0.3.5
+    Update killbill-meter-plugin to 0.4.0
+
 0.3.7
     Update killbill-api to 0.4.0 (search APIs)
     Update killbill-plugin-api to 0.3.0 (search APIs)
