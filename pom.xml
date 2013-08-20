@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.3.5-SNAPSHOT</version>
+    <version>0.4.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -91,10 +91,12 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
-        <killbill-api.version>0.3.3-SNAPSHOT</killbill-api.version>
-        <killbill-commons.version>0.1.7</killbill-commons.version>
-        <killbill-plugin-api.version>0.3.1-SNAPSHOT</killbill-plugin-api.version>
-        <killbill.version>0.3.4</killbill.version>
+        <killbill-analytics-plugin.version>0.3.6</killbill-analytics-plugin.version>
+        <killbill-api.version>0.6.0-SNAPSHOT</killbill-api.version>
+        <killbill-commons.version>0.2.1</killbill-commons.version>
+        <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
+        <killbill-plugin-api.version>0.4.0-SNAPSHOT</killbill-plugin-api.version>
+        <killbill.version>0.6.0-SNAPSHOT</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -319,7 +321,7 @@
             <dependency>
                 <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-osgi-bundles-analytics</artifactId>
-                <version>0.3.3</version>
+                <version>${killbill-analytics-plugin.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>
@@ -349,7 +351,7 @@
             <dependency>
                 <groupId>com.ning.billing</groupId>
                 <artifactId>killbill-osgi-bundles-meter</artifactId>
-                <version>0.3.1</version>
+                <version>${killbill-meter-plugin.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>
@@ -601,12 +603,22 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.2.1</version>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-guice</artifactId>
+                <version>1.2.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
-                <version>1.2.1</version>
+                <version>1.2.2</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>

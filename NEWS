@@ -1,3 +1,38 @@
+0.4.0 (entitlement new apis, overdue at account level)
+    Update killbill-api to 0.6.0
+    Update killbill to 0.6.0
+    Update killbill-plugin-api to 0.4.0
+
+0.3.11
+    Update killbill-api to 0.5.0
+    Update killbill to 0.5.0
+    Update killbill-analytics-plugin to 0.3.6
+    Update killbill-meter-plugin to 0.4.1
+    Update Shiro to 1.2.2
+
+0.3.10
+    Update killbill-commons to 0.2.1
+
+0.3.9
+    Update killbill to 0.4.0
+
+0.3.8
+    Update killbill-commons to 0.2.0
+    Update killbill-analytics-plugin to 0.3.5
+    Update killbill-meter-plugin to 0.4.0
+
+0.3.7
+    Update killbill-api to 0.4.0 (search APIs)
+    Update killbill-plugin-api to 0.3.0 (search APIs)
+
+0.3.6
+    Fix typo in analytics plugin version
+
+0.3.5
+    Update killbill-api to 0.3.3 (support for all ISO currencies)
+    Update killbill-plugin-api to 0.2.6 (api dependency)
+    Update analytics plugin to 0.3.4 (api dependency)
+
 0.3.4
     Upgrade latest analytics plugin
 
