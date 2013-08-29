@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.4.2-SNAPSHOT</version>
+    <version>0.4.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -91,9 +91,9 @@
         <guice.version>3.0</guice.version>
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
-        <killbill-analytics-plugin.version>0.3.6</killbill-analytics-plugin.version>
+        <killbill-analytics-plugin.version>0.4.0</killbill-analytics-plugin.version>
         <killbill-api.version>0.6.1</killbill-api.version>
-        <killbill-commons.version>0.2.1</killbill-commons.version>
+        <killbill-commons.version>0.2.3</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.4.0</killbill-plugin-api.version>
         <killbill.version>0.6.0</killbill.version>
@@ -116,6 +116,11 @@
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
                 <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-core</artifactId>
+                <version>3.0.1</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -519,6 +524,7 @@
                 <artifactId>jersey-guice</artifactId>
                 <version>${jersey.version}</version>
             </dependency>
+            <!-- TODO Migrate Kill Bill server to 3.x version -->
             <dependency>
                 <groupId>com.yammer.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
