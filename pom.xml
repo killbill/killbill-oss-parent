@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.4.4-SNAPSHOT</version>
+    <version>0.4.4</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -446,7 +446,7 @@
                 <artifactId>killbill-clock</artifactId>
                 <version>${killbill-commons.version}</version>
                 <type>test-jar</type>
-<!-- Removed scope test until we decide if ClockMock should be in non test package
+                <!-- Removed scope test until we decide if ClockMock should be in non test package
      or if this is indeed the right thing to have that jar part non test code
      (Used to advance clock in Kill Bill server for test integration suite)
                <scope>test</scope>
