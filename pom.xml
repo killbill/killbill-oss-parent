@@ -93,7 +93,7 @@
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-analytics-plugin.version>0.4.0</killbill-analytics-plugin.version>
         <killbill-api.version>0.6.5</killbill-api.version>
-        <killbill-commons.version>0.2.4</killbill-commons.version>
+        <killbill-commons.version>0.2.5</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.4.0</killbill-plugin-api.version>
         <killbill.version>0.6.0</killbill.version>
