@@ -945,7 +945,7 @@
                                     <exclude>doc/**</exclude>
                                     <exclude>src/site/**</exclude>
                                     <exclude>**/*.log</exclude>
-                                    <exclude>README.*</exclude>
+                                    <exclude>**/README.*</exclude>
                                     <exclude>TODO</exclude>
                                     <exclude>logs/**</exclude>
                                     <exclude>**/*.bak</exclude>
@@ -968,6 +968,7 @@
                                     <exclude>examples/**</exclude>
                                     <exclude>Gemfile.lock</exclude>
                                     <exclude>src/main/ruby/kbadmin/**</exclude>
+                                    <exclude>**/deb/**</exclude>
                                 </excludes>
                             </configuration>
                         </execution>
