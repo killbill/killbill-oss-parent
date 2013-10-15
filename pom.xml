@@ -978,7 +978,7 @@
                     See also https://issues.sonatype.org/browse/NEXUS-5653 -->
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.4.3</version>
+                    <version>1.4.8</version>
                     <extensions>true</extensions>
                 </plugin>
             </plugins>
