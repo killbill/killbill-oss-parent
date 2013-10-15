@@ -1,6 +1,7 @@
 0.4.16
     Update to Guava 15.0
     Update to BoneCP 0.8.0-rc3 (fixes the Guava version mismatch)
+    Add com.dmurph:JGoogleAnalyticsTracker 1.2.0
 
 0.4.15
     Update killbill-commons to 0.2.8
