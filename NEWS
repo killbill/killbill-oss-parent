@@ -1,3 +1,6 @@
+0.4.17
+    Update version of shade plugin to 2.1
+
 0.4.16
     Update to Guava 15.0
     Update to BoneCP 0.8.0-rc3 (fixes the Guava version mismatch)
