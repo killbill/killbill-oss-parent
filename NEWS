@@ -1,6 +1,9 @@
+0.5.1
+    Update killbill-api to 0.7.1 (new pagination API)
+
 0.5.0
-    Update killbill-api to 0.7.0 (new pagination API)
-    Update killbill-plugin-api to 0.5.0 (new pagination API)
+    Update killbill-api to 0.7.0 (new currency conversion API)
+    Update killbill-plugin-api to 0.5.0 (new pagination and currency conversion APIs)
     Update killbill to 0.7.0 (new pagination JAX-RS API)
     Update killbill-analytics-plugin to 0.5.1
 
