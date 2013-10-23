@@ -1,6 +1,8 @@
 0.5.0
     Update killbill-api to 0.7.0 (new pagination API)
     Update killbill-plugin-api to 0.5.0 (new pagination API)
+    Update killbill to 0.7.0 (new pagination JAX-RS API)
+    Update killbill-analytics-plugin to 0.5.1
 
 0.4.18
     Update version of nexus-staging-maven-plugin to 1.4.8
