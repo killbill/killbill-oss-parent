@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.5.4-SNAPSHOT</version>
+    <version>0.5.4</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
