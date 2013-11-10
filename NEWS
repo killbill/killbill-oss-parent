@@ -1,10 +1,13 @@
-0.5.3
+0.5.5
+    Update killbill-commons to 0.2.9
+
+0.5.4
     Update killbill-api to 0.7.5
 
-0.5.2
+0.5.3
     Update killbill-api and killbill-plugin-api for currency api modifications
 
-0.5.1
+0.5.2
     Update killbill-api to 0.7.3 (Fix missing currency on plugin info)
 
 0.5.1
