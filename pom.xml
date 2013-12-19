@@ -95,7 +95,7 @@
         <killbill-api.version>0.7.8-SNAPSHOT</killbill-api.version>
         <killbill-commons.version>0.2.9</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-plugin-api.version>0.6.1</killbill-plugin-api.version>
+        <killbill-plugin-api.version>0.6.2-SNAPSHOT</killbill-plugin-api.version>
         <killbill.version>0.7.0</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
