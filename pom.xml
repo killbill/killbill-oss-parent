@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.5.18</version>
+    <version>0.5.19-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -914,7 +914,7 @@
                             </goals>
                             <configuration>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"></licenseFamily>
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
                                     <!-- Hack, rat 0.9 will have org.apache.rat.analysis.license.MITLicense -->
                                     <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
                                         <familyName>The MIT License</familyName>
