@@ -93,6 +93,7 @@
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-analytics-plugin.version>0.5.5</killbill-analytics-plugin.version>
         <killbill-api.version>0.8.0</killbill-api.version>
+        <killbill-client.version>0.0.1</killbill-client.version>
         <killbill-commons.version>0.2.10</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.6.3</killbill-plugin-api.version>
@@ -265,6 +266,11 @@
                 <version>${killbill.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing</groupId>
+                <artifactId>killbill-client-java</artifactId>
+                <version>${killbill-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.billing</groupId>

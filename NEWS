@@ -1,3 +1,6 @@
+0.5.18
+    Add com.ning.billing:killbill-client-java dependency
+
 0.5.17
     Update killbill-api to 0.8.0
     Update killbill-plugin-api to 0.6.3
