@@ -97,7 +97,7 @@
         <killbill-commons.version>0.2.10</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.6.3</killbill-plugin-api.version>
-        <killbill.version>0.7.0</killbill.version>
+        <killbill.version>0.8.8</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
