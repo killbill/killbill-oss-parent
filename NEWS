@@ -1,3 +1,6 @@
+0.5.19
+    Update AHC to 1.7.24
+
 0.5.18
     Add com.ning.billing:killbill-client-java dependency
 
