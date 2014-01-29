@@ -1,3 +1,8 @@
+0.5.22
+    Update killbill to 0.8.10
+    Update killbill-analytics-plugin to 0.5.9
+    Update killbill-client-java to 0.0.2
+
 0.5.21
     Update killbill-commons.version to 0.2.11
 
