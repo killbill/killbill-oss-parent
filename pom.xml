@@ -92,8 +92,8 @@
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.8.0</killbill-api.version>
-        <killbill-client.version>0.0.2</killbill-client.version>
+        <killbill-api.version>0.8.1</killbill-api.version>
+        <killbill-client.version>0.0.3</killbill-client.version>
         <killbill-commons.version>0.2.11</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.6.3</killbill-plugin-api.version>
