@@ -968,6 +968,8 @@
                                     <exclude>**/*.xml</exclude>
                                     <exclude>**/*.stg</exclude>
                                     <exclude>**/*.sql</exclude>
+                                    <exclude>**/*.ddl</exclude>
+                                    <exclude>**/*.prc</exclude>
                                     <exclude>**/*.js</exclude>
                                     <exclude>**/*.css</exclude>
                                     <exclude>**/*.properties</exclude>
