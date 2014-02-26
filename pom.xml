@@ -474,6 +474,21 @@
             </dependency>
             <dependency>
                 <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-embeddeddb-common</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-embeddeddb-h2</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
+                <artifactId>killbill-embeddeddb-mysql</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ning.billing.commons</groupId>
                 <artifactId>killbill-jdbi</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
