@@ -21,7 +21,7 @@
         <groupId>org.sonatype.oss</groupId>
         <version>5</version>
     </parent>
-    <groupId>com.ning.billing</groupId>
+    <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
     <version>0.5.26-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -92,12 +92,12 @@
         <jersey.version>1.12</jersey.version>
         <jetty.version>8.1.11.v20130520</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.8.1</killbill-api.version>
-        <killbill-client.version>0.0.4</killbill-client.version>
+        <killbill-api.version>0.8.2-SNAPSHOT</killbill-api.version>
+        <killbill-client.version>0.0.5-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.2.12-SNAPSHOT</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-plugin-api.version>0.6.3</killbill-plugin-api.version>
-        <killbill.version>0.8.11</killbill.version>
+        <killbill-plugin-api.version>0.6.4-SNAPSHOT</killbill-plugin-api.version>
+        <killbill.version>0.9.0-SNAPSHOT</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>2.1.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -218,316 +218,6 @@
                 <groupId>com.ning</groupId>
                 <artifactId>async-http-client</artifactId>
                 <version>1.7.17</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-account</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-account</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-api</artifactId>
-                <version>${killbill-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-api</artifactId>
-                <version>${killbill-api.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-beatrix</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-beatrix</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-catalog</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-catalog</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-client-java</artifactId>
-                <version>${killbill-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-currency</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-entitlement</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-entitlement</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-internal-api</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-invoice</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-invoice</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-jaxrs</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-junction</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-junction</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-all-bundles</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-analytics</artifactId>
-                <version>${killbill-analytics-plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-defaultbundles</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-jruby</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-lib-killbill</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-lib-slf4j-osgi</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-logger</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-meter</artifactId>
-                <version>${killbill-meter-plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-test-beatrix</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-test-payment</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-osgi-bundles-webconsolebranding</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-overdue</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-overdue</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-payment</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-payment</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-server</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-subscription</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-subscription</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-tenant</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-usage</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-util</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing</groupId>
-                <artifactId>killbill-util</artifactId>
-                <version>${killbill.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-clock</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-clock</artifactId>
-                <version>${killbill-commons.version}</version>
-                <type>test-jar</type>
-                <!-- Removed scope test until we decide if ClockMock should be in non test package
-     or if this is indeed the right thing to have that jar part non test code
-     (Used to advance clock in Kill Bill server for test integration suite)
-               <scope>test</scope>
--->
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-concurrent</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-embeddeddb</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-embeddeddb-common</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-embeddeddb-h2</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-embeddeddb-mysql</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-jdbi</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-locker</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-queue</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.commons</groupId>
-                <artifactId>killbill-queue</artifactId>
-                <version>${killbill-commons.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.plugin</groupId>
-                <artifactId>killbill-plugin-api</artifactId>
-                <version>${killbill-plugin-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.plugin</groupId>
-                <artifactId>killbill-plugin-api-currency</artifactId>
-                <version>${killbill-plugin-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.plugin</groupId>
-                <artifactId>killbill-plugin-api-notification</artifactId>
-                <version>${killbill-plugin-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning.billing.plugin</groupId>
-                <artifactId>killbill-plugin-api-payment</artifactId>
-                <version>${killbill-plugin-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ning.jetty</groupId>
@@ -701,6 +391,316 @@
                 <version>2.53</version>
             </dependency>
             <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-account</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-account</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-api</artifactId>
+                <version>${killbill-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-api</artifactId>
+                <version>${killbill-api.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-beatrix</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-beatrix</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-catalog</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-catalog</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-client-java</artifactId>
+                <version>${killbill-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-currency</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-entitlement</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-entitlement</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-internal-api</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-invoice</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-invoice</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-jaxrs</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-junction</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-junction</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-all-bundles</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-analytics</artifactId>
+                <version>${killbill-analytics-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-defaultbundles</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-jruby</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-lib-killbill</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-lib-slf4j-osgi</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-logger</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-meter</artifactId>
+                <version>${killbill-meter-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-test-beatrix</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-test-payment</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-osgi-bundles-webconsolebranding</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-overdue</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-overdue</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-payment</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-payment</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-server</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-subscription</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-subscription</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-tenant</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-usage</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-util</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-util</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin</groupId>
+                <artifactId>killbill-plugin-api</artifactId>
+                <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin</groupId>
+                <artifactId>killbill-plugin-api-currency</artifactId>
+                <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin</groupId>
+                <artifactId>killbill-plugin-api-notification</artifactId>
+                <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin</groupId>
+                <artifactId>killbill-plugin-api-payment</artifactId>
+                <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-clock</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-clock</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <!-- Removed scope test until we decide if ClockMock should be in non test package
+     or if this is indeed the right thing to have that jar part non test code
+     (Used to advance clock in Kill Bill server for test integration suite)
+               <scope>test</scope>
+-->
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-concurrent</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-common</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-h2</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-mysql</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-jdbi</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-locker</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-queue</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-queue</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
                 <version>1.9.0</version>
@@ -762,42 +762,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>2.0.2</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-duplicate-finder-plugin</artifactId>
-                    <version>1.0.4</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
-                        <!-- That's for Jetty -->
-                        <ignoredResources>
-                            <ignoredResource>about.html</ignoredResource>
-                        </ignoredResources>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>io.tesla.jettyconsole</groupId>
                     <artifactId>jetty-console-maven-plugin</artifactId>
@@ -929,7 +893,7 @@
                             </goals>
                             <configuration>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"></licenseFamily>
                                     <!-- Hack, rat 0.9 will have org.apache.rat.analysis.license.MITLicense -->
                                     <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
                                         <familyName>The MIT License</familyName>
@@ -1005,6 +969,42 @@
                             </configuration>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.kill-bill.maven.plugins</groupId>
+                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    <version>2.0.2</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.kill-bill.maven.plugins</groupId>
+                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <version>1.0.4</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
+                        <!-- That's for Jetty -->
+                        <ignoredResources>
+                            <ignoredResource>about.html</ignoredResource>
+                        </ignoredResources>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <!-- You need to get it from sonatype-forge (https://repository.sonatype.org/content/groups/sonatype-public-grid/)
@@ -1211,7 +1211,7 @@
                         <configuration>
                             <groups>fast,slow</groups>
                             <systemPropertyVariables>
-                                <com.ning.billing.dbi.test.h2>true</com.ning.billing.dbi.test.h2>
+                                <org.killbill.billing.dbi.test.h2>true</org.killbill.billing.dbi.test.h2>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -1219,8 +1219,16 @@
             </build>
             <dependencies>
                 <dependency>
-                    <groupId>com.ning.billing.commons</groupId>
+                    <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-h2</artifactId>
+                    <version>${killbill-commons.version}</version>
+                    <scope>test</scope>
+                </dependency>
+                <!-- required because of some import statement -->
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-mysql</artifactId>
+                    <version>${killbill-commons.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1235,16 +1243,24 @@
                         <configuration>
                             <groups>fast,slow</groups>
                             <systemPropertyVariables>
-                                <com.ning.billing.dbi.test.h2>false</com.ning.billing.dbi.test.h2>
+                                <org.killbill.billing.dbi.test.h2>false</org.killbill.billing.dbi.test.h2>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
             <dependencies>
+                 <!-- required because of some import statement -->
                 <dependency>
-                    <groupId>com.ning.billing.commons</groupId>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-h2</artifactId>
+                    <version>${killbill-commons.version}</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-mysql</artifactId>
+                    <version>${killbill-commons.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1259,8 +1275,8 @@
                         <configuration>
                             <groups>fast,slow,mysql</groups>
                             <systemPropertyVariables>
-                                <com.ning.billing.dbi.test.useLocalDb>true</com.ning.billing.dbi.test.useLocalDb>
-                                <com.ning.billing.dbi.jdbc.url>jdbc:mysql://127.0.0.1:3306/killbill</com.ning.billing.dbi.jdbc.url>
+                                <org.killbill.billing.dbi.test.useLocalDb>true</org.killbill.billing.dbi.test.useLocalDb>
+                                <org.killbill.billing.dbi.jdbc.url>jdbc:mysql://127.0.0.1:3306/killbill</org.killbill.billing.dbi.jdbc.url>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -1271,10 +1287,6 @@
             <id>travis</id>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
@@ -1293,25 +1305,29 @@
                         <configuration>
                             <groups>fast,slow</groups>
                             <systemPropertyVariables>
-                                <com.ning.billing.dbi.test.h2>true</com.ning.billing.dbi.test.h2>
+                                <org.killbill.billing.dbi.test.h2>true</org.killbill.billing.dbi.test.h2>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
                     <!-- Comment out the plugin for now. Logs are getting too big on Travis which fails the build,
                          see for example https://api.travis-ci.org/jobs/5172875/log.txt?deansi=true -->
                     <!--<plugin>-->
-                    <!--<groupId>com.ning.maven.plugins</groupId>-->
+                    <!--<groupId>org.kill-bill.maven.plugins</groupId>-->
                     <!--<artifactId>maven-duplicate-finder-plugin</artifactId>-->
                     <!--</plugin>-->
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
                     </plugin>
+                    <plugin>
+                        <groupId>org.kill-bill.maven.plugins</groupId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    </plugin>
                 </plugins>
             </build>
             <dependencies>
                 <dependency>
-                    <groupId>com.ning.billing.commons</groupId>
+                    <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-h2</artifactId>
                     <scope>test</scope>
                 </dependency>
@@ -1335,14 +1351,6 @@
             <id>sonatype-oss-release</id>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-duplicate-finder-plugin</artifactId>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
@@ -1379,6 +1387,14 @@
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.kill-bill.maven.plugins</groupId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.kill-bill.maven.plugins</groupId>
+                        <artifactId>maven-duplicate-finder-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
