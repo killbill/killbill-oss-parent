@@ -99,7 +99,7 @@
         <killbill-plugin-api.version>0.6.4-SNAPSHOT</killbill-plugin-api.version>
         <killbill.version>0.9.0-SNAPSHOT</killbill.version>
         <logback.version>1.0.1</logback.version>
-        <metrics.version>2.1.2</metrics.version>
+        <metrics.version>3.0.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skeleton.version>0.1.7</skeleton.version>
         <slf4j.version>1.7.5</slf4j.version>
@@ -120,8 +120,73 @@
             </dependency>
             <dependency>
                 <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-annotation</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
-                <version>3.0.1</version>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-ehcache</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-healthchecks</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-jdbi</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-jersey</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-jetty8</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-jetty9</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-json</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-jvm</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-log4j</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-logback</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-servlet</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.codahale.metrics</groupId>
+                <artifactId>metrics-servlets</artifactId>
+                <version>${metrics.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.dmurph</groupId>
@@ -230,6 +295,11 @@
                 <version>${skeleton.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.palominolabs.metrics</groupId>
+                <artifactId>metrics-guice</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.samskivert</groupId>
                 <artifactId>jmustache</artifactId>
                 <version>1.5</version>
@@ -243,17 +313,6 @@
                 <groupId>com.sun.jersey.contribs</groupId>
                 <artifactId>jersey-guice</artifactId>
                 <version>${jersey.version}</version>
-            </dependency>
-            <!-- TODO Migrate Kill Bill server to 3.x version -->
-            <dependency>
-                <groupId>com.yammer.metrics</groupId>
-                <artifactId>metrics-core</artifactId>
-                <version>${metrics.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.yammer.metrics</groupId>
-                <artifactId>metrics-guice</artifactId>
-                <version>${metrics.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
@@ -1250,7 +1309,7 @@
                 </plugins>
             </build>
             <dependencies>
-                 <!-- required because of some import statement -->
+                <!-- required because of some import statement -->
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-h2</artifactId>
