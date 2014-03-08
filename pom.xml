@@ -827,6 +827,42 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.ning.maven.plugins</groupId>
+                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    <version>2.0.2</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.ning.maven.plugins</groupId>
+                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <version>1.0.4</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
+                        <!-- That's for Jetty -->
+                        <ignoredResources>
+                            <ignoredResource>about.html</ignoredResource>
+                        </ignoredResources>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>io.tesla.jettyconsole</groupId>
                     <artifactId>jetty-console-maven-plugin</artifactId>
                     <version>1.47</version>
@@ -1033,42 +1069,6 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.kill-bill.maven.plugins</groupId>
-                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>2.0.2</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.kill-bill.maven.plugins</groupId>
-                    <artifactId>maven-duplicate-finder-plugin</artifactId>
-                    <version>1.0.4</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
-                        <!-- That's for Jetty -->
-                        <ignoredResources>
-                            <ignoredResource>about.html</ignoredResource>
-                        </ignoredResources>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <!-- You need to get it from sonatype-forge (https://repository.sonatype.org/content/groups/sonatype-public-grid/)
@@ -1352,6 +1352,10 @@
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>com.ning.maven.plugins</groupId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
                     </plugin>
@@ -1376,16 +1380,12 @@
                     <!-- Comment out the plugin for now. Logs are getting too big on Travis which fails the build,
                          see for example https://api.travis-ci.org/jobs/5172875/log.txt?deansi=true -->
                     <!--<plugin>-->
-                    <!--<groupId>org.kill-bill.maven.plugins</groupId>-->
+                    <!--<groupId>com.ning.maven.plugins</groupId>-->
                     <!--<artifactId>maven-duplicate-finder-plugin</artifactId>-->
                     <!--</plugin>-->
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.kill-bill.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
@@ -1415,6 +1415,14 @@
             <id>sonatype-oss-release</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>com.ning.maven.plugins</groupId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.ning.maven.plugins</groupId>
+                        <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
@@ -1451,14 +1459,6 @@
                     <plugin>
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.kill-bill.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.kill-bill.maven.plugins</groupId>
-                        <artifactId>maven-duplicate-finder-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
