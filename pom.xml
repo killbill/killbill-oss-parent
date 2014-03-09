@@ -23,7 +23,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.5.26</version>
+    <version>0.5.27-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -98,7 +98,7 @@
         <killbill-commons.version>0.2.12</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-plugin-api.version>0.6.4</killbill-plugin-api.version>
-        <killbill.version>0.9.0</killbill.version>
+        <killbill.version>0.9.1</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>3.0.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

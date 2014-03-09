@@ -1,3 +1,9 @@
+0.5.27
+   Update package name from com.ning -> org.killbill
+
+0.5.26
+    N/A
+
 0.5.25
     rat: ignore ddl and prc files
 
