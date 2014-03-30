@@ -673,6 +673,13 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-usage</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-util</artifactId>
                 <version>${killbill.version}</version>
             </dependency>
