@@ -1,3 +1,6 @@
+0.5.33
+    Upgrade killbill-client.version to 0.0.8
+
 0.5.32
     Use all-in-one-bundle Felix webconsole artifact
 
