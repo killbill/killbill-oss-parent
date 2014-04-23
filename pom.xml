@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright 2010-2013 Ning, Inc.
+  ~ Copyright 2014 Groupon, Inc
+  ~ Copyright 2014 The Billing Project, LLC
   ~
-  ~ Ning licenses this file to you under the Apache License, version 2.0
+  ~ The Billing Project licenses this file to you under the Apache License, version 2.0
   ~ (the "License"); you may not use this file except in compliance with the
   ~ License.  You may obtain a copy of the License at:
   ~
@@ -23,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.6.35-SNAPSHOT</version>
+    <version>0.7.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -93,11 +95,11 @@
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.8.4</killbill-api.version>
+        <killbill-api.version>0.9.0</killbill-api.version>
         <killbill-client.version>0.0.8</killbill-client.version>
         <killbill-commons.version>0.2.15</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-plugin-api.version>0.6.5</killbill-plugin-api.version>
+        <killbill-plugin-api.version>0.7.0</killbill-plugin-api.version>
         <killbill.version>0.11.1</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>3.0.2</metrics.version>
