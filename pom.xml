@@ -99,7 +99,7 @@
         <killbill-client.version>0.0.9</killbill-client.version>
         <killbill-commons.version>0.2.15</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-plugin-api.version>0.7.0</killbill-plugin-api.version>
+        <killbill-plugin-api.version>0.7.1</killbill-plugin-api.version>
         <killbill.version>0.11.1</killbill.version>
         <logback.version>1.0.1</logback.version>
         <metrics.version>3.0.2</metrics.version>
