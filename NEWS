@@ -1,3 +1,7 @@
+0.7.8
+    Update killbill-api to 0.9.5
+    Update killbill-plugin-api to 0.7.2
+
 0.7.7
     Update killbill-client-java to 0.0.10
     Update killbill to 0.11.2
