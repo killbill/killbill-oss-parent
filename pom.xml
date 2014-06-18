@@ -95,13 +95,14 @@
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.9.5</killbill-api.version>
-        <killbill-client.version>0.0.10</killbill-client.version>
+        <killbill-api.version>0.9.6-SNAPSHOT</killbill-api.version>
+        <killbill-client.version>0.0.12-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.2.16-SNAPSHOT</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-plugin-api.version>0.7.3</killbill-plugin-api.version>
+        <killbill-platform.version>0.0.1-SNAPSHOT</killbill-platform.version>
+        <killbill-plugin-api.version>0.7.4-SNAPSHOT</killbill-plugin-api.version>
         <killbill.version>0.11.3</killbill.version>
-        <logback.version>1.0.1</logback.version>
+        <logback.version>1.1.2</logback.version>
         <metrics.version>3.0.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.6</slf4j.version>
@@ -655,66 +656,6 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-all-bundles</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-analytics</artifactId>
-                <version>${killbill-analytics-plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-defaultbundles</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-jruby</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-lib-killbill</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-lib-slf4j-osgi</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-logger</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-meter</artifactId>
-                <version>${killbill-meter-plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-test-beatrix</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-test-payment</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-osgi-bundles-webconsolebranding</artifactId>
-                <version>${killbill.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-overdue</artifactId>
                 <version>${killbill.version}</version>
             </dependency>
@@ -739,7 +680,137 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-server</artifactId>
+                <artifactId>killbill-platform-api</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-base</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-base</artifactId>
+                <version>${killbill-platform.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-lifecycle</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-all-bundles</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-api</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-api</artifactId>
+                <version>${killbill-platform.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-defaultbundles</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-jruby</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-lib-killbill</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-lib-slf4j-osgi</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-logger</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-test-beatrix</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-test-payment</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-webconsolebranding</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-lib-bundles</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-test-bundles</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-server</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-server</artifactId>
+                <version>${killbill-platform.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-test</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-profiles</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-profiles-killbill</artifactId>
+                <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-profiles-killbill</artifactId>
+                <version>${killbill.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-profiles-killpay</artifactId>
                 <version>${killbill.version}</version>
             </dependency>
             <dependency>
@@ -801,6 +872,11 @@
             <dependency>
                 <groupId>org.kill-bill.billing.plugin</groupId>
                 <artifactId>killbill-plugin-api-payment</artifactId>
+                <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin</groupId>
+                <artifactId>killbill-plugin-api-retry</artifactId>
                 <version>${killbill-plugin-api.version}</version>
             </dependency>
             <dependency>
@@ -941,6 +1017,16 @@
         </dependencies>
     </dependencyManagement>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
         <pluginManagement>
             <plugins>
                 <plugin>
