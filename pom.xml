@@ -21,7 +21,7 @@
     <parent>
         <artifactId>oss-parent</artifactId>
         <groupId>org.sonatype.oss</groupId>
-        <version>7</version>
+        <version>9</version>
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
@@ -1280,11 +1280,9 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <!-- You need to get it from sonatype-forge (https://repository.sonatype.org/content/groups/sonatype-public-grid/)
-                    See also https://issues.sonatype.org/browse/NEXUS-5653 -->
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.4.8</version>
+                    <version>1.6.2</version>
                     <extensions>true</extensions>
                 </plugin>
             </plugins>
