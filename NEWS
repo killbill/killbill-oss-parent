@@ -1,3 +1,7 @@
+0.7.13
+    Update nexus-staging-maven-plugin to 1.6.2
+    Update oss-parent to 9
+
 0.7.12
     Update killbill-api to 0.9.6
     Update killbill-plugin-api to 0.7.4
