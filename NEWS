@@ -1,3 +1,7 @@
+0.7.14
+    Add com.ning:compress-lzf
+    Tweak nexus-staging-maven-plugin configuration (see https://issues.sonatype.org/browse/OSSRH-10547)
+
 0.7.13
     Update nexus-staging-maven-plugin to 1.6.2
     Update oss-parent to 9
