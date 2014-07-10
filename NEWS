@@ -1,3 +1,6 @@
+0.7.15
+    Update maven-bundle-plugin to 2.5.0
+
 0.7.14
     Add com.ning:compress-lzf
     Tweak nexus-staging-maven-plugin configuration (see https://issues.sonatype.org/browse/OSSRH-10547)
