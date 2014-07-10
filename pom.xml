@@ -95,9 +95,9 @@
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.9.6</killbill-api.version>
+        <killbill-api.version>0.9.6-SNAPSHOT</killbill-api.version>
         <killbill-client.version>0.0.12</killbill-client.version>
-        <killbill-commons.version>0.2.16</killbill-commons.version>
+        <killbill-commons.version>0.2.17-SNAPSHOT</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-platform.version>0.0.4</killbill-platform.version>
         <killbill-plugin-api.version>0.7.4</killbill-plugin-api.version>
@@ -1206,7 +1206,7 @@
                             </goals>
                             <configuration>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"></licenseFamily>
                                     <!-- Hack, rat 0.9 will have org.apache.rat.analysis.license.MITLicense -->
                                     <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
                                         <familyName>The MIT License</familyName>
