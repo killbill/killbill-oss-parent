@@ -1,3 +1,9 @@
+0.7.16
+    Update killbill-commons to 0.2.18
+    Update killbill-platform to 0.0.6
+    Update killbill to 0.11.7
+    Update killbill-client-java to 0.0.13
+
 0.7.15
     Update maven-bundle-plugin to 2.5.0
     Update killbill-api to 0.9.7
