@@ -88,7 +88,7 @@
     </issueManagement>
     <properties>
         <async-http-client.version>1.7.24</async-http-client.version>
-        <ehcache.version>2.6.2</ehcache.version>
+        <ehcache.version>2.6.9</ehcache.version>
         <guava.version>15.0</guava.version>
         <guice.version>3.0</guice.version>
         <jackson.version>2.3.2</jackson.version>
@@ -488,22 +488,22 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.2.2</version>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-ehcache</artifactId>
-                <version>1.2.2</version>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-guice</artifactId>
-                <version>1.2.2</version>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
-                <version>1.2.2</version>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.bgee.log4jdbc-log4j2</groupId>
