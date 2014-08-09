@@ -1301,7 +1301,7 @@
             <plugin>
                 <groupId>com.google.code.sortpom</groupId>
                 <artifactId>maven-sortpom-plugin</artifactId>
-                <version>2.1.0</version>
+                <version>2.3.0</version>
                 <executions>
                     <execution>
                         <phase>verify</phase>
@@ -1314,6 +1314,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <keepBlankLines>true</keepBlankLines>
                     <lineSeparator>\n</lineSeparator>
+                    <expandEmptyElements>false</expandEmptyElements>
                     <nrOfIndentSpace>4</nrOfIndentSpace>
                     <sortDependencies>groupId,artifactId,scope</sortDependencies>
                     <sortPlugins>groupId,artifactId,scope</sortPlugins>
