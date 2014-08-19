@@ -2,6 +2,7 @@
     Add aopalliance:aopalliance:1.0
     Add com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.3.2
     Add com.sun.jersey:jersey-core:1.18.1
+    Update jetty-console-maven-plugin to 1.55 (groupId is now org.simplericity.jettyconsole)
 
 0.7.20
     Add org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16
