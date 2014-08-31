@@ -96,8 +96,8 @@
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
         <killbill-api.version>0.9.8</killbill-api.version>
-        <killbill-client.version>0.0.13</killbill-client.version>
-        <killbill-commons.version>0.2.20</killbill-commons.version>
+        <killbill-client.version>0.0.14</killbill-client.version>
+        <killbill-commons.version>0.2.21</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-platform.version>0.0.8</killbill-platform.version>
         <killbill-plugin-api.version>0.7.4</killbill-plugin-api.version>
@@ -1096,11 +1096,6 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.simplericity.jettyconsole</groupId>
-                    <artifactId>jetty-console-maven-plugin</artifactId>
-                    <version>1.55</version>
-                </plugin>
-                <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>2.5.0</version>
@@ -1303,6 +1298,11 @@
                             </configuration>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.simplericity.jettyconsole</groupId>
+                    <artifactId>jetty-console-maven-plugin</artifactId>
+                    <version>1.55</version>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
