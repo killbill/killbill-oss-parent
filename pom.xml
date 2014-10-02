@@ -343,6 +343,16 @@
                 <version>${jersey.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP-java6</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>2.1</version>
@@ -564,6 +574,11 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-xml</artifactId>
                 <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.18.2-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.jdbi</groupId>
@@ -986,6 +1001,11 @@
                 <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-xmlloader</artifactId>
                 <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>1.1.7</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
