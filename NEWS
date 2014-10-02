@@ -1,3 +1,7 @@
+0.7.29
+    Update killbill-commons to 0.2.25
+    Update killbill-platform to 0.0.13
+
 0.7.28
     Add com.zaxxer:HikariCP:2.0.1
     Add com.zaxxer:HikariCP-java6:2.0.1
