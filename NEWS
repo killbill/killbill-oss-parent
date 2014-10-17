@@ -1,3 +1,6 @@
+0.8.4
+    Update jackson to 2.4.3
+
 0.8.3
     Update jsr305 and jackson version to fix vmc dependency issue
 
