@@ -91,7 +91,7 @@
         <ehcache.version>2.6.9</ehcache.version>
         <guava.version>15.0</guava.version>
         <guice.version>3.0</guice.version>
-        <jackson.version>2.4.1</jackson.version>
+        <jackson.version>2.4.3</jackson.version>
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
