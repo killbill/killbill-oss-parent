@@ -97,7 +97,7 @@
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
         <killbill-api.version>0.10.1</killbill-api.version>
         <killbill-client.version>0.0.15</killbill-client.version>
-        <killbill-commons.version>0.2.27</killbill-commons.version>
+        <killbill-commons.version>0.2.28</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
         <killbill-platform.version>0.0.14</killbill-platform.version>
         <killbill-plugin-api.version>0.8.1</killbill-plugin-api.version>
