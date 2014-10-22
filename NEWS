@@ -1,3 +1,6 @@
+0.8.6
+    Update killbill-commons to 0.2.28
+
 0.8.5
     Update api and java client to reflect latest api changes for dryRun operations
 
