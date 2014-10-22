@@ -1,3 +1,6 @@
+0.8.5
+    Update api and java client to reflect latest api changes for dryRun operations
+
 0.8.4
     Update jackson to 2.4.3
 
