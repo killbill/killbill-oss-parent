@@ -99,8 +99,8 @@
         <killbill-client.version>0.0.15</killbill-client.version>
         <killbill-commons.version>0.2.28</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
-        <killbill-platform.version>0.0.14</killbill-platform.version>
-        <killbill-plugin-api.version>0.8.1</killbill-plugin-api.version>
+        <killbill-platform.version>0.0.15</killbill-platform.version>
+        <killbill-plugin-api.version>0.8.2</killbill-plugin-api.version>
         <killbill.version>0.11.7</killbill.version>
         <logback.version>1.1.2</logback.version>
         <metrics.version>3.0.2</metrics.version>
@@ -931,7 +931,7 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing.plugin</groupId>
-                <artifactId>killbill-plugin-api-retry</artifactId>
+                <artifactId>killbill-plugin-api-routing</artifactId>
                 <version>${killbill-plugin-api.version}</version>
             </dependency>
             <dependency>
