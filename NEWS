@@ -1,3 +1,6 @@
+0.9.2
+    Update killbill-platform to 0.1.1
+
 0.9.1
     Update killbill-plugin-api to 0.8.2
     Update killbill-platform to 0.1.0 (prev release was use a wrong platform version)
