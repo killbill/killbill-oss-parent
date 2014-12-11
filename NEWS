@@ -1,5 +1,8 @@
 0.9.4
     Add org.kill-bill.billing.plugin.java:killbill-base-plugin:0.0.1
+    rat:
+     - Upgrade plugin to 0.11
+     - Ignore wsdl, txt, h2 and jOOQ files
 
 0.9.3
     Update killbill-api to 0.10.3
