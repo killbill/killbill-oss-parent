@@ -96,6 +96,7 @@
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
         <killbill-api.version>0.10.3</killbill-api.version>
+        <killbill-base-plugin.version>0.0.1</killbill-base-plugin.version>
         <killbill-client.version>0.0.15</killbill-client.version>
         <killbill-commons.version>0.2.28</killbill-commons.version>
         <killbill-meter-plugin.version>0.4.1</killbill-meter-plugin.version>
@@ -933,6 +934,18 @@
                 <groupId>org.kill-bill.billing.plugin</groupId>
                 <artifactId>killbill-plugin-api-routing</artifactId>
                 <version>${killbill-plugin-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin.java</groupId>
+                <artifactId>killbill-base-plugin</artifactId>
+                <version>${killbill-base-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing.plugin.java</groupId>
+                <artifactId>killbill-base-plugin</artifactId>
+                <version>${killbill-base-plugin.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
