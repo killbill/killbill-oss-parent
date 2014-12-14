@@ -597,6 +597,11 @@
                 <version>2.53</version>
             </dependency>
             <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq</artifactId>
+                <version>3.5.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jruby</groupId>
                 <artifactId>jruby-complete</artifactId>
                 <version>1.7.16</version>
