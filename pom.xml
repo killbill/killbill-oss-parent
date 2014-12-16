@@ -95,7 +95,7 @@
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <killbill-analytics-plugin.version>0.5.9</killbill-analytics-plugin.version>
-        <killbill-api.version>0.10.3</killbill-api.version>
+        <killbill-api.version>0.10.4-SNAPSHOT</killbill-api.version>
         <killbill-base-plugin.version>0.0.2-SNAPSHOT</killbill-base-plugin.version>
         <killbill-client.version>0.0.15</killbill-client.version>
         <killbill-commons.version>0.2.29-SNAPSHOT</killbill-commons.version>
@@ -885,6 +885,13 @@
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-tenant</artifactId>
                 <version>${killbill.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-tenant</artifactId>
+                <version>${killbill.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
