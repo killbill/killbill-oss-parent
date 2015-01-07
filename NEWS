@@ -1,3 +1,6 @@
+0.9.5
+    Release commons and base-plugin to remove SNAPSHOT
+
 0.9.4
     Add org.kill-bill.billing.plugin.java:killbill-base-plugin:0.0.1
     Add org.jooq:jooq:3.5.0
