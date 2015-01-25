@@ -1,3 +1,6 @@
+0.9.9
+    Update org.mockito:mockito-all to 1.10.19
+
 0.9.8
     Update killbill-client-java to 0.1.2
     Update slf4j to 1.7.7
