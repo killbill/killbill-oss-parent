@@ -1,4 +1,9 @@
+0.9.10
+    Update killbill-api to 0.12.1
+    Update killbill-commons to 0.2.31
+
 0.9.9
+    Update killbill-api to 0.12.0
     Update killbill-commons to 0.2.30
     Update org.mockito:mockito-all to 1.10.19
 
