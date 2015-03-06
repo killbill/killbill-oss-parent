@@ -1,3 +1,6 @@
+0.9.13
+    Update killbill-client and killbill-plugin-api to latest version
+
 0.9.12
     Update killbill-api (and killbill-commons + killbill-client) for release of killbill-commons + killbill-plugin-api
 
