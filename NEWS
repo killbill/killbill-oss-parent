@@ -1,3 +1,6 @@
+0.9.15
+    Update killbill-platform
+
 0.9.14
     Update killbill-plugin-api (revert WithEvents interfaces)
 
