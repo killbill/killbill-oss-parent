@@ -1,14 +1,33 @@
+0.10.0
+    Update killbill-commons to 0.3.0
+    Update killbill-platform to 0.2.0
+    Update c3p0 to 0.9.5
+    Update Dropwizard metrics to 3.1.1
+    Update Ehcache to 2.9.1
+    Update HikariCP to 2.3.3
+    Update jDBI to 2.59
+    Update Jetty to 9.2.10.v20150310
+    Update mariadb-java-client to 1.1.8
+    Update Servlet API to 3.1.0
+    Update SLF4J to 1.7.9
+    Update com.google.code.findbugs:annotations to 3.0.0
+    Update org.javassist:javassist to 3.19.0-GA
+    Remove BoneCP
+
 0.9.15
-    Update killbill-platform
+    Update killbill-platform to 0.1.4
 
 0.9.14
-    Update killbill-plugin-api (revert WithEvents interfaces)
+    Update killbill-plugin-api to 0.8.4
 
 0.9.13
-    Update killbill-client and killbill-plugin-api to latest version
+    Update killbill-plugin-api to 0.8.3
+    Update killbill-client-java to 0.2.2
 
 0.9.12
-    Update killbill-api (and killbill-commons + killbill-client) for release of killbill-commons + killbill-plugin-api
+    Update killbill-api to 0.12.4
+    Update killbill-commons to 0.2.33
+    Update killbill-client-java to 0.2.1
 
 0.9.11
     Update killbill-api to 0.12.2
