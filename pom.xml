@@ -96,7 +96,7 @@
         <jetty.version>9.2.10.v20150310</jetty.version>
         <killbill-api.version>0.13.0</killbill-api.version>
         <killbill-base-plugin.version>0.0.2</killbill-base-plugin.version>
-        <killbill-client.version>0.3.0</killbill-client.version>
+        <killbill-client.version>0.3.1</killbill-client.version>
         <killbill-commons.version>0.3.0-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.2.0-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.8.4</killbill-plugin-api.version>
