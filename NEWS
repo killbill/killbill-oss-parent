@@ -16,6 +16,9 @@
     Update org.javassist:javassist to 3.19.0-GA
     Remove BoneCP
 
+0.10.2
+    Upgrade killbill-plugin-api to 0.8.5
+
 0.10.1
     Upgrade kilbill-client-java to 0.3.1
 
