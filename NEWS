@@ -5,7 +5,7 @@
     Update Dropwizard metrics to 3.1.1
     Update Ehcache to 2.9.1
     Update H2 to 1.4.186
-    Update HikariCP to 2.3.3
+    Update HikariCP to 2.3.5
     Update jDBI to 2.60
     Update Jetty to 9.2.10.v20150310
     Update Logback to 1.1.3
