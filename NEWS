@@ -20,6 +20,7 @@
     Update com.google.code.findbugs:annotations to 3.0.0
     Update org.javassist:javassist to 3.19.0-GA
     Remove BoneCP
+    Update maven-deploy-plugin to 2.8.2
 
 0.10.3
     Update killbill-platform.version to 0.1.5 (fix transitive dependency issues)
