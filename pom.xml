@@ -608,7 +608,7 @@
             <dependency>
                 <groupId>org.jruby</groupId>
                 <artifactId>jruby-complete</artifactId>
-                <version>1.7.16</version>
+                <version>1.7.20</version>
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
