@@ -1,3 +1,6 @@
+0.19
+    Add missing dependency for killbill-plugin-api-catalog
+
 0.18
     killbill-plugin-api.version -> 0.11
 
