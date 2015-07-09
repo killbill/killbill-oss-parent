@@ -1660,6 +1660,32 @@
             </dependencies>
         </profile>
         <profile>
+            <id>postgresql</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <groups>fast,slow</groups>
+                            <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.postgresql>true</org.killbill.billing.dbi.test.postgresql>
+                                <org.killbill.billing.dbi.test.useLocalDb>true</org.killbill.billing.dbi.test.useLocalDb>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-postgresql</artifactId>
+                    <version>${killbill-commons.version}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>localtest</id>
             <build>
                 <plugins>
