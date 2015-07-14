@@ -1,5 +1,8 @@
 0.28
+    Add io.airlift:testing-postgresql-server:0.3
+    Add org.postgresql:postgresql:9.4-1201-jdbc41
     Update killbill-client-java to 0.6
+    Update jmxutils to 1.18
 
 0.27
     Update killbill-platform -> 0.5

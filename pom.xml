@@ -298,6 +298,11 @@
                 <version>2.1</version>
             </dependency>
             <dependency>
+                <groupId>io.airlift</groupId>
+                <artifactId>testing-postgresql-server</artifactId>
+                <version>0.3</version>
+            </dependency>
+            <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-annotation</artifactId>
                 <version>${metrics.version}</version>
@@ -1073,6 +1078,11 @@
                 <version>5.0.0</version>
             </dependency>
             <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.4-1201-jdbc41</version>
+            </dependency>
+            <dependency>
                 <groupId>org.skife.config</groupId>
                 <artifactId>config-magic</artifactId>
                 <version>0.14</version>
@@ -1111,7 +1121,7 @@
             <dependency>
                 <groupId>org.weakref</groupId>
                 <artifactId>jmxutils</artifactId>
-                <version>1.12</version>
+                <version>1.18</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
