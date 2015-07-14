@@ -1638,13 +1638,6 @@
                     <version>${killbill-commons.version}</version>
                     <scope>test</scope>
                 </dependency>
-                <!-- required because of some import statement -->
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons.version}</version>
-                    <scope>test</scope>
-                </dependency>
             </dependencies>
         </profile>
         <profile>
@@ -1655,22 +1648,15 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <groups>fast,slow</groups>
+                            <groups>fast,slow,mysql</groups>
                             <systemPropertyVariables>
-                                <org.killbill.billing.dbi.test.h2>false</org.killbill.billing.dbi.test.h2>
+                                <org.killbill.billing.dbi.test.mysql>true</org.killbill.billing.dbi.test.mysql>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
             <dependencies>
-                <!-- required because of some import statement -->
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons.version}</version>
-                    <scope>test</scope>
-                </dependency>
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-mysql</artifactId>
@@ -1687,10 +1673,9 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <groups>fast,slow</groups>
+                            <groups>fast,slow,postgresql</groups>
                             <systemPropertyVariables>
                                 <org.killbill.billing.dbi.test.postgresql>true</org.killbill.billing.dbi.test.postgresql>
-                                <org.killbill.billing.dbi.test.useLocalDb>true</org.killbill.billing.dbi.test.useLocalDb>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -1706,7 +1691,7 @@
             </dependencies>
         </profile>
         <profile>
-            <id>localtest</id>
+            <id>localtest-mysql</id>
             <build>
                 <plugins>
                     <plugin>
@@ -1715,8 +1700,26 @@
                         <configuration>
                             <groups>fast,slow,mysql</groups>
                             <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.mysql>true</org.killbill.billing.dbi.test.mysql>
                                 <org.killbill.billing.dbi.test.useLocalDb>true</org.killbill.billing.dbi.test.useLocalDb>
-                                <org.killbill.billing.dbi.jdbc.url>jdbc:mysql://127.0.0.1:3306/killbill</org.killbill.billing.dbi.jdbc.url>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>localtest-postgresql</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <groups>fast,slow,postgresql</groups>
+                            <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.postgresql>true</org.killbill.billing.dbi.test.postgresql>
+                                <org.killbill.billing.dbi.test.useLocalDb>true</org.killbill.billing.dbi.test.useLocalDb>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
