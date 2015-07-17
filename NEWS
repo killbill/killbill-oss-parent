@@ -1,4 +1,6 @@
 0.28
+    New postgresql and localtest-postgresql profiles
+    Profile localtest has been renamed localtest-mysql
     Add io.airlift:testing-postgresql-server:0.3
     Add org.postgresql:postgresql:9.4-1201-jdbc41
     Add org.kill-bill.commons:killbill-embeddeddb-postgresql
