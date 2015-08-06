@@ -1,3 +1,6 @@
+0.29
+    Update commons to 0.4
+
 0.28
     Remove snapshot versions to create a suitable pom containing the postgress support required for the release of commons
     New postgresql and localtest-postgresql profiles
