@@ -96,10 +96,10 @@
         <jetty.version>9.2.10.v20150310</jetty.version>
         <killbill-api.version>0.19</killbill-api.version>
         <killbill-base-plugin.version>0.1</killbill-base-plugin.version>
-        <killbill-client.version>0.6-SNAPSHOT</killbill-client.version>
-        <killbill-commons.version>0.4-SNAPSHOT</killbill-commons.version>
-        <killbill-platform.version>0.6-SNAPSHOT</killbill-platform.version>
-        <killbill-plugin-api.version>0.14-SNAPSHOT</killbill-plugin-api.version>
+        <killbill-client.version>0.5</killbill-client.version>
+        <killbill-commons.version>0.3</killbill-commons.version>
+        <killbill-platform.version>0.5</killbill-platform.version>
+        <killbill-plugin-api.version>0.13</killbill-plugin-api.version>
         <logback.version>1.1.3</logback.version>
         <metrics-palominolabs.version>3.1.2</metrics-palominolabs.version>
         <metrics.version>3.1.1</metrics.version>
