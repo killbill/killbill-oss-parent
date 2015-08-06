@@ -1,4 +1,5 @@
 0.28
+    Remove snapshot versions to create a suitable pom containing the postgress support required for the release of commons
     New postgresql and localtest-postgresql profiles
     Profile localtest has been renamed localtest-mysql
     Add io.airlift:testing-postgresql-server:0.3
