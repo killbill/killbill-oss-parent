@@ -1,22 +1,21 @@
 0.31
-    Update platform to 0.6 prior release
+    Update killbill-platform to 0.6
 
 0.30
-    Update plugin-api to 0.14 and java-client to 0.6
+    Update killbill-plugin-api to 0.14
+    Update killbill-client-java to 0.6
 
 0.29
-    Update commons to 0.4
+    Update killbill-commons to 0.4
 
 0.28
-    Remove snapshot versions to create a suitable pom containing the postgress support required for the release of commons
+    Rename killbill-plugin-api-routing to killbill-plugin-api-control
     New postgresql and localtest-postgresql profiles
     Profile localtest has been renamed localtest-mysql
     Add io.airlift:testing-postgresql-server:0.3
     Add org.postgresql:postgresql:9.4-1201-jdbc41
     Add org.kill-bill.commons:killbill-embeddeddb-postgresql
-    Update killbill-client-java to 0.6
-    Update killbill-commons to 0.4
-    Update killbill-platform to 0.6
+    Update killbill-plugin-api to 0.13
     Update jmxutils to 1.18
 
 0.27
