@@ -1,3 +1,6 @@
+0.32
+    Update killbill-base-plugin to 0.2.0
+
 0.31
     Update killbill-platform to 0.6
 
@@ -60,7 +63,6 @@
 0.13
     Update killbill-api to 0.15
     Update killbill-plugin-api to 0.10
-    Update killbill-base-plugin to 0.2.0
 
 0.12
     Update killbill-client.version to 0.5
