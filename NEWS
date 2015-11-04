@@ -1,3 +1,16 @@
+0.61
+    Upgrade killbill-client -> 0.14
+    Upgrade killbill-api -> 0.27
+
+0.60
+    Upgrade killbill-platform -> 0.13
+
+0.59
+    Upgrade killbill-commons -> 0.9
+
+0.58
+    Update killbill-client to 0.13
+
 0.57
     Update killbill-base-plugin to 0.2.3
 
