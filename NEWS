@@ -1,3 +1,7 @@
+0.70
+    Update killbill-client -> 0.16
+    Update killbill-platform -> 0.15
+
 0.69
     Update killbill-plugin-api -> 0.18
 
