@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.71-SNAPSHOT</version>
+    <version>0.72-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -96,7 +96,7 @@
         <jetty.version>9.2.10.v20150310</jetty.version>
         <killbill-api.version>0.30</killbill-api.version>
         <killbill-base-plugin.version>0.2.3</killbill-base-plugin.version>
-        <killbill-client.version>0.16</killbill-client.version>
+        <killbill-client.version>0.17</killbill-client.version>
         <killbill-commons.version>0.11</killbill-commons.version>
         <killbill-platform.version>0.15</killbill-platform.version>
         <killbill-plugin-api.version>0.18</killbill-plugin-api.version>
