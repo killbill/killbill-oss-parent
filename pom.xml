@@ -100,11 +100,11 @@
         <killbill-commons.version>0.14</killbill-commons.version>
         <killbill-platform.version>0.21</killbill-platform.version>
         <killbill-plugin-api.version>0.18</killbill-plugin-api.version>
-        <logback.version>1.1.3</logback.version>
+        <logback.version>1.1.7</logback.version>
         <metrics-palominolabs.version>3.1.2</metrics-palominolabs.version>
         <metrics.version>3.1.1</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <slf4j.version>1.7.12</slf4j.version>
+        <slf4j.version>1.7.21</slf4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
