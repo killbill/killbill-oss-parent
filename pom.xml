@@ -1307,6 +1307,7 @@
                             <killbill.version>${killbill.version}</killbill.version>
                             <org.slf4j.simpleLogger.showDateTime>true</org.slf4j.simpleLogger.showDateTime>
                             <org.slf4j.simpleLogger.dateTimeFormat>yyyy-MM-dd'T'HH:mm:ss.SSSZ</org.slf4j.simpleLogger.dateTimeFormat>
+                            <killbill.test.use.connection.pool>false</killbill.test.use.connection.pool>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
