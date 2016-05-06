@@ -1,3 +1,43 @@
+0.92
+    Upgrade killbill-platform -> 0.24
+    Update killbill-api -> 0.33
+
+0.91
+    Update killbill-commons -> 0.15
+
+0.90
+    Add missing slf4j SimpleLogger for testng tests to make sure we print the date of each log line
+
+0.89
+    Update killbill-platform -> 0.23
+
+0.88
+    Update killbill-platform to 0.22
+
+0.87
+    Add org.joda:joda-money dependency
+    Update Logback to 1.1.7
+    Update SLF4J to 1.7.21
+
+0.86
+    Update killbill-commons to 0.14
+    Update killbill-platform to 0.21
+
+0.85
+    Update killbill-platform -> 0.21
+
+0.84
+    Update killbill-client -> 0.20
+
+0.83
+    Update killbill-commons -> 0.13
+
+0.82
+    Update killbill-client -> 0.19
+
+0.81
+    Update killbill-client -> 0.18
+
 0.80
     Update killbill-platform -> 0.20
 
