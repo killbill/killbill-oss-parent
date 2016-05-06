@@ -1,3 +1,6 @@
+0.91
+    Update killbill-commons -> 0.15
+
 0.90
     Add missing slf4j SimpleLogger for testng tests to make sure we print the date of each log line
 
