@@ -1,3 +1,6 @@
+0.94
+    Create initial version of pom.xml for KB release 0.17.0
+
 0.92
     Upgrade killbill-platform -> 0.24
     Update killbill-api -> 0.33
