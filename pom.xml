@@ -94,7 +94,7 @@
         <jackson.version>2.4.3</jackson.version>
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
-        <killbill-api.version>0.36</killbill-api.version>
+        <killbill-api.version>0.37</killbill-api.version>
         <killbill-base-plugin.version>1.0.0</killbill-base-plugin.version>
         <killbill-client.version>0.27</killbill-client.version>
         <killbill-commons.version>0.18</killbill-commons.version>
