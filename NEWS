@@ -1,3 +1,6 @@
+0.110
+    Update killbill-platform -> 0.30
+
 0.109
     Update killbill-api -> 0.37
     Add org.codehaus.janino:janino:2.5.16
