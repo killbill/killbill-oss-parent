@@ -1,4 +1,6 @@
 0.113
+    Update killbill-commons -> 0.19
+    Update killbill-platform -> 0.31
     Add io.airlift:command:0.2
     Add io.airlift:units:0.94
 
