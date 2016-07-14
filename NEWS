@@ -1,3 +1,7 @@
+0.113
+    Add io.airlift:command:0.2
+    Add io.airlift:units:0.94
+
 0.112
     Update killbill-api.version -> 0.38
 
