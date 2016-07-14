@@ -1051,8 +1051,22 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-mysql</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-embeddeddb-postgresql</artifactId>
                 <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-embeddeddb-postgresql</artifactId>
+                <version>${killbill-commons.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
