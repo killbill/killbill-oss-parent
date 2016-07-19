@@ -1,3 +1,94 @@
+0.115
+    Update killbill-client -> 0.29
+    Update killbill-api -> 0.39
+
+0.114
+    Update Swagger to 1.5.9
+
+0.113
+    Update killbill-commons -> 0.19
+    Update killbill-platform -> 0.31
+    Add io.airlift:command:0.2
+    Add io.airlift:units:0.94
+
+0.112
+    Update killbill-api.version -> 0.38
+
+0.111
+    killbill-client -> 0.28
+
+0.110
+    Update killbill-platform -> 0.30
+
+0.109
+    Update killbill-api -> 0.37
+    Add org.codehaus.janino:janino:2.5.16
+
+0.108
+    Update killbill-platform -> 0.29
+
+0.107
+    Update killbill-client -> 0.27
+    Update killbill-commons -> 0.18
+
+0.106
+    Update killbill-plugin-api -> 0.20
+
+0.105
+    Update killbill-api -> 0.36
+
+0.104
+    Update killbill-commons -> 0.17
+    Update killbill-platform -> 0.28
+
+0.103
+    Update killbill-api -> 0.35
+    Update killbill-client -> 0.26
+
+0.102
+    Update killbill-base-plugin -> 1.0.0
+
+0.101
+    Update killbill-client -> 0.25
+
+0.100
+    Update platform to 0.27 for KB release 0.17
+
+0.99
+    Update client-java to 0.24 for KB release 0.17
+
+0.98
+    Update commons to 0.16 for KB release 0.17
+
+0.97
+    Update plugin-api to 0.19 for KB release 0.17
+
+0.96
+    Update api to 0.34 for KB release 0.17
+
+0.95
+    Create initial version of pom.xml for KB release 0.17.0
+
+0.94.4
+    Update killbill-api -> 0.33.1
+    Upgrade killbill-client -> 0.23.1
+
+0.94.3
+    Update killbill-platform -> 0.26.1
+
+0.94.2
+    Update killbill-commons -> 0.15.1
+
+0.94.1
+    Upgrade killbill-platform -> 0.26
+    Upgrade killbill-client -> 0.23.1
+
+0.94
+    Update killbill-base-plugin to 0.3.3
+
+0.93
+    Upgrade killbill-platform -> 0.25
+
 0.92
     Upgrade killbill-platform -> 0.24
     Update killbill-api -> 0.33
