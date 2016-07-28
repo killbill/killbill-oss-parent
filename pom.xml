@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.119-SNAPSHOT</version>
+    <version>0.121-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -91,11 +91,11 @@
         <ehcache.version>2.9.1</ehcache.version>
         <guava.version>18.0</guava.version>
         <guice.version>3.0</guice.version>
-        <jackson.version>2.4.3</jackson.version>
+        <jackson.version>2.4.5</jackson.version>
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
         <killbill-api.version>0.40</killbill-api.version>
-        <killbill-base-plugin.version>1.0.0</killbill-base-plugin.version>
+        <killbill-base-plugin.version>1.0.1</killbill-base-plugin.version>
         <killbill-client.version>0.33-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.19</killbill-commons.version>
         <killbill-platform.version>0.31</killbill-platform.version>
@@ -442,6 +442,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-email</artifactId>
                 <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.2.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
