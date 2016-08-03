@@ -1,3 +1,7 @@
+0.121
+    Update killbill-client -> 0.33
+    killbill-api -> 0.41
+
 0.120
     Update Jackson to 2.4.5
     Add org.apache.commons:commons-lang3:3.2.1
