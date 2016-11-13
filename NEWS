@@ -1,3 +1,155 @@
+0.140
+    Update killbill-platform -> 0.36
+
+0.139
+    Update killbill-plugin-api -> 0.23
+
+0.138
+    Update killbill-client -> 0.40 and killbill-platform -> 0.35
+
+0.137
+    Update plugin-api -> 0.22
+
+0.136
+    Update killbill-api -> 0.50
+
+0.135
+    Update killbill-platform -> 0.34
+
+0.134
+    Update killbill-plugin-api from 0.0 -> 0.21
+
+0.133
+    Update killbill-base-plugin -> 1.0.3
+
+0.132
+    Update killbill-base-plugin -> 1.0.2
+
+0.131
+    Update killbill-commons -> 0.20
+    Update killbill-platform -> 0.33
+
+0.130
+    Update killbill-api -> 0.49
+
+0.129
+    Update killbill-api -> 0.48
+    Update killbill-client -> 0.39
+
+0.128
+    Update killbill-api -> 0.47
+
+0.127
+    Update killbill-api -> 0.46
+
+0.126
+    Update killbill-api -> 0.45 and killbill-client -> 0.38
+
+0.125
+    Update killbill-api -> 0.44 and killbill-client -> 0.37
+
+0.124
+    Update killbill-client -> 0.36
+    Update killbill-api -> 0.43
+
+0.123
+    Update killbill-client -> 0.35 and killbill-api -> 0.42
+
+0.122
+    Update killbill-client -> 0.34
+
+0.121
+    Update killbill-client -> 0.33
+    killbill-api -> 0.41
+
+0.120
+    Update Jackson to 2.4.5
+    Add org.apache.commons:commons-lang3:3.2.1
+
+0.119
+    Update killbill-base-plugin -> 1.0.1
+
+0.118
+    Update killbill-client -> 0.32
+
+0.117
+    Update killbill-client -> 0.31
+
+0.116
+    Update killbill-api -> 0.40
+    Update killbill-client -> 0.30
+
+0.115
+    Update killbill-client -> 0.29
+    Update killbill-api -> 0.39
+
+0.114
+    Update Swagger to 1.5.9
+
+0.113
+    Update killbill-commons -> 0.19
+    Update killbill-platform -> 0.31
+    Add io.airlift:command:0.2
+    Add io.airlift:units:0.94
+
+0.112
+    Update killbill-api.version -> 0.38
+
+0.111
+    killbill-client -> 0.28
+
+0.110
+    Update killbill-platform -> 0.30
+
+0.109
+    Update killbill-api -> 0.37
+    Add org.codehaus.janino:janino:2.5.16
+
+0.108
+    Update killbill-platform -> 0.29
+
+0.107
+    Update killbill-client -> 0.27
+    Update killbill-commons -> 0.18
+
+0.106
+    Update killbill-plugin-api -> 0.20
+
+0.105
+    Update killbill-api -> 0.36
+
+0.104
+    Update killbill-commons -> 0.17
+    Update killbill-platform -> 0.28
+
+0.103
+    Update killbill-api -> 0.35
+    Update killbill-client -> 0.26
+
+0.102
+    Update killbill-base-plugin -> 1.0.0
+
+0.101
+    Update killbill-client -> 0.25
+
+0.100
+    Update platform to 0.27 for KB release 0.17
+
+0.99
+    Update client-java to 0.24 for KB release 0.17
+
+0.98
+    Update commons to 0.16 for KB release 0.17
+
+0.97
+    Update plugin-api to 0.19 for KB release 0.17
+
+0.96
+    Update api to 0.34 for KB release 0.17
+
+0.95
+    Create initial version of pom.xml for KB release 0.17.0
+
 0.94.5
     Update killbill-client.version -> 0.23.4
 
