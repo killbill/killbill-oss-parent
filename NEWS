@@ -1,3 +1,22 @@
+0.140.12
+    Update killbill-commons -> 0.20.3
+
+0.140.11
+    Update MariaDB client to 1.5.8
+    Update Ehcache to 2.10.3
+
+0.140.10
+    Update killbill-client -> 0.40.3
+
+0.140.9
+    Update killbill-commons -> 0.20.2
+
+0.140.8
+    Update killbill-api -> 0.50.1 and illbill-plugin-api -> 0.23.1
+
+0.140.7
+    Update killbill-client -> 0.40.2
+
 0.140.6
     Update killbill-commons -> 0.20.1
 
