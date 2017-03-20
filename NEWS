@@ -1,3 +1,6 @@
+0.140.16
+    Update killbill-commons -> 0.20.5
+
 0.140.15
     Update Dropwizard metrics to 3.2.1
     Update Jackson to 2.6.7
