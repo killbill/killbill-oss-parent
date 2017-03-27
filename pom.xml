@@ -620,6 +620,11 @@
                 <version>${ehcache.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache-clustered</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.ehcache.integrations.shiro</groupId>
                 <artifactId>shiro-ehcache3</artifactId>
                 <version>1.0.0</version>
