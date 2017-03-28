@@ -1,3 +1,22 @@
+0.140.19
+    Update killbill-client -> 0.40.6
+
+0.140.18
+    Update killbill-platform -> 0.36.5
+
+0.140.17
+    Update killbill-platform -> 0.36.4
+
+0.140.16
+    Update killbill-commons -> 0.20.5
+
+0.140.15
+    Update Dropwizard metrics to 3.2.1
+    Update Jackson to 2.6.7
+    Update Joda-Time to 2.9.7
+    Update Logback to 1.1.11
+    Update SLF4J to 1.7.25
+
 0.140.14
     Update killbill-commons -> 0.20.4
     Update killbill-base-plugin -> 1.1.1
