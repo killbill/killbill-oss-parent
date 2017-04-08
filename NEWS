@@ -1,3 +1,6 @@
+0.140.21
+    Update killbill-client -> 0.40.7
+
 0.140.20
     Update killbill-platform to 0.36.6
     Update Ehcache to 3.3.0
