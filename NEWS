@@ -1,3 +1,6 @@
+0.140.27
+    downgrade Swagger
+
 0.140.26
     Update killbill-commons -> 0.20.7
 
