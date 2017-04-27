@@ -108,7 +108,8 @@
         <metrics.version>3.2.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.25</slf4j.version>
-        <swagger.version>1.5.13</swagger.version>
+        <!-- Release 1.5.11+ requires Jackson 2.8+ -->
+        <swagger.version>1.5.10</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
