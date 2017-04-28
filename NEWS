@@ -1,3 +1,9 @@
+0.140.27
+    downgrade Swagger
+
+0.140.26
+    Update killbill-commons -> 0.20.7
+
 0.140.25
     Update killbill-base-plugin -> 1.1.2
     Update killbill-client -> 0.40.8
