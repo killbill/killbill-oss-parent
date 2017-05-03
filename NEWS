@@ -1,5 +1,9 @@
+0.140.28
+    Update killbill-client -> 0.40.9
+    Ignore .github for RAT
+
 0.140.27
-    downgrade Swagger
+    Downgrade Swagger
 
 0.140.26
     Update killbill-commons -> 0.20.7
