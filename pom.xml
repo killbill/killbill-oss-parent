@@ -100,7 +100,7 @@
         <killbill-api.version>0.50.1</killbill-api.version>
         <killbill-base-plugin.version>1.1.2</killbill-base-plugin.version>
         <killbill-client.version>0.40.9</killbill-client.version>
-        <killbill-commons.version>0.20.8</killbill-commons.version>
+        <killbill-commons.version>0.20.9</killbill-commons.version>
         <killbill-platform.version>0.36.7</killbill-platform.version>
         <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
