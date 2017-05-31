@@ -1,3 +1,6 @@
+0.140.30
+    Update killbill-commons -> 0.20.8
+
 0.140.29
     Add cglib:cglib:3.1
     Add com.fasterxml:classmate:1.1.0
