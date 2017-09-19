@@ -1,3 +1,6 @@
+0.140.41
+    Ignore .circleci for RAT
+
 0.140.40
     Update killbill-api -> 0.50.2
 

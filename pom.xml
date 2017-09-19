@@ -1543,6 +1543,7 @@
                                     <exclude>**/target/**</exclude>
                                     <exclude>**/.settings/**</exclude>
                                     <exclude>.travis.yml</exclude>
+                                    <exclude>.circleci/**</exclude>
                                     <exclude>bin/**</exclude>
                                     <!-- exclude mustache template files -->
                                     <exclude>**/*.mustache</exclude>
