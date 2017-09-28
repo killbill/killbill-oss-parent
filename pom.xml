@@ -294,12 +294,12 @@
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>command</artifactId>
-                <version>0.2</version>
+                <version>0.3</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>testing-postgresql-server</artifactId>
-                <version>0.3</version>
+                <version>9.6.3-3</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -1225,7 +1225,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>9.4-1201-jdbc41</version>
+                <version>42.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
