@@ -101,6 +101,8 @@
         <killbill-api.version>0.50.2</killbill-api.version>
         <killbill-base-plugin.version>1.2.0</killbill-base-plugin.version>
         <killbill-client.version>0.40.10</killbill-client.version>
+        <!-- This should point to the latest non-SNAPSHOT version of commons -->
+        <killbill-commons-for-tests.version>0.20.11</killbill-commons-for-tests.version>
         <killbill-commons.version>0.20.11</killbill-commons.version>
         <killbill-platform.version>0.36.11</killbill-platform.version>
         <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
@@ -1807,7 +1809,7 @@
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons.version}</version>
+                    <version>${killbill-commons-for-tests.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1832,7 +1834,7 @@
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons.version}</version>
+                    <version>${killbill-commons-for-tests.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1857,7 +1859,7 @@
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-postgresql</artifactId>
-                    <version>${killbill-commons.version}</version>
+                    <version>${killbill-commons-for-tests.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1945,13 +1947,13 @@
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons.version}</version>
+                    <version>${killbill-commons-for-tests.version}</version>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.kill-bill.commons</groupId>
                     <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons.version}</version>
+                    <version>${killbill-commons-for-tests.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
