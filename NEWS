@@ -1,3 +1,6 @@
+0.140.43
+    Add com.izettle:dropwizard-metrics-influxdb dependency
+
 0.140.42
     Update TestNG to 6.12
 
