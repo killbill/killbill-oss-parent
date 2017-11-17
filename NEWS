@@ -1,5 +1,5 @@
 0.140.44
-    Update killbill-commons -> 0.20.12
+    Update killbill-commons -> 0.20.13
 
 0.140.43
     Add com.izettle:dropwizard-metrics-influxdb dependency
