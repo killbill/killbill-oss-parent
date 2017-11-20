@@ -1,3 +1,6 @@
+0.141.9
+    Update killbill-api -> 0.51.6
+
 0.141.8
     Update killbill-api -> 0.51.5
     Update killbill-client -> 0.41.4
