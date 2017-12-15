@@ -1,3 +1,6 @@
+0.141.16
+    Bump io.airlift.units to 1.0 and add exclusion for guava to fix issues reported by maven-dependency-versions-check-plugin
+
 0.141.15
     Update killbill-platform -> 0.37.2
 
