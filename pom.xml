@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.140.50-SNAPSHOT</version>
+    <version>0.141.20-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -98,14 +98,14 @@
         <jetty.version>9.2.10.v20150310</jetty.version>
         <joda-time.version>2.9.9</joda-time.version>
         <jooby.version>1.1.3</jooby.version>
-        <killbill-api.version>0.50.2</killbill-api.version>
-        <killbill-base-plugin.version>1.2.3</killbill-base-plugin.version>
-        <killbill-client.version>0.40.10</killbill-client.version>
+        <killbill-api.version>0.51.7</killbill-api.version>
+        <killbill-base-plugin.version>2.0.0</killbill-base-plugin.version>
+        <killbill-client.version>0.41.4</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.20.15</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.20.15</killbill-commons.version>
-        <killbill-platform.version>0.36.13</killbill-platform.version>
-        <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
+        <killbill-commons-for-tests.version>0.21.1</killbill-commons-for-tests.version>
+        <killbill-commons.version>0.21.1</killbill-commons.version>
+        <killbill-platform.version>0.37.3</killbill-platform.version>
+        <killbill-plugin-api.version>0.24.4</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.1</metrics-palominolabs.version>
         <metrics.version>3.2.2</metrics.version>
@@ -226,6 +226,12 @@
                 <artifactId>guice-multibindings</artifactId>
                 <version>${guice.version}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -301,17 +307,35 @@
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>command</artifactId>
-                <version>0.2</version>
+                <version>0.3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>testing-postgresql-server</artifactId>
-                <version>0.3</version>
+                <version>9.6.3-3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>units</artifactId>
-                <version>0.94</version>
+                <version>1.0</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
@@ -485,6 +509,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>3.6.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.derby</groupId>
@@ -1232,7 +1261,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>9.4-1201-jdbc41</version>
+                <version>42.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>

@@ -1,3 +1,58 @@
+0.141.18
+    Update killbill-commons for tests -> 0.21.1
+
+0.141.17
+    Update killbill-base-plugin -> 2.0.0
+
+0.141.16
+    Bump io.airlift.units to 1.0 and add exclusion for guava to fix issues reported by maven-dependency-versions-check-plugin
+
+0.141.15
+    Update killbill-platform -> 0.37.2
+
+0.141.14
+    Update killbill-plugin-api -> 0.24.4
+
+0.141.13
+    Update killbill-commons -> 0.21.1
+    Update killbill-api -> 0.51.7
+
+0.141.12
+    Update killbill-platform -> 0.37.1
+
+0.141.11
+    Update killbill-commons -> 0.21.0
+
+0.141.10
+    Update killbill-plugin-api -> 0.24.3
+
+0.141.9
+    Update killbill-api -> 0.51.6
+
+0.141.8
+    Update killbill-api -> 0.51.5
+    Update killbill-client -> 0.41.4
+
+0.141.7
+    Update killbill-plugin-api -> 0.24.2
+    Update killbill-client -> 0.41.3
+
+0.141.6
+    Update killbill-client -> 0.51.4
+
+0.141.5
+    Update killbill-api -> 0.41.2
+    Update killbill-client-java -> 0.51.3
+
+0.141.2
+    Update killbill-api -> 0.51.2
+
+0.141.1
+    Update postgreSQL version to 9.6.3
+
+0.141.0
+    Initial version against 0.19.x branch
+
 0.140.49
     Update killbill-platform -> 0.36.13
 
