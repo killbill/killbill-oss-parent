@@ -60,6 +60,9 @@
 0.141.0
     Initial version against 0.19.x branch
 
+0.140.50
+    Update killbill-commons -> 0.20.16
+
 0.140.49
     Update killbill-platform -> 0.36.13
 
