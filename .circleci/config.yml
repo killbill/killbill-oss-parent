@@ -35,10 +35,3 @@ jobs:
           path: ~/junit
       - store_artifacts:
           path: ~/junit
-
-      - deploy:
-          name: Maybe release
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "release" ] && [ "${CIRCLE_USERNAME}" != "killbillio" ]; then
-              eval ${DO_RELEASE}
-            fi
