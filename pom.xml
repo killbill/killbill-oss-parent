@@ -99,7 +99,7 @@
         <joda-time.version>2.9.9</joda-time.version>
         <jooby.version>1.1.3</jooby.version>
         <killbill-api.version>0.51.10</killbill-api.version>
-        <killbill-base-plugin.version>2.0.0</killbill-base-plugin.version>
+        <killbill-base-plugin.version>2.1.0</killbill-base-plugin.version>
         <killbill-client.version>0.41.6</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
         <killbill-commons-for-tests.version>0.21.4</killbill-commons-for-tests.version>
@@ -1315,6 +1315,11 @@
                 <artifactId>jmxutils</artifactId>
                 <version>1.19</version>
             </dependency>
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>1.18</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -1933,6 +1938,81 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>integration-h2</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <groups>fast,slow,integration</groups>
+                            <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.h2>true</org.killbill.billing.dbi.test.h2>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-h2</artifactId>
+                    <version>${killbill-commons-for-tests.version}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>integration-mysql</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <groups>fast,slow,mysql,integration</groups>
+                            <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.mysql>true</org.killbill.billing.dbi.test.mysql>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-mysql</artifactId>
+                    <version>${killbill-commons-for-tests.version}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>integration-postgresql</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <groups>fast,slow,postgresql,integration</groups>
+                            <systemPropertyVariables>
+                                <org.killbill.billing.dbi.test.postgresql>true</org.killbill.billing.dbi.test.postgresql>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.kill-bill.commons</groupId>
+                    <artifactId>killbill-embeddeddb-postgresql</artifactId>
+                    <version>${killbill-commons-for-tests.version}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>travis</id>
