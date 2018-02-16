@@ -100,7 +100,7 @@
         <jooby.version>1.1.3</jooby.version>
         <killbill-api.version>0.51.11</killbill-api.version>
         <killbill-base-plugin.version>2.1.0</killbill-base-plugin.version>
-        <killbill-client.version>0.41.6</killbill-client.version>
+        <killbill-client.version>0.41.7</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
         <killbill-commons-for-tests.version>0.21.4</killbill-commons-for-tests.version>
         <killbill-commons.version>0.21.5</killbill-commons.version>
