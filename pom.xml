@@ -102,7 +102,7 @@
         <killbill-base-plugin.version>2.1.0</killbill-base-plugin.version>
         <killbill-client.version>0.41.7</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.21.4</killbill-commons-for-tests.version>
+        <killbill-commons-for-tests.version>0.21.5</killbill-commons-for-tests.version>
         <killbill-commons.version>0.21.5</killbill-commons.version>
         <killbill-platform.version>0.37.6</killbill-platform.version>
         <killbill-plugin-api.version>0.24.4</killbill-plugin-api.version>
