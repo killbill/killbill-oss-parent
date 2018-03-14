@@ -1,3 +1,6 @@
+0.141.42
+    Update killbill-commons -> 0.21.9
+
 0.141.41
     Add missing dependencies for swagger-jaxrs and swagger-models
 
