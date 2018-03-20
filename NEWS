@@ -1,3 +1,6 @@
+0.141.45
+    Update killbill-commons -> 0.21.10
+
 0.141.44
     Update killbill-api -> 0.51.12
     Update killbill-client -> 0.41.8
