@@ -1,3 +1,6 @@
+0.141.50
+    Add swagger code gen exclude files for rat plugin
+
 0.141.49
     Update killbill-base-plugin.version -> 2.2.0
 
