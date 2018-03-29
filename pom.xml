@@ -1602,6 +1602,9 @@
                                     <exclude>Gemfile.lock</exclude>
                                     <exclude>src/main/ruby/kbadmin/**</exclude>
                                     <exclude>**/deb/**</exclude>
+                                    <!-- swagger code gen -->
+                                    <exclude>.swagger-codegen/**</exclude>
+                                    <exclude>.swagger-codegen-ignore</exclude>
                                 </excludes>
                             </configuration>
                         </execution>
