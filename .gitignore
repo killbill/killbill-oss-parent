@@ -9,3 +9,8 @@ target
 pom.xml.bak
 pom.xml.releaseBackup
 release.properties
+
+# Eclipse metadata
+.classpath
+.project
+.settings/
