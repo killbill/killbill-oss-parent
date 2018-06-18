@@ -98,7 +98,7 @@
         <jetty.version>9.2.10.v20150310</jetty.version>
         <joda-time.version>2.9.9</joda-time.version>
         <jooby.version>1.4.0</jooby.version>
-        <killbill-api.version>0.51.24</killbill-api.version>
+        <killbill-api.version>0.51.25</killbill-api.version>
         <killbill-base-plugin.version>2.3.2</killbill-base-plugin.version>
         <killbill-client.version>1.0.3</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
