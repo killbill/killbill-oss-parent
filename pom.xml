@@ -1610,6 +1610,11 @@
                                     <!-- swagger code gen -->
                                     <exclude>.swagger-codegen/**</exclude>
                                     <exclude>.swagger-codegen-ignore</exclude>
+                                    <!-- swagger ui -->
+                                    <exclude>**/*.js.map</exclude>
+                                    <exclude>**/*.css.map</exclude>
+                                    <exclude>**/api.html</exclude>
+                                    <exclude>**/oauth2-redirect.html</exclude>
                                 </excludes>
                             </configuration>
                         </execution>
