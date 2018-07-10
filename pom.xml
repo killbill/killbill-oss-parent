@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Copyright 2010-2013 Ning, Inc.
-  ~ Copyright 2014-2015 Groupon, Inc
-  ~ Copyright 2014-2015 The Billing Project, LLC
+  ~ Copyright 2014-2018 Groupon, Inc
+  ~ Copyright 2014-2018 The Billing Project, LLC
   ~
   ~ The Billing Project licenses this file to you under the Apache License, version 2.0
   ~ (the "License"); you may not use this file except in compliance with the
@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.140.56-SNAPSHOT</version>
+    <version>0.141.98-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -97,15 +97,15 @@
         <jersey.version>1.19.3</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
         <joda-time.version>2.9.9</joda-time.version>
-        <jooby.version>1.1.3</jooby.version>
-        <killbill-api.version>0.50.2</killbill-api.version>
-        <killbill-base-plugin.version>1.3.1</killbill-base-plugin.version>
-        <killbill-client.version>0.40.10</killbill-client.version>
+        <jooby.version>1.4.0</jooby.version>
+        <killbill-api.version>0.51.27</killbill-api.version>
+        <killbill-base-plugin.version>2.4.0</killbill-base-plugin.version>
+        <killbill-client.version>1.0.6</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.20.17</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.20.17</killbill-commons.version>
-        <killbill-platform.version>0.36.15</killbill-platform.version>
-        <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
+        <killbill-commons-for-tests.version>0.21.15</killbill-commons-for-tests.version>
+        <killbill-commons.version>0.21.15</killbill-commons.version>
+        <killbill-platform.version>0.37.19</killbill-platform.version>
+        <killbill-plugin-api.version>0.24.8</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.1</metrics-palominolabs.version>
         <metrics.version>3.2.2</metrics.version>
@@ -226,6 +226,12 @@
                 <artifactId>guice-multibindings</artifactId>
                 <version>${guice.version}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -301,17 +307,35 @@
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>command</artifactId>
-                <version>0.2</version>
+                <version>0.3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>testing-postgresql-server</artifactId>
-                <version>0.3</version>
+                <version>9.6.3-3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>units</artifactId>
-                <version>0.94</version>
+                <version>1.0</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
@@ -401,7 +425,17 @@
             </dependency>
             <dependency>
                 <groupId>io.swagger</groupId>
+                <artifactId>swagger-jaxrs</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
                 <artifactId>swagger-jersey-jaxrs</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
@@ -485,6 +519,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>3.6.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.derby</groupId>
@@ -696,6 +735,11 @@
                 <artifactId>hamcrest-core</artifactId>
                 <version>1.3</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jasypt</groupId>
+                <artifactId>jasypt</artifactId>
+                <version>1.9.2</version>
             </dependency>
             <dependency>
                 <groupId>org.javassist</groupId>
@@ -1206,7 +1250,7 @@
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
-                <version>1.5.9</version>
+                <version>1.7.2</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
@@ -1232,7 +1276,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>9.4-1201-jdbc41</version>
+                <version>42.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
@@ -1278,7 +1322,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>6.12</version>
+                <version>6.14.3</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -1563,6 +1607,14 @@
                                     <exclude>Gemfile.lock</exclude>
                                     <exclude>src/main/ruby/kbadmin/**</exclude>
                                     <exclude>**/deb/**</exclude>
+                                    <!-- swagger code gen -->
+                                    <exclude>.swagger-codegen/**</exclude>
+                                    <exclude>.swagger-codegen-ignore</exclude>
+                                    <!-- swagger ui -->
+                                    <exclude>**/*.js.map</exclude>
+                                    <exclude>**/*.css.map</exclude>
+                                    <exclude>**/api.html</exclude>
+                                    <exclude>**/oauth2-redirect.html</exclude>
                                 </excludes>
                             </configuration>
                         </execution>
