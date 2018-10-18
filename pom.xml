@@ -102,7 +102,7 @@
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
         <killbill-commons-for-tests.version>0.22.1</killbill-commons-for-tests.version>
         <killbill-commons.version>0.22.2-SNAPSHOT</killbill-commons.version>
-        <killbill-platform.version>0.38.2</killbill-platform.version>
+        <killbill-platform.version>0.38.3-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.25.0</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.1</metrics-palominolabs.version>
