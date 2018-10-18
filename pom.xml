@@ -441,6 +441,11 @@
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
+                <groupId>it.ozimov</groupId>
+                <artifactId>embedded-redis</artifactId>
+                <version>0.7.2</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.cache</groupId>
                 <artifactId>cache-api</artifactId>
                 <version>1.0.0</version>
@@ -1279,6 +1284,11 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>42.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>2.12.5</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
