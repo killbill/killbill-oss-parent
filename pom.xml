@@ -74,9 +74,6 @@
             <archive>http://groups.google.com/group/killbilling-dev</archive>
         </mailingList>
     </mailingLists>
-    <prerequisites>
-        <maven>3.0</maven>
-    </prerequisites>
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:killbill/killbill-oss-parent.git</developerConnection>
