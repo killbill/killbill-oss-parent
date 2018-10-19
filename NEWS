@@ -1,3 +1,6 @@
+0.142.6
+    Update killbill-commons -> 0.22.2
+
 0.142.5
     Update Guava to 26.0-jre
     Update Jackson to 2.9.7
