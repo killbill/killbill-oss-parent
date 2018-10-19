@@ -1,3 +1,16 @@
+0.142.6
+    Update killbill-commons -> 0.22.2
+
+0.142.5
+    Update Guava to 26.0-jre
+    Update Jackson to 2.9.7
+    Update Swagger to 1.5.21
+    Update javassist to 3.21.0-GA
+    Add com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.7
+    Add it.ozimov:embedded-redis:0.7.2
+    Add org.redisson:redisson:3.8.2
+    Switch to jdk18 profile by default
+
 0.142.4
     Update killbill-platform -> 0.38.2
 

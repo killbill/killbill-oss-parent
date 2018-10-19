@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.142.5-SNAPSHOT</version>
+    <version>0.142.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -74,9 +74,6 @@
             <archive>http://groups.google.com/group/killbilling-dev</archive>
         </mailingList>
     </mailingLists>
-    <prerequisites>
-        <maven>3.0</maven>
-    </prerequisites>
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:killbill/killbill-oss-parent.git</developerConnection>
@@ -91,8 +88,7 @@
         <ehcache.version>3.3.1</ehcache.version>
         <guava.version>26.0-jre</guava.version>
         <guice.version>4.1.0</guice.version>
-        <!-- Release 2.7 requires JDK 1.7 or newer -->
-        <jackson.version>2.6.7</jackson.version>
+        <jackson.version>2.9.7</jackson.version>
         <jersey.version>1.19.3</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
         <joda-time.version>2.9.9</joda-time.version>
@@ -101,8 +97,8 @@
         <killbill-base-plugin.version>3.0.0</killbill-base-plugin.version>
         <killbill-client.version>1.0.6</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.22.1</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.22.1</killbill-commons.version>
+        <killbill-commons-for-tests.version>0.22.2</killbill-commons-for-tests.version>
+        <killbill-commons.version>0.22.2</killbill-commons.version>
         <killbill-platform.version>0.38.2</killbill-platform.version>
         <killbill-plugin-api.version>0.25.0</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
@@ -110,8 +106,7 @@
         <metrics.version>3.2.2</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.25</slf4j.version>
-        <!-- Release 1.5.11+ requires Jackson 2.8+ -->
-        <swagger.version>1.5.10</swagger.version>
+        <swagger.version>1.5.21</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -170,6 +165,11 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-smile</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
@@ -436,6 +436,11 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-models</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.ozimov</groupId>
+                <artifactId>embedded-redis</artifactId>
+                <version>0.7.2</version>
             </dependency>
             <dependency>
                 <groupId>javax.cache</groupId>
@@ -743,7 +748,7 @@
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.19.0-GA</version>
+                <version>3.21.0-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.joda</groupId>
@@ -1276,6 +1281,11 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>42.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>3.8.2</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
