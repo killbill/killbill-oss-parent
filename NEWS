@@ -1,3 +1,6 @@
+0.143.26
+    Update mariadb-java-client -> 1.7.4 (fix for https://jira.mariadb.org/browse/CONJ-604)
+
 0.143.25
     Update killbill-api -> 0.53.8 & killbill-client -> 1.1.5
 
