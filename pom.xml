@@ -1351,6 +1351,12 @@
                 <version>1.19</version>
             </dependency>
             <dependency>
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>1.1.7.3</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>1.23</version>
