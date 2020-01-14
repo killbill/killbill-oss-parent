@@ -1,5 +1,7 @@
 0.143.42
     Update killbill-api -> 0.53.16
+    Update metrics-guice -> 3.2.2
+    Update metrics -> 3.2.3
 
 0.143.41
     Update killbill-platform -> 0.39.9
