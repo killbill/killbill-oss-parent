@@ -98,7 +98,7 @@
         <killbill-client.version>1.1.9</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
         <killbill-commons-for-tests.version>0.23.5</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.23.5</killbill-commons.version>
+        <killbill-commons.version>0.23.6</killbill-commons.version>
         <killbill-platform.version>0.39.10</killbill-platform.version>
         <killbill-plugin-api.version>0.26.2</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
