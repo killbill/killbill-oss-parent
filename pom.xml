@@ -100,7 +100,7 @@
         <killbill-commons-for-tests.version>0.23.5</killbill-commons-for-tests.version>
         <killbill-commons.version>0.23.6</killbill-commons.version>
         <killbill-platform.version>0.39.10</killbill-platform.version>
-        <killbill-plugin-api.version>0.26.2</killbill-plugin-api.version>
+        <killbill-plugin-api.version>0.26.3</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.3</metrics.version>
