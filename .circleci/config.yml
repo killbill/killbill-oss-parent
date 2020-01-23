@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: killbill/kbbuild:0.1.0
+      - image: killbill/kbbuild:0.7.0
 
     working_directory: ~/repo
 
