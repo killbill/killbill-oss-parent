@@ -1,4 +1,5 @@
 0.142.8
+    Upgrade killbill-commons -> 0.23.8 (backport existing queue for master)
     Update Redisson to 3.10.0
 
 0.142.7
