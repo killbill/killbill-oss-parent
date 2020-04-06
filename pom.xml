@@ -88,7 +88,7 @@
         <ehcache.version>3.3.1</ehcache.version>
         <guava.version>26.0-jre</guava.version>
         <guice.version>4.1.0</guice.version>
-        <jackson.version>2.9.7</jackson.version>
+        <jackson.version>2.9.8</jackson.version>
         <jersey.version>1.19.3</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
         <joda-time.version>2.9.9</joda-time.version>
@@ -97,13 +97,13 @@
         <killbill-base-plugin.version>3.0.0</killbill-base-plugin.version>
         <killbill-client.version>1.0.6</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.23.8</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.23.8</killbill-commons.version>
+        <killbill-commons-for-tests.version>0.23.9</killbill-commons-for-tests.version>
+        <killbill-commons.version>0.23.9</killbill-commons.version>
         <killbill-platform.version>0.38.3</killbill-platform.version>
         <killbill-plugin-api.version>0.25.0</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.1</metrics-palominolabs.version>
-        <metrics.version>3.2.2</metrics.version>
+        <metrics.version>3.2.3</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.25</slf4j.version>
         <swagger.version>1.5.21</swagger.version>
@@ -1254,7 +1254,7 @@
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
-                <version>1.7.2</version>
+                <version>1.7.4</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
@@ -1342,7 +1342,7 @@
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
-                <version>1.18</version>
+                <version>1.23</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
