@@ -1,3 +1,6 @@
+0.142.9
+    Update pom.xml for 0.20.x to allow using the same killbill-commons as 0.22
+
 0.142.8
     Upgrade killbill-commons -> 0.23.8 (backport existing queue for master)
     Update Redisson to 3.10.0
