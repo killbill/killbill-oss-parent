@@ -1,3 +1,6 @@
+0.142.10
+    Update killbill-platform -> 0.38.5
+
 0.142.9
     Update pom.xml for 0.20.x to allow using the same killbill-commons as 0.22
 
