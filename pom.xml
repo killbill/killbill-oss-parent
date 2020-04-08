@@ -316,6 +316,16 @@
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
+                <artifactId>concurrent</artifactId>
+                <version>0.150</version>
+            </dependency>
+            <dependency>
+                <groupId>io.airlift</groupId>
+                <artifactId>log</artifactId>
+                <version>0.150</version>
+            </dependency>
+            <dependency>
+                <groupId>io.airlift</groupId>
                 <artifactId>testing-mysql-server</artifactId>
                 <version>8.0.12-2</version>
                 <exclusions>
