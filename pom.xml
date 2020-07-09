@@ -44,11 +44,6 @@
             <id>pierre</id>
             <name>Pierre-Alexandre Meyer</name>
             <email>pierre@mouraf.org</email>
-            <url>http://pub.mouraf.org/blog</url>
-            <timezone>-8</timezone>
-            <properties>
-                <picUrl>http://pub.mouraf.org/me/me.jpg</picUrl>
-            </properties>
         </developer>
         <developer>
             <id>stephane</id>
@@ -86,6 +81,9 @@
     </issueManagement>
     <properties>
         <async-http-client.version>1.9.40</async-http-client.version>
+        <!-- Can be deactivated with -Dcheck.fail-enforcer=false on the command line -->
+        <check.fail-enforcer>true</check.fail-enforcer>
+        <check.skip-enforcer>false</check.skip-enforcer>
         <ehcache.version>3.3.1</ehcache.version>
         <guava.version>26.0-jre</guava.version>
         <guice.version>4.1.0</guice.version>
@@ -99,8 +97,8 @@
         <killbill-client.version>1.1.9</killbill-client.version>
         <!-- This should point to the latest non-SNAPSHOT version of commons -->
         <killbill-commons-for-tests.version>0.23.11</killbill-commons-for-tests.version>
-        <killbill-commons.version>0.23.11</killbill-commons.version>
-        <killbill-platform.version>0.39.17</killbill-platform.version>
+        <killbill-commons.version>0.23.12-SNAPSHOT</killbill-commons.version>
+        <killbill-platform.version>0.39.18-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
@@ -118,7 +116,7 @@
             </dependency>
             <dependency>
                 <groupId>cglib</groupId>
-                <artifactId>cglib</artifactId>
+                <artifactId>cglib-nodep</artifactId>
                 <version>3.1</version>
             </dependency>
             <dependency>
@@ -200,14 +198,8 @@
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
-                <artifactId>annotations</artifactId>
-                <version>3.0.1u2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
                 <version>3.0.2</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -666,12 +658,6 @@
                 <artifactId>easymock</artifactId>
                 <version>3.3</version>
                 <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>cglib-nodep</artifactId>
-                        <groupId>cglib</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
@@ -1447,35 +1433,71 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>1.2</version>
+                    <version>3.0.0-M3</version>
                     <executions>
                         <execution>
-                            <id>enforce-versions</id>
+                            <id>default</id>
+                            <phase>validate</phase>
                             <goals>
                                 <goal>enforce</goal>
                             </goals>
-                            <configuration>
-                                <rules>
-                                    <requireMavenVersion>
-                                        <version>3.0.0</version>
-                                    </requireMavenVersion>
-                                    <requireJavaVersion>
-                                        <version>1.8</version>
-                                    </requireJavaVersion>
-                                    <bannedDependencies>
-                                        <excludes>
-                                            <exclude>com.google.collections:google-collections</exclude>
-                                            <exclude>com.google.guava:guava</exclude>
-                                            <exclude>org.jdbi:jdbi</exclude>
-                                        </excludes>
-                                        <includes>
-                                            <include>com.google.guava:guava:[12,)</include>
-                                        </includes>
-                                    </bannedDependencies>
-                                </rules>
-                            </configuration>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>extra-enforcer-rules</artifactId>
+                            <version>1.2</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <skip>${check.skip-enforcer}</skip>
+                        <fail>${check.fail-enforcer}</fail>
+                        <failFast>false</failFast>
+                        <rules>
+                            <bannedDependencies>
+                                <excludes>
+                                    <!-- Clashes with commons-logging:commons-logging -->
+                                    <exclude>commons-logging:commons-logging-api</exclude>
+                                    <!-- Clashes with cglib:cglib-nodep -->
+                                    <exclude>cglib:cglib</exclude>
+                                    <!-- Old versions of junit repackage hamcrest -->
+                                    <exclude>junit:junit</exclude>
+                                    <!-- Use guava -->
+                                    <exclude>com.google.collections:google-collections</exclude>
+                                    <!-- But not the badly numbered ones... -->
+                                    <exclude>com.google.guava:guava</exclude>
+                                    <!-- The non-empty verison overlaps with classes in guava -->
+                                    <exclude>com.google.guava:listenablefuture</exclude>
+                                    <!-- Contains FindBugs annotations, JSR-305 and JCIP annotations -->
+                                    <exclude>com.google.code.findbugs:annotations</exclude>
+                                    <!-- Use the official version at javax.servlet:javax.servlet-api -->
+                                    <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
+                                    <!-- We forked the code -->
+                                    <exclude>org.jdbi:jdbi</exclude>
+                                </excludes>
+                                <includes>
+                                    <!-- whitelist the well numbered guava releases -->
+                                    <include>com.google.guava:guava:[12,)</include>
+                                    <!-- newer versions of junit do not repackage hamcrest -->
+                                    <include>junit:junit:[4.11,)</include>
+                                </includes>
+                            </bannedDependencies>
+                            <banDuplicatePomDependencyVersions />
+                            <requireUpperBoundDeps />
+                            <requireMavenVersion>
+                                <version>3.3.9</version>
+                            </requireMavenVersion>
+                            <requireJavaVersion>
+                                <!-- >= 1.8.0 -->
+                                <version>1.8</version>
+                            </requireJavaVersion>
+                            <enforceBytecodeVersion>
+                                <!-- Stay 1.8 compatible -->
+                                <maxJdkVersion>1.8</maxJdkVersion>
+                            </enforceBytecodeVersion>
+                        </rules>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
