@@ -2120,21 +2120,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <!-- required because of some import statement -->
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>travis-nodb</id>
