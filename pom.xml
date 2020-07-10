@@ -81,9 +81,20 @@
     </issueManagement>
     <properties>
         <async-http-client.version>1.9.40</async-http-client.version>
+        <build.jvmsize>1024m</build.jvmsize>
+        <check.fail-dependency>true</check.fail-dependency>
+        <check.fail-dependency-scope>true</check.fail-dependency-scope>
+        <check.fail-duplicate-finder>true</check.fail-duplicate-finder>
         <!-- Can be deactivated with -Dcheck.fail-enforcer=false on the command line -->
         <check.fail-enforcer>true</check.fail-enforcer>
+        <!-- TODO Check errors -->
+        <check.fail-spotbugs>false</check.fail-spotbugs>
+        <check.skip-dependency>false</check.skip-dependency>
+        <check.skip-dependency-scope>false</check.skip-dependency-scope>
+        <check.skip-duplicate-finder>false</check.skip-duplicate-finder>
         <check.skip-enforcer>false</check.skip-enforcer>
+        <check.skip-spotbugs>false</check.skip-spotbugs>
+        <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.3.1</ehcache.version>
         <guava.version>26.0-jre</guava.version>
         <guice.version>4.1.0</guice.version>
@@ -104,6 +115,7 @@
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.3</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.targetJdk>1.8</project.build.targetJdk>
         <slf4j.version>1.7.25</slf4j.version>
         <swagger.version>1.5.21</swagger.version>
     </properties>
@@ -1243,7 +1255,7 @@
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
+                <artifactId>mockito-core</artifactId>
                 <version>1.10.19</version>
                 <scope>test</scope>
             </dependency>
@@ -1351,6 +1363,41 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>3.1.12.2</version>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <skip>${check.skip-spotbugs}</skip>
+                        <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
+                        <failOnError>${check.fail-spotbugs}</failOnError>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.hubspot.maven.plugins</groupId>
+                    <artifactId>dependency-scope-maven-plugin</artifactId>
+                    <version>0.10</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <skip>${check.skip-dependency-scope}</skip>
+                                <fail>${check.fail-dependency-scope}</fail>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
                     <groupId>com.ning.maven.plugins</groupId>
                     <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     <version>2.0.2</version>
@@ -1367,26 +1414,6 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-duplicate-finder-plugin</artifactId>
-                    <version>1.0.4</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
-                        <!-- That's for Jetty -->
-                        <ignoredResources>
-                            <ignoredResource>about.html</ignoredResource>
-                        </ignoredResources>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <groupId>org.antlr</groupId>
                     <artifactId>antlr3-maven-plugin</artifactId>
                     <version>3.5.2</version>
@@ -1400,35 +1427,48 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>2.4</version>
+                    <configuration>
+                        <!-- Always use GNU tar mode -->
+                        <tarLongFileMode>gnu</tarLongFileMode>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.0</version>
+                    <version>3.8.0</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>${project.build.targetJdk}</source>
+                        <target>${project.build.targetJdk}</target>
+                        <!-- Since Java9 -->
+                        <!-- <release>${project.build.targetJdk}</release> -->
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <maxmem>${build.jvmsize}</maxmem>
+                        <failOnWarning>${compiler.fail-warnings}</failOnWarning>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
                         <fork>true</fork>
+                        <parameters>true</parameters>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.3</version>
+                    <version>3.1.2</version>
                     <executions>
                         <execution>
-                            <id>analyze</id>
+                            <id>default</id>
+                            <phase>process-test-classes</phase>
                             <goals>
                                 <goal>analyze-only</goal>
+                                <goal>analyze-duplicate</goal>
                             </goals>
-                            <configuration>
-                                <ignoreNonCompile>true</ignoreNonCompile>
-                                <failOnWarning>false</failOnWarning>
-                            </configuration>
                         </execution>
                     </executions>
+                    <configuration>
+                        <skip>${check.skip-dependency}</skip>
+                        <failOnWarning>${check.fail-dependency}</failOnWarning>
+                        <ignoreNonCompile>true</ignoreNonCompile>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1489,15 +1529,27 @@
                                 <version>3.3.9</version>
                             </requireMavenVersion>
                             <requireJavaVersion>
-                                <!-- >= 1.8.0 -->
-                                <version>1.8</version>
+                                <version>${project.build.targetJdk}</version>
                             </requireJavaVersion>
                             <enforceBytecodeVersion>
-                                <!-- Stay 1.8 compatible -->
-                                <maxJdkVersion>1.8</maxJdkVersion>
+                                <maxJdkVersion>${project.build.targetJdk}</maxJdkVersion>
                             </enforceBytecodeVersion>
                         </rules>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1505,6 +1557,8 @@
                     <version>2.4</version>
                     <executions>
                         <execution>
+                            <id>attach-tests</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
                                 <goal>test-jar</goal>
@@ -1518,19 +1572,19 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>2.4.3</version>
+                    <version>3.2.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
+                    <version>3.0.1</version>
                     <executions>
                         <execution>
                             <id>attach-sources</id>
-                            <phase>verify</phase>
+                            <phase>package</phase>
                             <goals>
-                                <goal>jar</goal>
-                                <goal>test-jar</goal>
+                                <goal>jar-no-fork</goal>
+                                <goal>test-jar-no-fork</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -1538,14 +1592,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.13</version>
+                    <version>2.22.0</version>
                     <configuration>
-                        <argLine>-Xms512m -Xmx1024m -XX:MaxDirectMemorySize=512m</argLine>
+                        <argLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</argLine>
+                        <runOrder>random</runOrder>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
+                        <trimStackTrace>false</trimStackTrace>
                         <systemPropertyVariables>
-                            <file.encoding>UTF-8</file.encoding>
                             <user.timezone>GMT</user.timezone>
-                            <killbill.version>${killbill.version}</killbill.version>
                             <org.slf4j.simpleLogger.showDateTime>true</org.slf4j.simpleLogger.showDateTime>
                             <org.slf4j.simpleLogger.dateTimeFormat>yyyy-MM-dd'T'HH:mm:ss.SSSZ</org.slf4j.simpleLogger.dateTimeFormat>
                             <killbill.test.use.connection.pool>false</killbill.test.use.connection.pool>
@@ -1664,6 +1718,94 @@
                     </executions>
                 </plugin>
                 <plugin>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>duplicate-finder-maven-plugin</artifactId>
+                    <version>1.4.0</version>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <phase>process-test-classes</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <skip>${check.skip-duplicate-finder}</skip>
+                        <failBuildInCaseOfConflict>${check.fail-duplicate-finder}</failBuildInCaseOfConflict>
+                        <exceptions>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils-core</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-collections</groupId>
+                                        <artifactId>commons-collections</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <classes>
+                                    <class>org.apache.commons.collections.ArrayStack</class>
+                                    <class>org.apache.commons.collections.Buffer</class>
+                                    <class>org.apache.commons.collections.BufferUnderflowException</class>
+                                    <class>org.apache.commons.collections.FastHashMap</class>
+                                </classes>
+                            </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils-core</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>org.apache.commons.beanutils</package>
+                                </packages>
+                            </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>aopalliance</groupId>
+                                        <artifactId>aopalliance</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <!-- Might not be an issue with more recent versions of Spring? -->
+                                        <groupId>org.springframework</groupId>
+                                        <artifactId>spring</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>org.aopalliance.aop</package>
+                                    <package>org.aopalliance.intercept</package>
+                                </packages>
+                            </exception>
+                        </exceptions>
+                        <ignoredDependencies>
+                            <dependency>
+                                <groupId>org.jruby</groupId>
+                                <artifactId>jruby-complete</artifactId>
+                            </dependency>
+                        </ignoredDependencies>
+                        <ignoredResourcePatterns>
+                            <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
+                            <ignoredResourcePattern>META-INF/.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
+                            <ignoredResourcePattern>THIRD-PARTY</ignoredResourcePattern>
+                        </ignoredResourcePatterns>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>1.9.1</version>
@@ -1696,6 +1838,14 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.2</version>
                     <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh-releases</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
+                        <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -1727,7 +1877,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -1740,12 +1890,38 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <quiet>true</quiet>
+                    <source>${project.build.targetJdk}</source>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <maxmemory>${build.jvmsize}</maxmemory>
+                    <additionalOptions>-Xdoclint:none</additionalOptions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>2.5</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.apache.maven.scm</groupId>
@@ -1767,12 +1943,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.6</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
             </plugin>
             <plugin>
-                <!-- TODO: fix for http://jira.codehaus.org/browse/MSITE-286? -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.0</version>
+                <version>3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -1797,29 +1975,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
-                <reportSets>
-                    <reportSet>
-                        <id>html</id>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-                <configuration>
-                    <source>1.6</source>
-                    <encoding>UTF-8</encoding>
-                    <maxmemory>1g</maxmemory>
-                    <links>
-                        <link>http://commons.apache.org/lang/api/</link>
-                        <link>http://download.oracle.com/javase/6/docs/api/</link>
-                    </links>
-                    <linksource>true</linksource>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
@@ -1840,15 +1995,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.5.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
-                <configuration>
-                    <threshold>Low</threshold>
-                    <effort>Max</effort>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -2085,12 +2231,16 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.hubspot.maven.plugins</groupId>
+                        <artifactId>dependency-scope-maven-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-duplicate-finder-plugin</artifactId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -2118,6 +2268,10 @@
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
                     </plugin>
+                    <plugin>
+                        <groupId>org.basepom.maven</groupId>
+                        <artifactId>duplicate-finder-maven-plugin</artifactId>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -2126,12 +2280,16 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.hubspot.maven.plugins</groupId>
+                        <artifactId>dependency-scope-maven-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-duplicate-finder-plugin</artifactId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -2159,6 +2317,10 @@
                         <groupId>org.apache.rat</groupId>
                         <artifactId>apache-rat-plugin</artifactId>
                     </plugin>
+                    <plugin>
+                        <groupId>org.basepom.maven</groupId>
+                        <artifactId>duplicate-finder-maven-plugin</artifactId>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -2181,12 +2343,16 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.hubspot.maven.plugins</groupId>
+                        <artifactId>dependency-scope-maven-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>com.ning.maven.plugins</groupId>
-                        <artifactId>maven-duplicate-finder-plugin</artifactId>
+                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -2199,16 +2365,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -2226,110 +2382,12 @@
                         <artifactId>apache-rat-plugin</artifactId>
                     </plugin>
                     <plugin>
+                        <groupId>org.basepom.maven</groupId>
+                        <artifactId>duplicate-finder-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>ossrh-releases</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
-                            <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk16</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
-                            <showDeprecation>true</showDeprecation>
-                            <showWarnings>true</showWarnings>
-                            <fork>true</fork>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>jar</goal>
-                                    <goal>test-jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>jdk16</classifier>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <skipIfEmpty>true</skipIfEmpty>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk17</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <source>1.7</source>
-                            <target>1.7</target>
-                            <showDeprecation>true</showDeprecation>
-                            <showWarnings>true</showWarnings>
-                            <fork>true</fork>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>jar</goal>
-                                    <goal>test-jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>jdk17</classifier>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <skipIfEmpty>true</skipIfEmpty>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk18</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <source>1.8</source>
-                            <target>1.8</target>
-                            <showDeprecation>true</showDeprecation>
-                            <showWarnings>true</showWarnings>
-                            <fork>true</fork>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
