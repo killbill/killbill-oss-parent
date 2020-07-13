@@ -180,6 +180,11 @@
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
@@ -292,6 +297,11 @@
                 <groupId>com.sun.jersey.contribs</groupId>
                 <artifactId>jersey-guice</artifactId>
                 <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe</groupId>
+                <artifactId>config</artifactId>
+                <version>1.3.2</version>
             </dependency>
             <dependency>
                 <groupId>com.zaxxer</groupId>
@@ -749,6 +759,11 @@
             </dependency>
             <dependency>
                 <groupId>org.jooby</groupId>
+                <artifactId>funzy</artifactId>
+                <version>0.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jooby</groupId>
                 <artifactId>jooby</artifactId>
                 <version>${jooby.version}</version>
                 <exclusions>
@@ -776,6 +791,11 @@
             <dependency>
                 <groupId>org.jruby</groupId>
                 <artifactId>jruby</artifactId>
+                <version>1.7.26</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jruby</groupId>
+                <artifactId>jruby-core</artifactId>
                 <version>1.7.26</version>
             </dependency>
             <dependency>
