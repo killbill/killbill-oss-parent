@@ -1,3 +1,12 @@
+0.144.0
+    Update killbill-base-plugin -> 4.2.0
+    Switch from cglib:cglib to cglib:cglib-nodep
+    Remove com.google.code.findbugs:annotations
+    Switch from org.mockito:mockito-all to org.mockito:mockito-core
+    Upgrade various Maven plugins
+    Remove jdk16, jdk17, and jdk18 profiles (target 1.8 is the default)
+    Remove reporting section
+
 0.143.63
     Update killbill-platform -> 0.39.17
 
