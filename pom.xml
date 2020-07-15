@@ -96,12 +96,12 @@
         <check.skip-spotbugs>false</check.skip-spotbugs>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.3.1</ehcache.version>
-        <guava.version>26.0-jre</guava.version>
-        <guice.version>4.1.0</guice.version>
-        <jackson.version>2.9.8</jackson.version>
+        <guava.version>29.0-jre</guava.version>
+        <guice.version>4.2.3</guice.version>
+        <jackson.version>2.11.1</jackson.version>
         <jersey.version>1.19.3</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
-        <joda-time.version>2.9.9</joda-time.version>
+        <joda-time.version>2.10.6</joda-time.version>
         <jooby.version>1.4.0</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.0</killbill-base-plugin.version>
@@ -116,7 +116,7 @@
         <metrics.version>3.2.3</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetJdk>1.8</project.build.targetJdk>
-        <slf4j.version>1.7.25</slf4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
         <swagger.version>1.5.21</swagger.version>
     </properties>
     <dependencyManagement>
@@ -135,13 +135,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>com.dmurph</groupId>
@@ -227,31 +225,38 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.inject.extensions</groupId>
-                <artifactId>guice-multibindings</artifactId>
-                <version>${guice.version}</version>
-                <scope>provided</scope>
                 <exclusions>
+                    <!-- this empty dependency is a hack and not needed -->
                     <exclusion>
-                        <artifactId>guava</artifactId>
+                        <artifactId>listenablefuture</artifactId>
                         <groupId>com.google.guava</groupId>
                     </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assistedinject</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-servlet</artifactId>
                 <version>${guice.version}</version>
-                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-throwingproviders</artifactId>
+                <version>${guice.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -1326,12 +1331,27 @@
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
                 <artifactId>osgi-over-slf4j</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-ext</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-nop</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
             <dependency>
@@ -1353,13 +1373,23 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>6.14.3</version>
+                <version>7.1.0</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>junit</artifactId>
+                        <groupId>junit</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>guice</artifactId>
+                        <groupId>com.google.inject</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.weakref</groupId>
                 <artifactId>jmxutils</artifactId>
-                <version>1.19</version>
+                <version>1.21</version>
             </dependency>
             <dependency>
                 <groupId>org.xerial.snappy</groupId>
