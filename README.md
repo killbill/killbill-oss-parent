@@ -1,10 +1,21 @@
-killbill-oss-parent
-===================
+# killbill-oss-parent
+![Maven Central](https://img.shields.io/maven-central/v/org.kill-bill.billing/killbill-oss-parent?color=blue&label=Maven%20Central)
 
 Kill Bill OSS Parent: base pom for the various Kill Bill projects.
 
-Kill Bill compatibility
------------------------
+## Usage
+
+Add Kill Bill OSS Parent as the parent to a project:
+
+```xml
+<parent>
+  <groupId>org.kill-bill.billing</groupId>
+  <artifactId>killbill-oss-parent</artifactId>
+  <version>... release version ...</version>
+</parent>
+```
+
+## Kill Bill compatibility
 
 | OSS parent version | Kill Bill version |
 | -----------------: | ----------------: |
@@ -15,11 +26,8 @@ Kill Bill compatibility
 | 0.143.y            | 0.22.z            |
 | 0.144.y            | 0.22.z            |
 
-0.144.x has a lot of upgraded dependencies (required for Java 11 support).
+We've upgraded numerous dependencies in 0.144.x (required for Java 11 support).
 
-Installation
-------------
+## About
 
-To install the pom.xml in your local repository, use maven:
-
-    mvn clean install
+Kill Bill is the leading Open-Source Subscription Billing & Payments Platform. For more information about the project, go to https://killbill.io/.
