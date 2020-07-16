@@ -42,6 +42,7 @@
     Upgrade various Maven plugins
     Remove jdk16, jdk17, and jdk18 profiles (target 1.8 is the default)
     Remove reporting section
+    Remove dependency on org.sonatype.oss:oss-parent
 
 0.143.63
     Update killbill-platform -> 0.39.17
