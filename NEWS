@@ -1,7 +1,8 @@
 0.144.4
-    Fix sonatype-oss-release profile
+    Run maven-javadoc-plugin earlier in the build (before gpg plugin)
 
 0.144.3
+    Fix sonatype-oss-release profile
     Update killbill-commons to 0.24.0
 
 0.144.2
