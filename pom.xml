@@ -114,8 +114,6 @@
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.0</killbill-base-plugin.version>
         <killbill-client.version>1.1.9</killbill-client.version>
-        <!-- This should point to the latest non-SNAPSHOT version of commons -->
-        <killbill-commons-for-tests.version>0.23.11</killbill-commons-for-tests.version>
         <killbill-commons.version>0.23.11</killbill-commons.version>
         <killbill-platform.version>0.39.17</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
@@ -1077,7 +1075,6 @@
                 <artifactId>killbill-platform-test</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-profiles</artifactId>
@@ -2196,14 +2193,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>mysql</id>
@@ -2221,14 +2210,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>postgresql</id>
@@ -2246,14 +2227,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-postgresql</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>localtest-mysql</id>
@@ -2307,14 +2280,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-h2</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>integration-mysql</id>
@@ -2332,14 +2297,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-mysql</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>integration-postgresql</id>
@@ -2357,14 +2314,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>org.kill-bill.commons</groupId>
-                    <artifactId>killbill-embeddeddb-postgresql</artifactId>
-                    <version>${killbill-commons-for-tests.version}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>travis</id>
