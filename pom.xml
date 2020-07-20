@@ -2367,6 +2367,11 @@
             <id>sonatype-oss-release</id>
             <build>
                 <plugins>
+                    <!-- Sonatype requires a Javadoc jar -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
