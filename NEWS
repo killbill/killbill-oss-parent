@@ -24,7 +24,7 @@
     Update javassist from 3.21.0-GA to 3.27.0-GA
     Update jmustache from 1.5 to 1.15
     Update jmxutils from 1.19 to 1.21
-    Update joda-money from 0.12 to 1.0.2
+    Update joda-money from 0.12 to 1.0.1
     Update joda-time from 2.9.9 to 2.10.6
     Update junit from 4.12 to 4.13
     Update low-gc-membuffers from 1.1.1 to 1.2.0
