@@ -3,18 +3,6 @@
 
 Kill Bill OSS Parent: base pom for the various Kill Bill projects.
 
-## Usage
-
-Add Kill Bill OSS Parent as the parent to a project:
-
-```xml
-<parent>
-  <groupId>org.kill-bill.billing</groupId>
-  <artifactId>killbill-oss-parent</artifactId>
-  <version>... release version ...</version>
-</parent>
-```
-
 ## Kill Bill compatibility
 
 | OSS parent version | Kill Bill version |
@@ -27,6 +15,18 @@ Add Kill Bill OSS Parent as the parent to a project:
 | 0.144.y            | 0.22.z            |
 
 We've upgraded numerous dependencies in 0.144.x (required for Java 11 support).
+
+## Usage
+
+Add Kill Bill OSS Parent as the parent to a project:
+
+```xml
+<parent>
+  <groupId>org.kill-bill.billing</groupId>
+  <artifactId>killbill-oss-parent</artifactId>
+  <version>... release version ...</version>
+</parent>
+```
 
 ## About
 
