@@ -1,3 +1,7 @@
+0.144.6
+    Update mockito from 3.4.0 to 3.4.4
+    Upgrade various Maven plugins
+
 0.144.5
     Update killbill-commons to 0.24.2
 
