@@ -1,4 +1,5 @@
 0.144.6
+    Update jetty from 9.2.10.v20150310 to 9.4.30.v20200611
     Update mockito from 3.4.0 to 3.4.4
     Upgrade various Maven plugins
 
