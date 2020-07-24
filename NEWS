@@ -1,4 +1,5 @@
 0.144.7
+    Update async-http-client to 2.12.1 (groupId is now org.asynchttpclient)
     Update killbill-commons to 0.24.3
     Update maven-bundle-plugin to 4.2.1
 

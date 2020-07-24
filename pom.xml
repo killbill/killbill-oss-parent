@@ -88,7 +88,7 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <async-http-client.version>1.9.40</async-http-client.version>
+        <async-http-client.version>2.12.1</async-http-client.version>
         <build.jvmsize>1024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
@@ -316,11 +316,6 @@
             </dependency>
             <dependency>
                 <groupId>com.ning</groupId>
-                <artifactId>async-http-client</artifactId>
-                <version>${async-http-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ning</groupId>
                 <artifactId>compress-lzf</artifactId>
                 <version>1.0.4</version>
             </dependency>
@@ -504,6 +499,11 @@
                 <groupId>it.ozimov</groupId>
                 <artifactId>embedded-redis</artifactId>
                 <version>0.7.3</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.activation</groupId>
+                <artifactId>jakarta.activation-api</artifactId>
+                <version>1.2.1</version>
             </dependency>
             <dependency>
                 <groupId>javax.cache</groupId>
@@ -704,6 +704,18 @@
                 <artifactId>assertj-core</artifactId>
                 <version>3.16.1</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.asynchttpclient</groupId>
+                <artifactId>async-http-client</artifactId>
+                <version>${async-http-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <!-- Use jakarta.activation-api instead -->
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
