@@ -122,11 +122,11 @@
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.3</metrics.version>
-        <osgi.activator />
+        <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
         <osgi.export />
-        <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...";is:=ignore</osgi.fixupmessages>
+        <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             <!-- Almost always required -->
             org.apache.shiro.*;version="[1.3,2)",
@@ -158,6 +158,7 @@
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <slf4j.version>1.7.30</slf4j.version>
+        <surefire.skipTests>false</surefire.skipTests>
         <swagger.version>1.5.21</swagger.version>
     </properties>
     <dependencyManagement>
@@ -1882,6 +1883,7 @@
                     <configuration>
                         <argLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</argLine>
                         <runOrder>random</runOrder>
+                        <skipTests>${surefire.skipTests}</skipTests>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
                         <trimStackTrace>false</trimStackTrace>
                         <systemPropertyVariables>

@@ -1,3 +1,7 @@
+0.144.11
+    Set default value for osgi.activator
+    Introduce surefire.skipTests (false by default)
+
 0.144.10
     Update killbill-base-plugin to 4.2.1
 
