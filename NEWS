@@ -1,3 +1,6 @@
+0.144.13
+    Update killbill-platform to 0.40.0
+
 0.144.12
     Review default osgi.import property
 
