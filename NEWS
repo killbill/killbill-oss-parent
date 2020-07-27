@@ -1,3 +1,6 @@
+0.144.12
+    Review default osgi.import property
+
 0.144.11
     Set default value for osgi.activator
     Introduce surefire.skipTests (false by default)
