@@ -200,8 +200,8 @@
         <repository.snapshot.id>sonatype-nexus-snapshots</repository.snapshot.id>
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
+        <skipTests>false</skipTests>
         <slf4j.version>1.7.30</slf4j.version>
-        <surefire.skipTests>false</surefire.skipTests>
         <swagger.version>1.5.21</swagger.version>
     </properties>
     <dependencyManagement>
@@ -1926,7 +1926,7 @@
                     <configuration>
                         <argLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</argLine>
                         <runOrder>random</runOrder>
-                        <skipTests>${surefire.skipTests}</skipTests>
+                        <skipTests>${skipTests}</skipTests>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
                         <trimStackTrace>false</trimStackTrace>
                         <systemPropertyVariables>
