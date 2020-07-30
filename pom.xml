@@ -127,8 +127,10 @@
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
         <osgi.export />
+        <osgi.extra-import />
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
+            ${osgi.extra-import},
             <!-- Almost always required (don't use * or the packages won't be imported unless directly referenced): these match the default exports -->
             org.apache.shiro.subject;version=1.3,
             org.apache.shiro.util;version=1.3,

@@ -1,5 +1,6 @@
 0.144.16
     Introduce check.spotbugs-exclude-filter-file
+    Introduce osgi.extra-import
 
 0.144.15
     Rename surefire.skipTests to skipTests
