@@ -1,3 +1,6 @@
+0.144.16
+    Introduce check.spotbugs-exclude-filter-file
+
 0.144.15
     Rename surefire.skipTests to skipTests
     Update killbill-base-plugin to 4.2.3
