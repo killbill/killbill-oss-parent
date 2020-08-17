@@ -1,6 +1,120 @@
+0.144.19
+    Excluding logging frameworks from embedded-redis
+    Fix byte-buddy conflicts
+    Fix jaxb conflicts
+    Set Netty version to 4.1.50.Final
+    Introduce check.skip-dependency-versions and check.fail-dependency-versions
+
+0.144.18
+    rat: ignore documentation
+
+0.144.17
+    Update killbill-base-plugin to 4.2.4
+
+0.144.16
+    Introduce check.spotbugs-exclude-filter-file
+    Introduce osgi.extra-import
+
+0.144.15
+    Rename surefire.skipTests to skipTests
+    Update killbill-base-plugin to 4.2.3
+
+0.144.14
+    Update killbill-base-plugin to 4.2.2
+
+0.144.13
+    Update killbill-platform to 0.40.0
+
+0.144.12
+    Review default osgi.import property
+
+0.144.11
+    Set default value for osgi.activator
+    Introduce surefire.skipTests (false by default)
+
+0.144.10
+    Update killbill-base-plugin to 4.2.1
+
+0.144.9
+    Update killbill-commons to 0.24.4
+
+0.144.8
+    Update async-http-client to 2.12.1 (groupId is now org.asynchttpclient)
+    Update maven-bundle-plugin to 4.2.1
+
+0.144.7
+    Update killbill-commons to 0.24.3
+
+0.144.6
+    Update jetty from 9.2.10.v20150310 to 9.4.30.v20200611
+    Update mockito from 3.4.0 to 3.4.4
+    Upgrade various Maven plugins
+
+0.144.5
+    Update killbill-commons to 0.24.2
+
+0.144.4
+    Run maven-javadoc-plugin earlier in the build (before gpg plugin)
+
+0.144.3
+    Fix sonatype-oss-release profile
+    Update killbill-commons to 0.24.0
+
+0.144.2
+    Get rid of killbill-commons-for-tests dependencies
+
+0.144.1
+    Downgrade joda-money from 1.0.2 to 1.0.1
+    Review plugins in main build
+
+0.144.0
+    Update ST4 from 4.0.8 to 4.3.1
+    Update awaitility from 2.0.0 to 4.0.3
+    Update c3p0 from 0.9.5 to 0.9.5.5
+    Update cache-api from 1.0.0 to 1.1.1
+    Update cglib-nodep from 3.1 to 3.3.0
+    Update classmate from 1.1.0 to 1.5.1
+    Update com.typesafe:config from 1.3.2 to 1.4.0
+    Update commons-email from 1.2 to 1.5
+    Update commons-io from 2.5 to 2.7
+    Update commons-lang3 from 3.2.1 to 3.10
+    Update derby from 10.10.1.1 to 10.14.2.0
+    Update easymock from 3.3 to 4.2
+    Update ehcache from 3.3.1 to 3.8.1
+    Update embedded-redis from 0.7.2 to 0.7.3
+    Update guava from 26.0-jre to 29.0-jre
+    Update guice from 4.1.0 to 4.2.3
+    Update h2 from 1.4.194 to 1.4.200
+    Update hamcrest from 1.3 to 2.2
+    Update io.airlift:units from 1.0 to 1.6
+    Update jackson from 2.9.8 to 2.11.1
+    Update janino from 3.1.0 to 3.1.2
+    Update jasypt from 1.9.2 to 1.9.3
+    Update javassist from 3.21.0-GA to 3.27.0-GA
+    Update jmustache from 1.5 to 1.15
+    Update jmxutils from 1.19 to 1.21
+    Update joda-money from 0.12 to 1.0.2
+    Update joda-time from 2.9.9 to 2.10.6
+    Update junit from 4.12 to 4.13
+    Update low-gc-membuffers from 1.1.1 to 1.2.0
+    Update mockito from 1.10.19 to 3.4.0
+    Update redisson from 3.10.0 to 3.13.2
+    Update slf4j from 1.7.25 to 1.7.30
+    Update snakeyaml from 1.23 to 1.26
+    Update spotbugs-annotations from 4.0.4 to 4.0.6
+    Update testing-mysql-server from 8.0.12-2 to 8.0.12-5
+    Update testng from 6.14.3 to 7.1.0
+    Update killbill-base-plugin -> 4.2.0
+    Remove com.google.code.findbugs:annotations
+    Switch from cglib:cglib to cglib:cglib-nodep
+    Switch from org.mockito:mockito-all to org.mockito:mockito-core
+    Upgrade various Maven plugins
+    Remove jdk16, jdk17, and jdk18 profiles (target 1.8 is the default)
+    Remove reporting section
+    Remove dependency on org.sonatype.oss:oss-parent
+
 0.143.63
     Update killbill-platform -> 0.39.17
-    âˆ
 
 0.143.62
     Update killbill-platform -> 0.39.16
@@ -24,7 +138,7 @@
     Upgrade testing-mysql-server packages
 
 0.143.55
-    
+    No changes
 
 0.143.54
     Update killbill-commons -> 0.23.9
