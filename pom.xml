@@ -632,6 +632,12 @@
                 <version>5.1.46</version>
             </dependency>
             <dependency>
+                <!-- Conflict between mockito and redisson -->
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>1.10.13</version>
+            </dependency>
+            <dependency>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr-runtime</artifactId>
                 <version>3.5.2</version>
