@@ -1,3 +1,6 @@
+0.144.19
+    Introduce check.skip-dependency-versions and check.fail-dependency-versions
+
 0.144.18
     rat: ignore documentation
 

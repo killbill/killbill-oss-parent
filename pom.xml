@@ -92,6 +92,7 @@
         <build.jvmsize>1024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
+        <check.fail-dependency-versions>true</check.fail-dependency-versions>
         <check.fail-duplicate-finder>true</check.fail-duplicate-finder>
         <!-- Can be deactivated with -Dcheck.fail-enforcer=false on the command line -->
         <check.fail-enforcer>true</check.fail-enforcer>
@@ -100,6 +101,7 @@
         <check.ignore-rat>false</check.ignore-rat>
         <check.skip-dependency>false</check.skip-dependency>
         <check.skip-dependency-scope>false</check.skip-dependency-scope>
+        <check.skip-dependency-versions>false</check.skip-dependency-versions>
         <check.skip-duplicate-finder>false</check.skip-duplicate-finder>
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
@@ -1641,7 +1643,8 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+                        <skip>${check.skip-dependency-versions}</skip>
+                        <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
                     </configuration>
                 </plugin>
                 <plugin>
