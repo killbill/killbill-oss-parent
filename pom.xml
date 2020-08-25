@@ -117,10 +117,10 @@
         <joda-time.version>2.10.6</joda-time.version>
         <jooby.version>1.6.8</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
-        <killbill-base-plugin.version>4.2.5</killbill-base-plugin.version>
+        <killbill-base-plugin.version>4.2.6-SNAPSHOT</killbill-base-plugin.version>
         <killbill-client.version>1.2.0</killbill-client.version>
-        <killbill-commons.version>0.24.5</killbill-commons.version>
-        <killbill-platform.version>0.40.1</killbill-platform.version>
+        <killbill-commons.version>0.24.6-SNAPSHOT</killbill-commons.version>
+        <killbill-platform.version>0.40.2-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
