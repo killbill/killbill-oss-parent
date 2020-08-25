@@ -986,6 +986,13 @@
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
                 <version>3.13.4</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jaxb-api</artifactId>
+                        <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
+                        <groupId>javax.xml.bind</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jruby</groupId>
