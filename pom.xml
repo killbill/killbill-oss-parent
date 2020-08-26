@@ -2210,8 +2210,9 @@
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
                         </ignoredDependencies>
-                        <ignoredResourcePatterns>
+                        <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.txt</ignoredResourcePattern>
                             <ignoredResourcePattern>META-INF/.*</ignoredResourcePattern>
                             <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
                             <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
