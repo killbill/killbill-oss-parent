@@ -185,9 +185,10 @@
             org.osgi.service.http;version=1.2.0,
             org.osgi.service.log;version=1.3,
             org.slf4j;version=1.7.2,
-            org.slf4j.event;version=1.7.2,
-            org.slf4j.helpers;version=1.7.2,
-            org.slf4j.spi;version=1.7.2,
+            <!-- resolution:=optional to help with the upgrade (to remove post 0.22.12) -->
+            org.slf4j.event;resolution:=optional;version=1.7.2,
+            org.slf4j.helpers;resolution:=optional;version=1.7.2,
+            org.slf4j.spi;resolution:=optional;version=1.7.2,
             <!-- Anything else is optional -->
             *;resolution:=optional
         </osgi.import>
