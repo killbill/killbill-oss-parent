@@ -5,6 +5,10 @@ updates:
     schedule:
       interval: weekly
     ignore:
+    # 10.15.x requires Java 9
+    - dependency-name: org.apache.derby:derby
+      versions:
+        - ">= 10.15.0"
     # We've forked the code
     - dependency-name: org.flywaydb:*
     - dependency-name: ch.qos.logback:*
@@ -23,12 +27,17 @@ updates:
     - dependency-name: io.dropwizard.metrics:*
       versions:
         - ">= 4.0.0"
+    # https://github.com/killbill/killbill-oss-parent/issues/37
+    - dependency-name: com.izettle:dropwizard-metrics-influxdb
+      versions:
+        - "> 1.2.1-rc1"
     - dependency-name: io.netty:*
       versions:
         - ">= 5.0.0"
     - dependency-name: org.antlr:stringtemplate
       versions:
         - ">= 4.0.0"
+    # https://github.com/killbill/killbill-oss-parent/issues/36
     - dependency-name: org.apache.shiro:*
       versions:
         - "< 2.0.0"
