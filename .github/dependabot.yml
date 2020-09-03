@@ -36,8 +36,6 @@ updates:
         - ">= 10.15.0"
     # https://github.com/killbill/killbill-oss-parent/issues/34
     - dependency-name: org.apache.felix:*
-      versions:
-        - ">= 3.2.0"
     # https://github.com/killbill/killbill-oss-parent/issues/36
     - dependency-name: org.apache.shiro:*
       versions:
