@@ -1,0 +1,52 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: weekly
+    ignore:
+    # 10.15.x requires Java 9
+    - dependency-name: org.apache.derby:derby
+      versions:
+        - ">= 10.15.0"
+    # We've forked the code
+    - dependency-name: org.flywaydb:*
+    - dependency-name: ch.qos.logback:*
+      versions:
+        - ">= 1.3.0"
+    - dependency-name: org.slf4j:*
+      versions:
+        - ">= 2.0.0"
+    - dependency-name: jakarta.activation:jakarta.activation-api
+      versions:
+        - ">= 2.0.0"
+    - dependency-name: jakarta.xml.bind:jakarta.xml.bind-api
+      versions:
+        - ">= 3.0.0"
+    # https://github.com/brettwooldridge/HikariCP/issues/335
+    - dependency-name: io.dropwizard.metrics:*
+      versions:
+        - ">= 4.0.0"
+    # https://github.com/killbill/killbill-oss-parent/issues/37
+    - dependency-name: com.izettle:dropwizard-metrics-influxdb
+      versions:
+        - "> 1.2.1-rc1"
+    - dependency-name: io.netty:*
+      versions:
+        - ">= 5.0.0"
+    - dependency-name: org.antlr:stringtemplate
+      versions:
+        - ">= 4.0.0"
+    # https://github.com/killbill/killbill-oss-parent/issues/36
+    - dependency-name: org.apache.shiro:*
+      versions:
+        - "< 2.0.0"
+    - dependency-name: org.eclipse.jetty:*
+      versions:
+        - ">= 10.0.0"
+    - dependency-name: org.jruby:*
+      versions:
+        - ">= 1.8.0"
+    - dependency-name: org.ow2.asm:asm
+      versions:
+        - ">= 6.0.0"
