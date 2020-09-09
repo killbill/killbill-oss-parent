@@ -150,5 +150,6 @@ jobs:
           echo "$i pom.xml changes:"
           git --no-pager diff
           echo "Running $i ${{ matrix.suite }} tests"
-          mvn clean install -P${{ matrix.suite }}
+          # Flaky...
+          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
           popd
