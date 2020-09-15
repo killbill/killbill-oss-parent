@@ -212,7 +212,7 @@
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.30</slf4j.version>
-        <swagger.version>1.5.21</swagger.version>
+        <swagger.version>1.6.2</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
