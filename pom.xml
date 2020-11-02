@@ -658,7 +658,7 @@
                 <!-- Conflict between mockito and redisson -->
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.10.17</version>
+                <version>1.10.18</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
