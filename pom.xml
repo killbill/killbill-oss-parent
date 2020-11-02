@@ -1012,7 +1012,7 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.13.4</version>
+                <version>3.14.1</version>
                 <exclusions>
                     <exclusion>
                         <artifactId>jaxb-api</artifactId>
