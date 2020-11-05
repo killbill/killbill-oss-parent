@@ -375,6 +375,13 @@
                 <groupId>com.izettle</groupId>
                 <artifactId>dropwizard-metrics-influxdb</artifactId>
                 <version>1.2.1-rc1</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>validation-api</artifactId>
+                        <!-- We use jakarta.validation:jakarta.validation-api instead -->
+                        <groupId>javax.validation</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.mchange</groupId>
@@ -560,11 +567,18 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-jaxrs</artifactId>
                 <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-jaxrs2</artifactId>
-                <version>${swagger.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jsr311-api</artifactId>
+                        <!-- We use jakarta.ws.rs:jakarta.ws.rs-api instead -->
+                        <groupId>javax.ws.rs</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>validation-api</artifactId>
+                        <!-- We use jakarta.validation:jakarta.validation-api instead -->
+                        <groupId>javax.validation</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.swagger</groupId>
@@ -618,11 +632,6 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.1.0</version>
                 <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>javax.ws.rs</groupId>
-                <artifactId>jsr311-api</artifactId>
-                <version>1.1.1</version>
             </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
