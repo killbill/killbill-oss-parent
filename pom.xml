@@ -114,8 +114,8 @@
         <hk2.version>2.6.1</hk2.version>
         <jackson.version>2.11.3</jackson.version>
         <jersey.version>2.32</jersey.version>
-        <jetty.version>9.4.33.v20201020</jetty.version>
-        <joda-time.version>2.10.6</joda-time.version>
+        <jetty.version>9.4.34.v20201102</jetty.version>
+        <joda-time.version>2.10.8</joda-time.version>
         <jooby.version>1.6.8</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.9</killbill-base-plugin.version>
@@ -406,7 +406,7 @@
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
-                <version>1.4.0</version>
+                <version>1.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.zaxxer</groupId>
@@ -1595,7 +1595,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>3.5.15</version>
+                <version>3.6.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -1621,7 +1621,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.13.5</version>
+                <version>3.13.6</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
