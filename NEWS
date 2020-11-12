@@ -1,5 +1,10 @@
 0.144.38
+    Update config from 1.4.0 to 1.4.1
     Update jersey from 1.19.4 to 2.32
+    Update jetty from 9.4.33.v20201020 to 9.4.34.v20201102
+    Update joda-time from 2.10.6 to 2.10.8
+    Update mockito-core from 3.5.15 to 3.6.0
+    Update redisson from 3.13.5 to 3.13.6
 
 0.144.37
     Update killbill-platform to 0.40.4
