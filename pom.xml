@@ -438,7 +438,7 @@
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>log</artifactId>
-                <version>201</version>
+                <version>202</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
