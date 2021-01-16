@@ -1,0 +1,42 @@
+name: release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup git user
+        env:
+          BUILD_USER: ${{ secrets.BUILD_USER }}
+          BUILD_TOKEN: ${{ secrets.BUILD_TOKEN }}
+        run: |
+          git config --global user.email "contact@killbill.io"
+          git config --global user.name "Kill Bill core team"
+          git config --global url."https://${BUILD_USER}:${BUILD_TOKEN}@github.com/".insteadOf "git@github.com:"
+      - name: Configure Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 8
+          server-id: ossrh-releases
+          server-username: OSSRH_USER
+          server-password: OSSRH_PASS
+          gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+      - name: Download Java dependencies
+        run: |
+          mvn -B --no-transfer-progress clean install -DskipTests
+          mvn -B --no-transfer-progress dependency:resolve -Psonatype-oss-release
+          mvn -B --no-transfer-progress dependency:resolve-plugins -Psonatype-oss-release
+      - name: Release artifacts
+        env:
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_PASS: ${{ secrets.OSSRH_PASS }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          mvn -B --no-transfer-progress release:clean
+          mvn -B --no-transfer-progress release:prepare
+          mvn -B --no-transfer-progress release:perform
