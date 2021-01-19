@@ -1,3 +1,27 @@
+0.144.38
+    Update assertj-core from 3.18.0 to 3.18.1
+    Update byte-buddy from 1.10.18 to 1.10.19
+    Update checker-qual from 3.7.0 to 3.8.0
+    Update compress-lzf from 1.0.4 to 1.1
+    Update concurrent from 201 to 202
+    Update config from 1.4.0 to 1.4.1
+    Update git-commit-id-plugin from 4.0.2 to 4.0.3
+    Update guava from 30.0-jre to 30.1-jre
+    Update influxdb-java from 2.20 to 2.21
+    Update jackson from 2.11.3 to 2.12.1
+    Update jetty from 9.4.33.v20201020 to 9.4.35.v20201120
+    Update joda-time from 2.10.6 to 2.10.9
+    Update jooq from 3.14.1 to 3.14.4
+    Update kotlin-stdlib-common from 1.4.0 to 1.4.21
+    Update log from 201 to 202
+    Update mariadb-java-client from 2.7.0 to 2.7.1
+    Update mockito-core from 3.5.15 to 3.6.28
+    Update netty from 4.1.53.Final to 4.1.56.Final
+    Update redisson from 3.13.5 to 3.14.1
+    Update snappy-java from 1.1.8 to 1.1.8.2
+    Update spotbugs-annotations from 4.1.4 to 4.2.0
+    Update spotbugs-maven-plugin from 4.1.4 to 4.2.0
+
 0.144.37
     Update killbill-platform to 0.40.4
 
