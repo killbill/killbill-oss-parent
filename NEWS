@@ -1,3 +1,6 @@
+0.144.41
+    Update killbill-platform from 0.40.4 to 0.40.5
+
 0.144.40
     Update killbill-commons from 0.24.9 to 0.24.11
     Update netty from 4.1.56.Final to 4.1.58.Final
