@@ -1,3 +1,10 @@
+0.144.40
+    Update killbill-commons from 0.24.9 to 0.24.11
+    Update netty from 4.1.56.Final to 4.1.58.Final
+
+0.144.39
+    No functional change
+
 0.144.38
     Update assertj-core from 3.18.0 to 3.18.1
     Update byte-buddy from 1.10.18 to 1.10.19
