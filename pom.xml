@@ -113,7 +113,7 @@
         <guice.version>4.2.3</guice.version>
         <jackson.version>2.12.1</jackson.version>
         <jersey.version>1.19.4</jersey.version>
-        <jetty.version>9.4.35.v20201120</jetty.version>
+        <jetty.version>9.4.36.v20210114</jetty.version>
         <joda-time.version>2.10.9</joda-time.version>
         <jooby.version>1.6.8</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
