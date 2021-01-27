@@ -1828,6 +1828,18 @@
                         <showWarnings>true</showWarnings>
                         <fork>true</fork>
                         <parameters>true</parameters>
+                        <compilerArgs>
+                            <!-- Configure manifold plugin -->
+                            <arg>-Xplugin:Manifold</arg>
+                        </compilerArgs>
+                        <!-- Add the processor path for the plugin -->
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>systems.manifold</groupId>
+                                <artifactId>manifold-preprocessor</artifactId>
+                                <version>2020.1.45</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
