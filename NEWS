@@ -1,3 +1,9 @@
+0.144.46
+    Update killbill-base-plugin from 4.2.10 to 4.2.11
+
+0.144.45
+    Update killbill-commons from 0.24.11 to 0.24.12
+
 0.144.44
     Update checker-qual from 3.9.1 to 3.10.0
     Update HikariCP from 4.0.0 to 4.0.1
