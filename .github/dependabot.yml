@@ -24,6 +24,9 @@ updates:
     - dependency-name: jakarta.activation:jakarta.activation-api
       versions:
         - ">= 2.0.0"
+    - dependency-name: jakarta.ws.rs:jakarta.ws.rs-api
+      versions:
+        - ">= 3.0.0"
     - dependency-name: jakarta.xml.bind:jakarta.xml.bind-api
       versions:
         - ">= 3.0.0"
