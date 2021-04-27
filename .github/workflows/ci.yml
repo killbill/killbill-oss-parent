@@ -14,6 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        java-version:
+          - 8
         suite:
           - h2
           - mysql
@@ -54,6 +56,10 @@ jobs:
           repository: killbill/killbill
           ref: refs/heads/master
           path: killbill
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java-version }}
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
