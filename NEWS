@@ -1,5 +1,6 @@
 0.144.51
     Add org.objenesis:objenesis:3.2
+    Update ehcache from 3.9.0 to 3.9.3
     Update jersey from 2.33 to 2.34
     Update jetty from 9.4.36.v20210114 to 9.4.40.v20210413
     Update killbill-platform from 0.40.6 to 0.40.7
