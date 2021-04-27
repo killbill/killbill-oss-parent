@@ -1,5 +1,7 @@
 0.144.51
+    Update jetty from 9.4.36.v20210114 to 9.4.40.v20210413
     Update killbill-platform from 0.40.6 to 0.40.7
+    Update log from 202 to 205
 
 0.144.50
     Update biz.aQute.bndlib from 5.2.0 to 5.3.0
