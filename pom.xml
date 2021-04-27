@@ -120,7 +120,7 @@
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.11</killbill-base-plugin.version>
         <killbill-client.version>1.2.2</killbill-client.version>
-        <killbill-commons.version>0.24.13</killbill-commons.version>
+        <killbill-commons.version>0.24.14</killbill-commons.version>
         <killbill-platform.version>0.40.6</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
         <logback.version>1.2.3</logback.version>
@@ -1919,7 +1919,7 @@
                             <path>
                                 <groupId>systems.manifold</groupId>
                                 <artifactId>manifold-preprocessor</artifactId>
-                                <version>2020.1.45</version>
+                                <version>2021.1.11</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
