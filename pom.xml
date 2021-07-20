@@ -213,6 +213,7 @@
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.30</slf4j.version>
+        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.2</swagger.version>
     </properties>
     <dependencyManagement>
@@ -2148,7 +2149,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M5</version>
                     <configuration>
-                        <argLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</argLine>
+                        <argLine>${surefireArgLine}</argLine>
                         <runOrder>random</runOrder>
                         <skipTests>${skipTests}</skipTests>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
@@ -2690,6 +2691,8 @@
             </activation>
             <properties>
                 <maven.compiler.release>8</maven.compiler.release>
+                <!-- illegal-access=permit is for cglib (jDBI) -->
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
         </profile>
     </profiles>
