@@ -12,6 +12,14 @@ updates:
     - dependency-name: com.izettle:dropwizard-metrics-influxdb
       versions:
         - "> 1.2.1-rc1"
+    # 207 requires Java 11
+    - dependency-name: io.airlift:concurrent
+      versions:
+        - ">= 207"
+    # 207 requires Java 11
+    - dependency-name: io.airlift:log
+      versions:
+        - ">= 207"
     # https://github.com/brettwooldridge/HikariCP/issues/335
     - dependency-name: io.dropwizard.metrics:*
       versions:
