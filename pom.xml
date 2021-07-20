@@ -112,11 +112,11 @@
         <guava.version>30.1.1-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
-        <jackson.version>2.12.3</jackson.version>
+        <jackson.version>2.12.4</jackson.version>
         <jersey.version>2.34</jersey.version>
         <jetty.version>9.4.42.v20210604</jetty.version>
         <joda-time.version>2.10.10</joda-time.version>
-        <jooby.version>1.6.8</jooby.version>
+        <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.12</killbill-base-plugin.version>
         <killbill-client.version>1.2.3</killbill-client.version>
@@ -126,7 +126,7 @@
         <logback.version>1.2.3</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
-        <netty.version>4.1.63.Final</netty.version>
+        <netty.version>4.1.66.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
@@ -212,7 +212,7 @@
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <skipTests>false</skipTests>
-        <slf4j.version>1.7.30</slf4j.version>
+        <slf4j.version>1.7.31</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.2</swagger.version>
     </properties>
