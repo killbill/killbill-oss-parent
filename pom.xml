@@ -1899,10 +1899,9 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
+                        <!-- See profiles section for <release> configuration -->
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
-                        <!-- Since Java9 -->
-                        <!-- <release>${project.build.targetJdk}</release> -->
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
@@ -2683,6 +2682,15 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>javac-release</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.release>8</maven.compiler.release>
+            </properties>
         </profile>
     </profiles>
 </project>
