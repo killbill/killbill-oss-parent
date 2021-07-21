@@ -1921,6 +1921,8 @@
                         <compilerArgs>
                             <!-- Configure manifold plugin -->
                             <arg>-Xplugin:Manifold</arg>
+                            <!-- Allow access to internal packages -->
+                            <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
                         <!-- Add the processor path for the plugin -->
                         <annotationProcessorPaths>
