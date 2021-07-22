@@ -405,9 +405,9 @@
                 <version>1.15</version>
             </dependency>
             <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-impl</artifactId>
-                <version>3.0.2-b01</version>
+                <groupId>com.sun.activation</groupId>
+                <artifactId>jakarta.activation</artifactId>
+                <version>2.0.1</version>
             </dependency>
             <dependency>
                 <groupId>com.typesafe</groupId>
@@ -623,7 +623,7 @@
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
-                <version>3.0.1</version>
+                <version>2.3.3</version>
             </dependency>
             <dependency>
                 <groupId>javax.cache</groupId>
@@ -917,18 +917,6 @@
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
-                        <groupId>javax.activation</groupId>
-                        <artifactId>javax.activation-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
-                        <groupId>javax.xml.bind</groupId>
-                        <artifactId>jaxb-api</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ehcache</groupId>
@@ -973,6 +961,11 @@
                         <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.4</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.containers</groupId>

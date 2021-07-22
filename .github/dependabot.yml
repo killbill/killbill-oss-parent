@@ -59,6 +59,9 @@ updates:
     - dependency-name: org.glassfish.hk2:*
       versions:
         - ">= 3.0.0"
+    - dependency-name: org.glassfish.jaxb:jaxb-runtime
+      versions:
+        - ">= 3.0.0"
     - dependency-name: org.glassfish.jersey.*:*
       versions:
         - ">= 3.0.0"
