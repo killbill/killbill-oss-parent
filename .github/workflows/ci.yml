@@ -3,6 +3,7 @@ name: ci
 on:
   - pull_request
   - push
+  - workflow_dispatch
 
 env:
   MAVEN_FLAGS: "-B -ff -Dcheck.skip-spotbugs=true -DskipTests=true"
