@@ -2095,7 +2095,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M4</version>
                     <configuration>
                         <releaseProfiles>${release.release-profiles}</releaseProfiles>
                         <autoVersionSubmodules>${release.auto-version-submodules}</autoVersionSubmodules>
