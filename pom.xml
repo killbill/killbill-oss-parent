@@ -114,7 +114,7 @@
         <hk2.version>2.6.1</hk2.version>
         <jackson.version>2.12.4</jackson.version>
         <jersey.version>2.34</jersey.version>
-        <jetty.version>9.4.42.v20210604</jetty.version>
+        <jetty.version>9.4.43.v20210629</jetty.version>
         <joda-time.version>2.10.10</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
