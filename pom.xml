@@ -88,7 +88,7 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <async-http-client.version>2.12.1</async-http-client.version>
+        <async-http-client.version>2.12.3</async-http-client.version>
         <build.jvmsize>1024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
