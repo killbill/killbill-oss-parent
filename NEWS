@@ -2,6 +2,7 @@
     Add com.sun.activation:jakarta.activation 2.0.1
     Add org.glassfish.jaxb:jaxb-runtime 2.3.4
     Update concurrent from 202 to 206
+    Update ehcache from 3.9.3 to 3.9.4
     Update guava from 30.1-jre to 30.1.1-jre
     Update jackson from 2.12.3 to 2.12.4
     Update janino from 3.1.3 to 3.1.4
