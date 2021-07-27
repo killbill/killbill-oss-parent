@@ -115,6 +115,7 @@
         <jackson.version>2.12.4</jackson.version>
         <jersey.version>2.34</jersey.version>
         <jetty.version>9.4.43.v20210629</jetty.version>
+        <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.10</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
@@ -536,6 +537,21 @@
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-servlets</artifactId>
                 <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>

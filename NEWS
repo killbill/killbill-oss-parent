@@ -1,5 +1,8 @@
 0.144.53
     Add com.sun.activation:jakarta.activation 2.0.1
+    Add io.jsonwebtoken:jjwt-api:0.11.2
+    Add io.jsonwebtoken:jjwt-impl:0.11.2
+    Add io.jsonwebtoken:jjwt-jackson:0.11.2
     Add org.glassfish.jaxb:jaxb-runtime 2.3.4
     Update async-http-client from 2.12.1 to 2.12.3
     Update byte-buddy from 1.10.21 to 1.11.0
