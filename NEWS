@@ -15,7 +15,7 @@
     Update mysql-connector-java from 8.0.23 to 8.0.25
     Update netty from 4.1.63.Final to 4.1.66.Final
     Update redisson from 3.15.0 to 3.16.1
-    Update slf4j from 1.7.30 to 1.7.31
+    Update slf4j from 1.7.30 to 1.7.32
     Update snakeyaml from 1.27 to 1.29
     Update sortpom-maven-plugin from 2.13.1 to 3.0.0
     Add javac-release profile for JDK11+ builds
