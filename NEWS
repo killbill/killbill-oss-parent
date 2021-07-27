@@ -6,6 +6,7 @@
     Add org.glassfish.jaxb:jaxb-runtime 2.3.4
     Update assertj-core from 3.19.0 to 3.20.2
     Update async-http-client from 2.12.1 to 2.12.3
+    Update awaitility from 4.0.3 to 4.1.0
     Update byte-buddy from 1.10.21 to 1.11.0
     Update checker-qual from 3.13.0 to 3.16.0
     Update commons-compress from 1.20 to 1.21
