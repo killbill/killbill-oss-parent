@@ -676,12 +676,12 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.25</version>
+                <version>8.0.26</version>
             </dependency>
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.11.3</version>
+                <version>1.11.8</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -856,7 +856,7 @@
             <dependency>
                 <groupId>org.awaitility</groupId>
                 <artifactId>awaitility</artifactId>
-                <version>4.0.3</version>
+                <version>4.1.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
