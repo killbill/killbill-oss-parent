@@ -212,7 +212,7 @@
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <skipTests>false</skipTests>
-        <slf4j.version>1.7.31</slf4j.version>
+        <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.2</swagger.version>
     </properties>
@@ -663,10 +663,9 @@
                 <version>8.0.25</version>
             </dependency>
             <dependency>
-                <!-- Conflict between mockito and redisson -->
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.10.21</version>
+                <version>1.11.0</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -853,7 +852,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.13.0</version>
+                <version>3.16.0</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
@@ -1620,7 +1619,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.15.0</version>
+                <version>3.16.1</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
@@ -2024,7 +2023,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>3.0.1</version>
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
