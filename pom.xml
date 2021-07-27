@@ -676,7 +676,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.25</version>
+                <version>8.0.26</version>
             </dependency>
             <dependency>
                 <groupId>net.bytebuddy</groupId>
@@ -856,7 +856,7 @@
             <dependency>
                 <groupId>org.awaitility</groupId>
                 <artifactId>awaitility</artifactId>
-                <version>4.0.3</version>
+                <version>4.1.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -2082,7 +2082,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                     <configuration>
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
