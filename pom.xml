@@ -312,7 +312,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.2.1</version>
+                <version>4.3.0</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -676,12 +676,12 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.25</version>
+                <version>8.0.26</version>
             </dependency>
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.11.0</version>
+                <version>1.11.3</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -1604,7 +1604,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>3.9.0</version>
+                <version>3.11.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -2039,7 +2039,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>3.0.1</version>
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
@@ -2375,7 +2375,7 @@
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
-                    <version>4.0.3</version>
+                    <version>4.0.5</version>
                     <configuration>
                         <dateFormat>yyyy-MM-dd'T'HH:mm:ssZZ</dateFormat>
                         <gitDescribe>
