@@ -2,8 +2,8 @@
 <!--
   ~ Copyright 2010-2014 Ning, Inc.
   ~ Copyright 2014-2020 Groupon, Inc
-  ~ Copyright 2020-2020 Equinix, Inc
-  ~ Copyright 2014-2020 The Billing Project, LLC
+  ~ Copyright 2020-2021 Equinix, Inc
+  ~ Copyright 2014-2021 The Billing Project, LLC
   ~
   ~ The Billing Project licenses this file to you under the Apache License, version 2.0
   ~ (the "License"); you may not use this file except in compliance with the
@@ -88,7 +88,7 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <async-http-client.version>2.12.1</async-http-client.version>
+        <async-http-client.version>2.12.3</async-http-client.version>
         <build.jvmsize>1024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
@@ -106,15 +106,15 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file />
+        <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
-        <ehcache.version>3.9.3</ehcache.version>
-        <guava.version>30.1-jre</guava.version>
+        <ehcache.version>3.9.4</ehcache.version>
+        <guava.version>30.1.1-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
         <jackson.version>2.12.4</jackson.version>
         <jersey.version>2.34</jersey.version>
-        <jetty.version>9.4.42.v20210604</jetty.version>
+        <jetty.version>9.4.43.v20210629</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.10</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
@@ -124,15 +124,15 @@
         <killbill-commons.version>0.24.14</killbill-commons.version>
         <killbill-platform.version>0.40.7</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.5</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
         <netty.version>4.1.66.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -196,7 +196,7 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -213,7 +213,8 @@
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <skipTests>false</skipTests>
-        <slf4j.version>1.7.31</slf4j.version>
+        <slf4j.version>1.7.32</slf4j.version>
+        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.2</swagger.version>
     </properties>
     <dependencyManagement>
@@ -320,8 +321,8 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <artifactId>servlet-api</artifactId>
                         <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>servlet-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -337,8 +338,8 @@
                 <exclusions>
                     <!-- this empty dependency is a hack and not needed -->
                     <exclusion>
-                        <artifactId>listenablefuture</artifactId>
                         <groupId>com.google.guava</groupId>
+                        <artifactId>listenablefuture</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -378,9 +379,9 @@
                 <version>1.2.1-rc1</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>validation-api</artifactId>
                         <!-- We use jakarta.validation:jakarta.validation-api instead -->
                         <groupId>javax.validation</groupId>
+                        <artifactId>validation-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -405,6 +406,11 @@
                 <version>1.15</version>
             </dependency>
             <dependency>
+                <groupId>com.sun.activation</groupId>
+                <artifactId>jakarta.activation</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
                 <version>1.4.1</version>
@@ -427,12 +433,14 @@
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>concurrent</artifactId>
-                <version>202</version>
+                <!-- 207 requires Java 11 -->
+                <version>206</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>log</artifactId>
-                <version>205</version>
+                <!-- 207 requires Java 11 -->
+                <version>206</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -480,8 +488,8 @@
                 <version>${metrics.version}</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>jdbi</artifactId>
                         <groupId>org.jdbi</groupId>
+                        <artifactId>jdbi</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -585,14 +593,14 @@
                 <version>${swagger.version}</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>jsr311-api</artifactId>
                         <!-- We use jakarta.ws.rs:jakarta.ws.rs-api instead -->
                         <groupId>javax.ws.rs</groupId>
+                        <artifactId>jsr311-api</artifactId>
                     </exclusion>
                     <exclusion>
-                        <artifactId>validation-api</artifactId>
                         <!-- We use jakarta.validation:jakarta.validation-api instead -->
                         <groupId>javax.validation</groupId>
+                        <artifactId>validation-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -607,14 +615,14 @@
                 <version>0.7.3</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>commons-logging</artifactId>
                         <!-- Use jcl-over-slf4j instead -->
                         <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
                     </exclusion>
                     <exclusion>
-                        <artifactId>slf4j-simple</artifactId>
                         <!-- Conflicts with logback in some tests -->
                         <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-simple</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -671,10 +679,9 @@
                 <version>8.0.25</version>
             </dependency>
             <dependency>
-                <!-- Conflict between mockito and redisson -->
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.10.21</version>
+                <version>1.11.0</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -694,7 +701,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
-                <version>1.20</version>
+                <version>1.21</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -845,13 +852,6 @@
                 <groupId>org.asynchttpclient</groupId>
                 <artifactId>async-http-client</artifactId>
                 <version>${async-http-client.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>javax.activation</artifactId>
-                        <!-- Use jakarta.activation-api instead -->
-                        <groupId>com.sun.activation</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
@@ -868,7 +868,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.13.0</version>
+                <version>3.16.0</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
@@ -925,18 +925,6 @@
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>javax.activation-api</artifactId>
-                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
-                        <groupId>javax.activation</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>jaxb-api</artifactId>
-                        <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
-                        <groupId>javax.xml.bind</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ehcache</groupId>
@@ -960,8 +948,8 @@
                 <exclusions>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -972,15 +960,20 @@
                 <exclusions>
                     <!-- Repackaged artifact of aopalliance for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>aopalliance-repackaged</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>aopalliance-repackaged</artifactId>
                     </exclusion>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.4</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.containers</groupId>
@@ -989,8 +982,8 @@
                 <exclusions>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1001,8 +994,8 @@
                 <exclusions>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1013,8 +1006,8 @@
                 <exclusions>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1025,13 +1018,13 @@
                 <exclusions>
                     <!-- Repackaged artifact of aopalliance for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>aopalliance-repackaged</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>aopalliance-repackaged</artifactId>
                     </exclusion>
                     <!-- Repackaged artifact of javax.inject for the GlassFish OSGI environment -->
                     <exclusion>
-                        <artifactId>jakarta.inject</artifactId>
                         <groupId>org.glassfish.hk2.external</groupId>
+                        <artifactId>jakarta.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1092,8 +1085,8 @@
                 <version>${jooby.version}</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>logback-classic</artifactId>
                         <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1113,9 +1106,9 @@
                 <version>3.14.7</version>
                 <exclusions>
                     <exclusion>
-                        <artifactId>jaxb-api</artifactId>
                         <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
                         <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1637,12 +1630,12 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>42.2.20</version>
+                <version>42.2.23</version>
             </dependency>
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.15.0</version>
+                <version>3.16.1</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
@@ -1712,12 +1705,12 @@
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
-                        <artifactId>junit</artifactId>
                         <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
                     </exclusion>
                     <exclusion>
-                        <artifactId>guice</artifactId>
                         <groupId>com.google.inject</groupId>
+                        <artifactId>guice</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1766,18 +1759,6 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.11.2</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.11.2</version>
-            </extension>
-        </extensions>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -1794,14 +1775,6 @@
                     <groupId>com.github.ekryd.sortpom</groupId>
                     <artifactId>sortpom-maven-plugin</artifactId>
                     <version>3.0.0</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sort</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <keepBlankLines>true</keepBlankLines>
@@ -1813,26 +1786,34 @@
                         <sortProperties>true</sortProperties>
                         <createBackupFile>false</createBackupFile>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>sort</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
                     <version>4.2.0</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
                         <failOnError>${check.fail-spotbugs}</failOnError>
                         <excludeFilterFile>${check.spotbugs-exclude-filter-file}</excludeFilterFile>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>com.hubspot.maven.plugins</groupId>
@@ -1854,18 +1835,26 @@
                     <groupId>com.ning.maven.plugins</groupId>
                     <artifactId>maven-dependency-versions-check-plugin</artifactId>
                     <version>2.0.4</version>
-                    <executions>
-                        <execution>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <skip>${check.skip-dependency-versions}</skip>
                         <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
+                        <resolvers>
+                            <resolver>
+                                <strategyName>single-digit</strategyName>
+                                <includes>
+                                    <include>com.google.guava:guava</include>
+                                </includes>
+                            </resolver>
+                        </resolvers>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.antlr</groupId>
@@ -1877,14 +1866,6 @@
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>4.2.1</version>
                     <extensions>true</extensions>
-                    <dependencies>
-                        <dependency>
-                            <!-- Need a more recent version to turn off scanning for Class.forName usage -->
-                            <groupId>biz.aQute.bnd</groupId>
-                            <artifactId>biz.aQute.bndlib</artifactId>
-                            <version>5.3.0</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <instructions>
                             <Bundle-Name>${osgi.name}</Bundle-Name>
@@ -1897,9 +1878,18 @@
                             <Embed-Dependency>${osgi.dependency}</Embed-Dependency>
                             <Embed-Transitive>${osgi.transitive-dependency}</Embed-Transitive>
                             <_noclassforname>${osgi.noclassforname}</_noclassforname>
+                            <_noee>true</_noee>
                             <_fixupmessages>${osgi.fixupmessages}</_fixupmessages>
                         </instructions>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <!-- Need a more recent version to turn off scanning for Class.forName usage -->
+                            <groupId>biz.aQute.bnd</groupId>
+                            <artifactId>biz.aQute.bndlib</artifactId>
+                            <version>5.3.0</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1920,10 +1910,9 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
+                        <!-- See profiles section for <release> configuration -->
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
-                        <!-- Since Java9 -->
-                        <!-- <release>${project.build.targetJdk}</release> -->
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
@@ -1934,6 +1923,8 @@
                         <compilerArgs>
                             <!-- Configure manifold plugin -->
                             <arg>-Xplugin:Manifold</arg>
+                            <!-- Allow access to internal packages -->
+                            <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
                         <!-- Add the processor path for the plugin -->
                         <annotationProcessorPaths>
@@ -1949,16 +1940,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>3.1.2</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <phase>process-test-classes</phase>
-                            <goals>
-                                <goal>analyze-only</goal>
-                                <goal>analyze-duplicate</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <skip>${check.skip-dependency}</skip>
                         <failOnWarning>${check.fail-dependency}</failOnWarning>
@@ -1968,6 +1949,16 @@
                             <ignoredUnusedDeclaredDependency>org.apache.felix:org.apache.felix.framework</ignoredUnusedDeclaredDependency>
                         </ignoredUnusedDeclaredDependencies>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>analyze-only</goal>
+                                <goal>analyze-duplicate</goal>
+                            </goals>
+                            <phase>process-test-classes</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1982,22 +1973,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>3.0.0-M3</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>enforce</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>extra-enforcer-rules</artifactId>
-                            <version>1.3</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <skip>${check.skip-enforcer}</skip>
                         <fail>${check.fail-enforcer}</fail>
@@ -2031,8 +2006,8 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
-                            <requireUpperBoundDeps />
+                            <banDuplicatePomDependencyVersions/>
+                            <requireUpperBoundDeps/>
                             <requireMavenVersion>
                                 <version>3.3.9</version>
                             </requireMavenVersion>
@@ -2044,6 +2019,22 @@
                             </enforceBytecodeVersion>
                         </rules>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>extra-enforcer-rules</artifactId>
+                            <version>1.3</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <phase>validate</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -2052,10 +2043,10 @@
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
-                            <phase>verify</phase>
                             <goals>
                                 <goal>sign</goal>
                             </goals>
+                            <phase>verify</phase>
                             <configuration>
                                 <!-- Prevent `gpg` from using pinentry programs -->
                                 <gpgArguments>
@@ -2075,23 +2066,30 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.2.0</version>
-                    <executions>
-                        <execution>
-                            <id>attach-tests</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>test-jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <skipIfEmpty>true</skipIfEmpty>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-tests</id>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.2.0</version>
+                    <configuration>
+                        <quiet>true</quiet>
+                        <source>${project.build.targetJdk}</source>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <maxmemory>${build.jvmsize}</maxmemory>
+                        <additionalOptions>-Xdoclint:none</additionalOptions>
+                    </configuration>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -2100,18 +2098,11 @@
                             </goals>
                         </execution>
                     </executions>
-                    <configuration>
-                        <quiet>true</quiet>
-                        <source>${project.build.targetJdk}</source>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                        <maxmemory>${build.jvmsize}</maxmemory>
-                        <additionalOptions>-Xdoclint:none</additionalOptions>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M4</version>
                     <configuration>
                         <releaseProfiles>${release.release-profiles}</releaseProfiles>
                         <autoVersionSubmodules>${release.auto-version-submodules}</autoVersionSubmodules>
@@ -2157,11 +2148,11 @@
                     <executions>
                         <execution>
                             <id>attach-sources</id>
-                            <phase>package</phase>
                             <goals>
                                 <goal>jar-no-fork</goal>
                                 <goal>test-jar-no-fork</goal>
                             </goals>
+                            <phase>package</phase>
                         </execution>
                     </executions>
                 </plugin>
@@ -2170,7 +2161,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M5</version>
                     <configuration>
-                        <argLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</argLine>
+                        <argLine>${surefireArgLine}</argLine>
                         <runOrder>random</runOrder>
                         <skipTests>${skipTests}</skipTests>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
@@ -2197,16 +2188,16 @@
                     <version>0.13</version>
                     <executions>
                         <execution>
-                            <phase>verify</phase>
                             <goals>
                                 <goal>check</goal>
                             </goals>
+                            <phase>verify</phase>
                             <configuration>
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2259,15 +2250,6 @@
                     <groupId>org.basepom.maven</groupId>
                     <artifactId>duplicate-finder-maven-plugin</artifactId>
                     <version>1.5.0</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <phase>process-test-classes</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                     <configuration>
                         <skip>${check.skip-duplicate-finder}</skip>
                         <failBuildInCaseOfConflict>${check.fail-duplicate-finder}</failBuildInCaseOfConflict>
@@ -2343,6 +2325,15 @@
                             <ignoredResourcePattern>THIRD-PARTY</ignoredResourcePattern>
                         </ignoredResourcePatterns>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>process-test-classes</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -2461,6 +2452,18 @@
                 <artifactId>duplicate-finder-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>1.11.2</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>1.11.2</version>
+            </extension>
+        </extensions>
     </build>
     <profiles>
         <profile>
@@ -2692,6 +2695,17 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>javac-release</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.release>8</maven.compiler.release>
+                <!-- illegal-access=permit is for cglib (jDBI) -->
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+            </properties>
         </profile>
     </profiles>
 </project>

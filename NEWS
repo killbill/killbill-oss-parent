@@ -1,7 +1,31 @@
 0.144.53
+    Add com.sun.activation:jakarta.activation 2.0.1
     Add io.jsonwebtoken:jjwt-api:0.11.2
     Add io.jsonwebtoken:jjwt-impl:0.11.2
     Add io.jsonwebtoken:jjwt-jackson:0.11.2
+    Add org.glassfish.jaxb:jaxb-runtime 2.3.4
+    Update async-http-client from 2.12.1 to 2.12.3
+    Update byte-buddy from 1.10.21 to 1.11.0
+    Update checker-qual from 3.13.0 to 3.16.0
+    Update commons-compress from 1.20 to 1.21
+    Update concurrent from 202 to 206
+    Update ehcache from 3.9.3 to 3.9.4
+    Update guava from 30.1-jre to 30.1.1-jre
+    Update jackson from 2.12.3 to 2.12.4
+    Update janino from 3.1.3 to 3.1.4
+    Update jetty from 9.4.40.v20210413 to 9.4.43.v20210629
+    Update jooby from 1.6.8 to 1.6.9
+    Update log from 205 to 206
+    Update logback from 1.2.3 to 1.2.5
+    Update maven-release-plugin from 3.0.0-M1 to 3.0.0-M4
+    Update mysql-connector-java from 8.0.23 to 8.0.25
+    Update netty from 4.1.63.Final to 4.1.66.Final
+    Update postgresql from 42.2.20 to 42.2.23
+    Update redisson from 3.15.0 to 3.16.1
+    Update slf4j from 1.7.30 to 1.7.32
+    Update snakeyaml from 1.27 to 1.29
+    Update sortpom-maven-plugin from 2.13.1 to 3.0.0
+    Add javac-release profile for JDK11+ builds
 
 0.144.52
     Update killbill-base-plugin from 4.2.11 to 4.2.12
