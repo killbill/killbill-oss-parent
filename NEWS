@@ -3,6 +3,7 @@
     Add org.glassfish.jaxb:jaxb-runtime 2.3.4
     Update async-http-client from 2.12.1 to 2.12.3
     Update byte-buddy from 1.10.21 to 1.11.0
+    Update checker-qual from 3.13.0 to 3.16.0
     Update concurrent from 202 to 206
     Update ehcache from 3.9.3 to 3.9.4
     Update guava from 30.1-jre to 30.1.1-jre
