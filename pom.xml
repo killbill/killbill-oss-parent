@@ -828,14 +828,7 @@
             <dependency>
                 <groupId>org.asynchttpclient</groupId>
                 <artifactId>async-http-client</artifactId>
-                <version>${async-http-client.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>javax.activation</artifactId>
-                        <!-- Use jakarta.activation-api instead -->
-                        <groupId>com.sun.activation</groupId>
-                    </exclusion>
-                </exclusions>
+              <version>${async-http-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
