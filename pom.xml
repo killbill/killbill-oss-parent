@@ -123,7 +123,7 @@
         <killbill-commons.version>0.24.14</killbill-commons.version>
         <killbill-platform.version>0.40.7</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.5</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
         <netty.version>4.1.66.Final</netty.version>
