@@ -88,7 +88,7 @@
         </snapshotRepository>
     </distributionManagement>
     <properties>
-        <async-http-client.version>2.12.1</async-http-client.version>
+        <async-http-client.version>2.12.3</async-http-client.version>
         <build.jvmsize>1024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
@@ -837,13 +837,6 @@
                 <groupId>org.asynchttpclient</groupId>
                 <artifactId>async-http-client</artifactId>
                 <version>${async-http-client.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- Use jakarta.activation-api instead -->
-                        <groupId>com.sun.activation</groupId>
-                        <artifactId>javax.activation</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
