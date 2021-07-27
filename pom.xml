@@ -663,10 +663,9 @@
                 <version>8.0.25</version>
             </dependency>
             <dependency>
-                <!-- Conflict between mockito and redisson -->
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.10.21</version>
+                <version>1.11.0</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
