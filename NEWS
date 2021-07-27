@@ -21,6 +21,7 @@
     Update logback from 1.2.3 to 1.2.5
     Update maven-gpg-plugin from 1.6 to 3.0.1
     Update maven-release-plugin from 3.0.0-M1 to 3.0.0-M4
+    Update mockito-core from 3.9.0 to 3.11.2
     Update mysql-connector-java from 8.0.23 to 8.0.25
     Update netty from 4.1.63.Final to 4.1.66.Final
     Update postgresql from 42.2.20 to 42.2.23
