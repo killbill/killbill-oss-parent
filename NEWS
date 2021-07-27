@@ -8,6 +8,7 @@
     Update jetty from 9.4.40.v20210413 to 9.4.43.v20210629
     Update jooby from 1.6.8 to 1.6.9
     Update log from 205 to 206
+    Update maven-release-plugin from 3.0.0-M1 to 3.0.0-M4
     Update mysql-connector-java from 8.0.23 to 8.0.25
     Update netty from 4.1.63.Final to 4.1.66.Final
     Update slf4j from 1.7.30 to 1.7.31
