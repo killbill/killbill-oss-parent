@@ -28,6 +28,7 @@
     Update slf4j from 1.7.30 to 1.7.32
     Update snakeyaml from 1.27 to 1.29
     Update sortpom-maven-plugin from 2.13.1 to 3.0.0
+    Update spotbugs-annotations from 4.2.1 to 4.3.0
     Add javac-release profile for JDK11+ builds
 
 0.144.52
