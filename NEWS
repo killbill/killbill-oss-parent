@@ -1,3 +1,6 @@
+0.144.58
+    Update killbill-client from 1.2.3 to 1.2.4
+
 0.144.57
     Update killbill-platform from 0.40.7 to 0.40.8
 
@@ -65,6 +68,7 @@
     Update jackson from 2.12.1 to 2.12.3
     Update jersey from 2.33 to 2.34
     Update jetty from 9.4.36.v20210114 to 9.4.40.v20210413
+    Update killbill-client from 1.2.2 to 1.2.3
     Update killbill-platform from 0.40.6 to 0.40.7
     Update log from 202 to 205
     Update mockito-core from 3.7.7 to 3.9.0
