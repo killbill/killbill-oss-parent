@@ -73,6 +73,10 @@ updates:
     - dependency-name: org.jooby:*
       versions:
         - ">= 2.0.0"
+    # 3.15.0 requires Java 11
+    - dependency-name: org.jooq:jooq
+      versions:
+        - ">= 3.15.0"
     - dependency-name: org.jruby:*
       versions:
         - ">= 1.8.0"
