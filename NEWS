@@ -1,7 +1,10 @@
 0.144.59
-    Update byte-buddy from 1.11.8 to 1.11.9
+    Update byte-buddy from 1.11.8 to 1.11.12
+    Update checker-qual from 3.16.0 to 3.17.0
+    Update ehcache from 3.9.4 to 3.9.5
     Update git-commit-id-plugin from 4.0.5 to 4.9.10
     Update janino from 3.1.4 to 3.1.6
+    Update jaxb-runtime from 2.3.4 to 2.3.5
 
 0.144.58
     Update killbill-client from 1.2.3 to 1.2.4
