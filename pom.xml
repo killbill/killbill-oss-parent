@@ -1922,7 +1922,10 @@
                         <parameters>true</parameters>
                         <compilerArgs>
                             <!-- Configure manifold plugin -->
+                            <!-- Disabled as it caused issues compiling in IntelliJ with Java11
+                                 e.g Class XXX is public, should be declared in a file XXX.java
                             <arg>-Xplugin:Manifold</arg>
+                            -->
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
