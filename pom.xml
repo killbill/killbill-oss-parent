@@ -2129,7 +2129,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.11.2</version>
+                    <version>1.11.3</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
