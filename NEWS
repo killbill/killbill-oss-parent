@@ -1,3 +1,6 @@
+0.144.60
+    Update killbill-commons from 0.24.15 to 0.24.16
+
 0.144.59
     Update byte-buddy from 1.11.8 to 1.11.12
     Update checker-qual from 3.16.0 to 3.17.0
