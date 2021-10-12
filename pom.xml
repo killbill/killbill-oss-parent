@@ -215,7 +215,7 @@
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.2</swagger.version>
+        <swagger.version>1.6.3</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -312,7 +312,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.3.0</version>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -1887,7 +1887,7 @@
                             <!-- Need a more recent version to turn off scanning for Class.forName usage -->
                             <groupId>biz.aQute.bnd</groupId>
                             <artifactId>biz.aQute.bndlib</artifactId>
-                            <version>5.3.0</version>
+                            <version>6.0.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -2129,7 +2129,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.11.2</version>
+                    <version>1.12.0</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
@@ -2459,12 +2459,12 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
         </extensions>
     </build>
