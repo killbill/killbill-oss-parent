@@ -1522,6 +1522,11 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-config-magic</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-embeddeddb</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
@@ -1562,11 +1567,6 @@
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-jdbi</artifactId>
-                <version>${killbill-commons.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.commons</groupId>
-                <artifactId>killbill-config-magic</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
             <dependency>
@@ -1975,7 +1975,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>3.0.0</version>
                     <configuration>
                         <skip>${check.skip-enforcer}</skip>
                         <fail>${check.fail-enforcer}</fail>
