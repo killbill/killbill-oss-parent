@@ -124,7 +124,7 @@
         <killbill-commons.version>0.24.16</killbill-commons.version>
         <killbill-platform.version>0.40.10</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
-        <logback.version>1.2.5</logback.version>
+        <logback.version>1.2.6</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
         <netty.version>4.1.66.Final</netty.version>
@@ -1599,7 +1599,7 @@
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
-                <version>2.7.3</version>
+                <version>2.7.4</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
