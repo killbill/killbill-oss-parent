@@ -1,3 +1,6 @@
+0.144.67
+    Update killbill-commons from 0.24.17 to 0.24.18
+
 0.144.66
     Add io.netty:netty-resolver:4.1.69.Final
 
