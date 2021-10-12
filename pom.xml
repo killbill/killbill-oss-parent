@@ -116,7 +116,7 @@
         <jersey.version>2.34</jersey.version>
         <jetty.version>9.4.43.v20210629</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
-        <joda-time.version>2.10.10</joda-time.version>
+        <joda-time.version>2.10.12</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.14</killbill-base-plugin.version>
@@ -215,7 +215,7 @@
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.2</swagger.version>
+        <swagger.version>1.6.3</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -312,7 +312,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.3.0</version>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -2129,7 +2129,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.11.2</version>
+                    <version>1.12.0</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
@@ -2459,12 +2459,12 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
         </extensions>
     </build>
