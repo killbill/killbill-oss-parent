@@ -109,7 +109,7 @@
         <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.9.5</ehcache.version>
-        <guava.version>30.1.1-jre</guava.version>
+        <guava.version>31.0.1-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
         <jackson.version>2.12.4</jackson.version>
@@ -215,7 +215,7 @@
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.2</swagger.version>
+        <swagger.version>1.6.3</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -312,7 +312,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.3.0</version>
+                <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -2129,7 +2129,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.11.2</version>
+                    <version>1.12.0</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
@@ -2459,12 +2459,12 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.11.2</version>
+                <version>1.12.0</version>
             </extension>
         </extensions>
     </build>
