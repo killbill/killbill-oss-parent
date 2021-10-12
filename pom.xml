@@ -109,14 +109,14 @@
         <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.9.5</ehcache.version>
-        <guava.version>30.1.1-jre</guava.version>
+        <guava.version>31.0.1-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
-        <jackson.version>2.12.4</jackson.version>
-        <jersey.version>2.34</jersey.version>
-        <jetty.version>9.4.43.v20210629</jetty.version>
+        <jackson.version>2.13.0</jackson.version>
+        <jersey.version>2.35</jersey.version>
+        <jetty.version>9.4.44.v20210927</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
-        <joda-time.version>2.10.10</joda-time.version>
+        <joda-time.version>2.10.12</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.14</killbill-base-plugin.version>
@@ -124,10 +124,10 @@
         <killbill-commons.version>0.24.16</killbill-commons.version>
         <killbill-platform.version>0.40.10</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
-        <logback.version>1.2.5</logback.version>
+        <logback.version>1.2.6</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
-        <netty.version>4.1.66.Final</netty.version>
+        <netty.version>4.1.69.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
@@ -312,7 +312,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.4.1</version>
+                <version>4.4.2</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -681,7 +681,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.11.12</version>
+                <version>1.11.20</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -845,7 +845,7 @@
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.20.2</version>
+                <version>3.21.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -868,7 +868,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.17.0</version>
+                <version>3.18.1</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
@@ -1067,7 +1067,7 @@
                 <!-- To fix influxdb-java dependencies -->
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-common</artifactId>
-                <version>1.5.21</version>
+                <version>1.5.31</version>
             </dependency>
             <dependency>
                 <groupId>org.joda</groupId>
@@ -1635,7 +1635,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.16.1</version>
+                <version>3.16.3</version>
             </dependency>
             <dependency>
                 <groupId>org.skife.config</groupId>
@@ -1887,7 +1887,7 @@
                             <!-- Need a more recent version to turn off scanning for Class.forName usage -->
                             <groupId>biz.aQute.bnd</groupId>
                             <artifactId>biz.aQute.bndlib</artifactId>
-                            <version>5.3.0</version>
+                            <version>6.0.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -2085,7 +2085,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.3.0</version>
+                    <version>3.3.1</version>
                     <configuration>
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
