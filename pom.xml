@@ -2021,7 +2021,7 @@
                             <banDuplicatePomDependencyVersions />
                             <requireUpperBoundDeps />
                             <requireMavenVersion>
-                                <version>3.3.9</version>
+                                <version>3.5.2</version>
                             </requireMavenVersion>
                             <requireJavaVersion>
                                 <version>${project.build.targetJdk}</version>
