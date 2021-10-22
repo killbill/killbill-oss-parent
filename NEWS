@@ -1,3 +1,6 @@
+0.144.72
+    Add commons-codec:commons-codec:1.15
+
 0.144.71
     Add io.netty:netty-transport-native-unix-common:4.1.69.Final
 
