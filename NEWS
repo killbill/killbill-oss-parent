@@ -1,5 +1,7 @@
 0.144.72
     Add commons-codec:commons-codec:1.15
+    Update ehcache from 3.9.6 to 3.9.7
+    Update spotbugs-maven-plugin from 4.4.1 to 4.4.2.1
 
 0.144.71
     Add io.netty:netty-transport-native-unix-common:4.1.69.Final
