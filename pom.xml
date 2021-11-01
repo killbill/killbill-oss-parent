@@ -1664,7 +1664,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>42.2.24</version>
+                <version>42.3.1</version>
             </dependency>
             <dependency>
                 <groupId>org.redisson</groupId>
@@ -1827,7 +1827,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.4.2.1</version>
+                    <version>4.4.2.2</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
