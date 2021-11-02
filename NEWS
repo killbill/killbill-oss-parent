@@ -1,6 +1,10 @@
 0.144.73
+    Update awaitility from 4.1.0 to 4.1.1
     Update byte-buddy from 1.11.20 to 1.11.22
+    Update joda-time from 2.10.12 to 2.10.13
+    Update mysql-connector-java from 8.0.26 to 8.0.27
     Update postgresql from 42.2.24 to 42.3.1
+    Update spotbugs-maven-plugin from 4.4.2.1 to 4.4.2.2
 
 0.144.72
     Add commons-codec:commons-codec:1.15
