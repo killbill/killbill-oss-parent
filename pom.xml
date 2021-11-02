@@ -106,11 +106,11 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file />
+        <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.9.6</ehcache.version>
         <guava.version>31.0.1-jre</guava.version>
-        <guice.version>4.2.3</guice.version>
+        <guice.version>5.0.1</guice.version>
         <hk2.version>2.6.1</hk2.version>
         <jackson.version>2.13.0</jackson.version>
         <jersey.version>2.35</jersey.version>
@@ -118,10 +118,10 @@
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.12</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
-        <killbill-api.version>0.53.17</killbill-api.version>
+        <killbill-api.version>0.53.18-SNAPSHOT</killbill-api.version>
         <killbill-base-plugin.version>4.2.15</killbill-base-plugin.version>
         <killbill-client.version>1.2.5</killbill-client.version>
-        <killbill-commons.version>0.24.18</killbill-commons.version>
+        <killbill-commons.version>0.24.19-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.40.11</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
         <logback.version>1.2.6</logback.version>
@@ -131,8 +131,8 @@
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -196,12 +196,12 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>5.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>1.16</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -357,7 +357,7 @@
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-multibindings</artifactId>
-                <version>${guice.version}</version>
+                <version>4.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -801,37 +801,37 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
-                <version>4.4.1</version>
+                <version>7.0.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.gogo.runtime</artifactId>
-                <version>0.12.0</version>
+                <version>1.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.log</artifactId>
-                <version>1.0.1</version>
+                <version>1.2.4</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.metatype</artifactId>
-                <version>1.0.10</version>
+                <version>1.2.4</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr</artifactId>
-                <version>1.8.2</version>
+                <version>2.1.30</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr.annotations</artifactId>
-                <version>1.9.8</version>
+                <version>1.12.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
-                <version>1.2.4</version>
+                <version>1.2.10</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -841,12 +841,12 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.shell.remote</artifactId>
-                <version>1.1.2</version>
+                <version>1.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.webconsole</artifactId>
-                <version>4.2.2</version>
+                <version>4.7.0</version>
                 <classifier>all</classifier>
             </dependency>
             <!-- Because of https://issues.apache.org/jira/browse/SHIRO-679 (duplicate classes across artifacts),
@@ -1822,7 +1822,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.4.1</version>
+                    <version>4.4.2.1</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
@@ -2035,8 +2035,8 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
-                            <requireUpperBoundDeps />
+                            <banDuplicatePomDependencyVersions/>
+                            <requireUpperBoundDeps/>
                             <requireMavenVersion>
                                 <version>3.5.2</version>
                             </requireMavenVersion>
@@ -2225,8 +2225,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2732,8 +2732,7 @@
             </activation>
             <properties>
                 <maven.compiler.release>8</maven.compiler.release>
-                <!-- illegal-access=permit is for cglib (jDBI) -->
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
     </profiles>
