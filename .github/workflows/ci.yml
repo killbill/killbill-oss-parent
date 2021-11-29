@@ -32,31 +32,31 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-commons
-          ref: refs/heads/master
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-plugin-framework-java
-          ref: refs/heads/master
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill-plugin-framework-java
       - name: Checkout killbill-platform
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-platform
-          ref: refs/heads/master
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill-platform
       - name: Checkout killbill-client-java
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-client-java
-          ref: refs/heads/master
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill-client-java
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill
-          ref: refs/heads/master
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill
       - name: Setup Java
         uses: actions/setup-java@v1
