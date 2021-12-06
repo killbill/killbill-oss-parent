@@ -106,7 +106,7 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file />
+        <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.9.7</ehcache.version>
         <guava.version>31.0.1-jre</guava.version>
@@ -131,8 +131,8 @@
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -196,7 +196,7 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>5.0.0</osgi.version>
@@ -224,11 +224,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -710,7 +705,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.12.1</version>
+                <version>1.12.2</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -1916,7 +1911,7 @@
                             <!-- Need a more recent version to turn off scanning for Class.forName usage -->
                             <groupId>biz.aQute.bnd</groupId>
                             <artifactId>biz.aQute.bndlib</artifactId>
-                            <version>6.0.0</version>
+                            <version>6.1.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -2014,8 +2009,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- Clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <!-- All artifacts in cglib group -->
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2040,8 +2035,8 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
-                            <requireUpperBoundDeps />
+                            <banDuplicatePomDependencyVersions/>
+                            <requireUpperBoundDeps/>
                             <requireMavenVersion>
                                 <version>3.5.2</version>
                             </requireMavenVersion>
@@ -2230,8 +2225,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2737,8 +2732,7 @@
             </activation>
             <properties>
                 <maven.compiler.release>8</maven.compiler.release>
-                <!-- illegal-access=permit is for cglib (jDBI) -->
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
     </profiles>
