@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.144.74-SNAPSHOT</version>
+    <version>0.144.73-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -2017,8 +2017,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- All artifacts in cglib group -->
-                                    <exclude>cglib</exclude>
+                                    <!-- Clashes with cglib:cglib-nodep -->
+                                    <exclude>cglib:cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2768,7 +2768,8 @@
             </activation>
             <properties>
                 <maven.compiler.release>8</maven.compiler.release>
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
+                <!-- illegal-access=permit is for cglib (jDBI) -->
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
         </profile>
     </profiles>
