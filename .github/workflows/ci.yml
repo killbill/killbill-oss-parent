@@ -69,7 +69,7 @@ jobs:
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
           pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
-          mvn ${MAVEN_FLAGS} clean install
+          mvn ${MAVEN_FLAGS} clean install -X
           popd
 
           declare -A property=(
@@ -88,7 +88,7 @@ jobs:
             echo "$i pom.xml changes:"
             git --no-pager diff
             echo "Building $i"
-            mvn ${MAVEN_FLAGS} clean install
+            mvn ${MAVEN_FLAGS} clean install -X
             popd
 
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
@@ -97,7 +97,7 @@ jobs:
             echo "killbill-oss-parent pom.xml changes:"
             git --no-pager diff
             echo "Building killbill-oss-parent"
-            mvn ${MAVEN_FLAGS} clean install
+            mvn ${MAVEN_FLAGS} clean install -X
             popd
           done
       - name: Build Kill Bill
@@ -110,7 +110,7 @@ jobs:
           echo "Updating killbill parent pom.xml to $pomVersion"
           mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
           echo "Building killbill"
-          mvn ${MAVEN_FLAGS} clean install
+          mvn ${MAVEN_FLAGS} clean install -X
           popd
       - name: Review base pom.xml changes
         run: |
