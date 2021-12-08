@@ -213,7 +213,6 @@
         <repository.snapshot.id>sonatype-nexus-snapshots</repository.snapshot.id>
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
-        <shiro.version>1.8.0</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
@@ -860,24 +859,17 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>${shiro.version}</version>
+                <version>1.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-guice</artifactId>
-                <version>${shiro.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.annotation:jakarta.annotation-api instead -->
-                        <groupId>javax.annotation</groupId>
-                        <artifactId>javax.annotation-api</artifactId>
-                    </exclusion>
-                </exclusions>
+                <version>1.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
-                <version>${shiro.version}</version>
+                <version>1.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
