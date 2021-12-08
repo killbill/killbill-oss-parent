@@ -2766,7 +2766,7 @@
                 </plugins>
             </build>
         </profile>
-        <!--<profile>
+        <profile>
             <id>javac-release</id>
             <activation>
                 <jdk>[11,)</jdk>
@@ -2776,6 +2776,6 @@
                 <!-- illegal-access=permit is for cglib (jDBI) -->
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
-        </profile>-->
+        </profile>
     </profiles>
 </project>
