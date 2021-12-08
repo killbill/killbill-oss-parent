@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-commons
-          ref: refs/heads/support-jdk-17
+          ref: refs/remotes/origin/support-jdk-17
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
         uses: actions/checkout@v2
