@@ -1,3 +1,7 @@
+0.144.74
+    Update byte-buddy from 1.12.2 to 1.12.3
+    Update redisson from 3.16.4 to 3.16.6
+
 0.144.73
     Update awaitility from 4.1.0 to 4.1.1
     Update biz.aQute.bndlib from 6.0.0 to 6.1.0
