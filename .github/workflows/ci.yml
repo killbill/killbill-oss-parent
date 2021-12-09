@@ -20,9 +20,9 @@ jobs:
           - 11
           - 17
         java-distribution:
-          - adopt
           - zulu
-          - temurin
+          - liberica
+          - microsoft
         suite:
           - mysql
     steps:
@@ -66,6 +66,7 @@ jobs:
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
+          check-latest: true
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
