@@ -11,7 +11,7 @@ jobs:
       - image: killbill/kbbuild:0.7.0
     steps:
       - checkout
-      - run: mvn -DskipTests=true clean install -X
+      - run: mvn -DskipTests=true clean install
       # Run checks
       - run: mvn clean install -Ptravis
       - save_cache:
