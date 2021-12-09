@@ -21,6 +21,8 @@ jobs:
           - 17
         java-distribution:
           - adopt
+          - zulu
+          - temurin
         suite:
           - mysql
     steps:
