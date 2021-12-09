@@ -19,7 +19,7 @@ jobs:
         java-version:
           - 11
         java-distribution:
-          - adopt
+          - zulu
         suite:
           - h2
           - mysql
