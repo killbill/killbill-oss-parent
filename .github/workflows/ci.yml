@@ -108,7 +108,7 @@ jobs:
           echo "Updating killbill parent pom.xml to $pomVersion"
           mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
           echo "Building killbill"
-          mvn ${MAVEN_FLAGS} clean install -X
+          mvn ${MAVEN_FLAGS} clean install
           popd
       - name: Review base pom.xml changes
         run: |
