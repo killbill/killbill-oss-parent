@@ -61,7 +61,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          distribution: zulu
+          distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
       - name: Download dependencies and setup the various pom.xml
         run: |
