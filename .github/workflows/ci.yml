@@ -19,11 +19,10 @@ jobs:
         java-version:
           - 11
         java-distribution:
+          - adopt
           - zulu
         suite:
-          - h2
           - mysql
-          - postgresql
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
