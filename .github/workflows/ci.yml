@@ -11,7 +11,7 @@ env:
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 200
     strategy:
       fail-fast: false
@@ -20,11 +20,13 @@ jobs:
           - 11
           - 17
         java-distribution:
+          - temurin
           - zulu
-          - liberica
-          - microsoft
         suite:
           - mysql
+        os:
+          - ubuntu-latest
+          - macos-latest
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
