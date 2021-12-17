@@ -201,7 +201,7 @@
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>5.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -225,11 +225,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -2022,8 +2017,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- Clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <!-- All artificat IDs under this group -->
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2773,8 +2768,7 @@
             </activation>
             <properties>
                 <maven.compiler.release>8</maven.compiler.release>
-                <!-- illegal-access=permit is for cglib (jDBI) -->
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
     </profiles>
