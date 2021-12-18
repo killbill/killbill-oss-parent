@@ -2018,7 +2018,7 @@
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
                                     <!-- All artificat IDs under this group -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2052,7 +2052,7 @@
                                 <version>${project.build.targetJdk}</version>
                             </requireJavaVersion>
                             <enforceBytecodeVersion>
-                                <maxJdkVersion>${project.build.targetJdk}</maxJdkVersion>
+                                <maxJdkVersion>11</maxJdkVersion>
                             </enforceBytecodeVersion>
                         </rules>
                     </configuration>
