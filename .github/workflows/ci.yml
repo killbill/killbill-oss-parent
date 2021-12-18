@@ -55,8 +55,8 @@ jobs:
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
-          repository: killbill/killbill
-          ref: refs/heads/work-for-release-0.23.x
+          repository: vnandwana/killbill
+          ref: refs/heads/jdk-17-support
           path: killbill
       - name: Setup Java
         uses: actions/setup-java@v1
@@ -96,8 +96,7 @@ jobs:
             echo "killbill-oss-parent pom.xml changes:"
             git --no-pager diff
             echo "Building killbill-oss-parent"
-            mvn dependency:resolve-plugins
-            mvn ${MAVEN_FLAGS} clean install -e
+            mvn ${MAVEN_FLAGS} clean install
             popd
           done
       - name: Build Kill Bill
