@@ -85,7 +85,7 @@ jobs:
             echo "$i pom.xml changes:"
             git --no-pager diff
             echo "Building $i"
-            mvn ${MAVEN_FLAGS} clean install -X
+            mvn ${MAVEN_FLAGS} -pl -clock clean install -X
             popd
 
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
