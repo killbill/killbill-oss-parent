@@ -2018,7 +2018,7 @@
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
                                     <!-- All artificat IDs under this group -->
-                                    <exclude>cglib</exclude>
+                                    <exclude>cglib:cglib-nodep</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
