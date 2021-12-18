@@ -16,9 +16,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java-distribution:
-          - adopt
-          - zulu
         java-version:
           - 17
         suite:
