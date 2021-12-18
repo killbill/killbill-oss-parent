@@ -2771,5 +2771,15 @@
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
+		<profile>
+			<id>javac-16-release</id>
+			<activation>
+				<jdk>[16,)</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.release>8</maven.compiler.release>
+				<surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
+			</properties>
+		</profile>
     </profiles>
 </project>
