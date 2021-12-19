@@ -1943,7 +1943,7 @@
                     <version>3.8.1</version>
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
-                        <source>${project.build.targetJdk}</source>
+                        <source>11</source>
                         <target>11</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
