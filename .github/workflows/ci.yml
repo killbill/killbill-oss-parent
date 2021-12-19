@@ -96,7 +96,8 @@ jobs:
             echo "killbill-oss-parent pom.xml changes:"
             git --no-pager diff
             echo "Building killbill-oss-parent"
-            mvn ${MAVEN_FLAGS} clean install
+            mvn dependency:resolve-plugins
+            mvn ${MAVEN_FLAGS} clean install -e
             popd
           done
       - name: Build Kill Bill
