@@ -55,8 +55,8 @@ jobs:
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
-          repository: vnandwana/killbill
-          ref: refs/heads/jdk-17-support
+          repository: killbill/killbill
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill
       - name: Setup Java
         uses: actions/setup-java@v1
