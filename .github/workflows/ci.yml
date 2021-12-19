@@ -55,7 +55,7 @@ jobs:
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
-          repository: killbill/killbill
+          repository: vnandwana/killbill
           ref: refs/heads/work-for-release-0.23.x
           path: killbill
       - name: Setup Java
