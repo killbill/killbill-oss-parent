@@ -19,7 +19,7 @@ jobs:
         java-distribution:
           - zulu
         java-version:
-          - 16
+          - 17
         suite:
           - h2
           - mysql
@@ -61,7 +61,7 @@ jobs:
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
-          repository: vnandwana/killbill
+          repository: killbill/killbill
           ref: refs/heads/work-for-release-0.23.x
           path: killbill
       - name: Setup Java
