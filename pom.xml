@@ -1961,7 +1961,7 @@
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
-						<compilerVersion>17</compilerVersion>
+						<compilerVersion>11</compilerVersion>
                         <!-- Add the processor path for the plugin -->
                         <annotationProcessorPaths>
                             <path>
