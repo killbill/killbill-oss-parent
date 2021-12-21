@@ -25,10 +25,6 @@ jobs:
           - mysql
           - postgresql
     steps:
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.2
-        with:
-          maven-version: 3.8.2
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
