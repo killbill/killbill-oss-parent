@@ -34,8 +34,8 @@ jobs:
       - name: Checkout killbill-commons
         uses: actions/checkout@v2
         with:
-          repository: vnandwana/killbill-commons
-          ref: refs/heads/oom-fix
+          repository: killbill/killbill-commons
+          ref: refs/heads/work-for-release-0.23.x
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
         uses: actions/checkout@v2
