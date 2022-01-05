@@ -17,7 +17,6 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 11
           - 17
         java-distribution:
           - adopt
@@ -70,8 +69,7 @@ jobs:
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
           pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
-          mvn dependency:resolve-plugins
-          mvn ${MAVEN_FLAGS} clean install -e
+          mvn ${MAVEN_FLAGS} clean install
           popd
 
           declare -A property=(
@@ -90,8 +88,7 @@ jobs:
             echo "$i pom.xml changes:"
             git --no-pager diff
             echo "Building $i"
-            mvn dependency:resolve-plugins
-            mvn ${MAVEN_FLAGS} clean install -e
+            mvn ${MAVEN_FLAGS} clean install
             popd
 
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
@@ -100,8 +97,7 @@ jobs:
             echo "killbill-oss-parent pom.xml changes:"
             git --no-pager diff
             echo "Building killbill-oss-parent"
-            mvn dependency:resolve-plugins
-            mvn ${MAVEN_FLAGS} clean install -e
+            mvn ${MAVEN_FLAGS} clean install
             popd
           done
       - name: Build Kill Bill
