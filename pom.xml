@@ -1962,6 +1962,7 @@
                             -->
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
+							<arg>-J-Xss4m</arg>
 							<arg>-J-noverify</arg>
 							<arg>-verbose</arg>
 							<arg>-Xlint:all,-options,-path</arg>
