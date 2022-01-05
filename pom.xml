@@ -1943,6 +1943,7 @@
                     <version>3.8.1</version>
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
+						<verbose>true</verbose>
                         <source>11</source>
                         <target>11</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
@@ -1952,6 +1953,7 @@
                         <showWarnings>true</showWarnings>
                         <fork>true</fork>
                         <parameters>true</parameters>
+						<useIncrementalCompilation>true</useIncrementalCompilation>
                         <compilerArgs>
                             <!-- Configure manifold plugin -->
                             <!-- Disabled as it caused issues compiling in IntelliJ with Java11
@@ -1960,6 +1962,9 @@
                             -->
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
+							<arg>-J-noverify</arg>
+							<arg>-verbose</arg>
+							<arg>-Xlint:all,-options,-path</arg>
                         </compilerArgs>
                         <compilerVersion>11</compilerVersion>
                         <!-- Add the processor path for the plugin -->
