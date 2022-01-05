@@ -1994,10 +1994,10 @@
                     <executions>
                         <execution>
                             <id>default</id>
-                            <goals>
+                            <!--<goals>
                                 <goal>analyze-only</goal>
                                 <goal>analyze-duplicate</goal>
-                            </goals>
+                            </goals>-->
                             <phase>process-test-classes</phase>
                         </execution>
                     </executions>
