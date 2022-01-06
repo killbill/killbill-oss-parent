@@ -89,7 +89,6 @@
     </distributionManagement>
     <properties>
         <async-http-client.version>2.12.3</async-http-client.version>
-        <build.jvmsize>2024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
         <check.fail-dependency-versions>true</check.fail-dependency-versions>
@@ -216,7 +215,6 @@
         <shiro.version>1.8.0</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
-        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.3</swagger.version>
     </properties>
     <dependencyManagement>
@@ -1833,7 +1831,6 @@
                     <version>4.5.0.0</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
-                        <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
                         <failOnError>${check.fail-spotbugs}</failOnError>
                         <excludeFilterFile>${check.spotbugs-exclude-filter-file}</excludeFilterFile>
                     </configuration>
@@ -1947,7 +1944,6 @@
                         <source>16</source> <!--Tried different source/target versions-->
                         <target>16</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <maxmem>${build.jvmsize}</maxmem>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
@@ -2118,7 +2114,6 @@
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <maxmemory>${build.jvmsize}</maxmemory>
                         <additionalOptions>-Xdoclint:none</additionalOptions>
                     </configuration>
                     <executions>
@@ -2762,17 +2757,6 @@
             </activation>
             <properties>
                 <maven.compiler.release>11</maven.compiler.release>
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-            </properties>
-        </profile>
-        <profile>
-            <id>javac-16-release</id>
-            <activation>
-                <jdk>[16,)</jdk>
-            </activation>
-            <properties>
-                <maven.compiler.release>11</maven.compiler.release>
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
     </profiles>
