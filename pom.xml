@@ -1916,8 +1916,8 @@
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
 						<verbose>true</verbose>
-                        <source>16</source> <!--Tried different source/target versions-->
-                        <target>16</target>
+                        <source>15</source> <!--Tried different source/target versions-->
+                        <target>15</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
                         <showDeprecation>true</showDeprecation>
@@ -1926,39 +1926,7 @@
                         <parameters>true</parameters>
 						<useIncrementalCompilation>true</useIncrementalCompilation>
                         <compilerVersion>11</compilerVersion>
-                        <!-- Add the processor path for the plugin -->
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>systems.manifold</groupId>
-                                <artifactId>manifold-preprocessor</artifactId>
-                                <version>2022.1.1</version>
-                            </path>
-                        </annotationProcessorPaths>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.2.0</version>
-                    <configuration>
-                        <skip>${check.skip-dependency}</skip>
-                        <failOnWarning>${check.fail-dependency}</failOnWarning>
-                        <ignoreNonCompile>true</ignoreNonCompile>
-                        <ignoredUnusedDeclaredDependencies>
-                            <!-- It doesn't always detect that org.osgi.framework.ServiceReference is used (by PluginConfigurationHandler for instance) -->
-                            <ignoredUnusedDeclaredDependency>org.apache.felix:org.apache.felix.framework</ignoredUnusedDeclaredDependency>
-                        </ignoredUnusedDeclaredDependencies>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <!--<goals>
-                                <goal>analyze-only</goal>
-                                <goal>analyze-duplicate</goal>
-                            </goals>-->
-                            <phase>process-test-classes</phase>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
