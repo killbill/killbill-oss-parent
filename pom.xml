@@ -89,7 +89,7 @@
     </distributionManagement>
     <properties>
         <async-http-client.version>2.12.3</async-http-client.version>
-        <build.jvmsize>1024m</build.jvmsize>
+        <build.jvmsize>2024m</build.jvmsize>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
         <check.fail-dependency-versions>true</check.fail-dependency-versions>
@@ -1944,7 +1944,7 @@
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
 						<verbose>true</verbose>
-                        <source>16</source>
+                        <source>16</source> <!--Tried different source/target versions-->
                         <target>16</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
@@ -1954,19 +1954,6 @@
                         <fork>true</fork>
                         <parameters>true</parameters>
 						<useIncrementalCompilation>true</useIncrementalCompilation>
-                        <compilerArgs>
-                            <!-- Configure manifold plugin -->
-                            <!-- Disabled as it caused issues compiling in IntelliJ with Java11
-                                 e.g Class XXX is public, should be declared in a file XXX.java
-                            <arg>-Xplugin:Manifold</arg>
-                            -->
-                            <!-- Allow access to internal packages -->
-                            <arg>-XDignore.symbol.file</arg>
-							<arg>-J-Xss4m</arg>
-							<arg>-J-noverify</arg>
-							<arg>-verbose</arg>
-							<arg>-Xlint:all,-options,-path</arg>
-                        </compilerArgs>
                         <compilerVersion>11</compilerVersion>
                         <!-- Add the processor path for the plugin -->
                         <annotationProcessorPaths>
