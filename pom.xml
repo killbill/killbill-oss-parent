@@ -1931,7 +1931,7 @@
                             <path>
                                 <groupId>systems.manifold</groupId>
                                 <artifactId>manifold-preprocessor</artifactId>
-                                <version>2021.1.11</version>
+                                <version>2022.1.1</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
