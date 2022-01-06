@@ -2059,7 +2059,7 @@
                                 <version>${project.build.targetJdk}</version>
                             </requireJavaVersion>
                             <enforceBytecodeVersion>
-                                <maxJdkVersion>16</maxJdkVersion>
+                                <maxJdkVersion>11</maxJdkVersion>
                             </enforceBytecodeVersion>
                         </rules>
                     </configuration>
