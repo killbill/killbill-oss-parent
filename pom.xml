@@ -1861,31 +1861,6 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>2.0.4</version>
-                    <configuration>
-                        <skip>${check.skip-dependency-versions}</skip>
-                        <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
-                        <resolvers>
-                            <resolver>
-                                <strategyName>single-digit</strategyName>
-                                <includes>
-                                    <include>com.google.guava:guava</include>
-                                </includes>
-                            </resolver>
-                        </resolvers>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <phase>verify</phase>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <groupId>org.antlr</groupId>
                     <artifactId>antlr3-maven-plugin</artifactId>
                     <version>3.5.2</version>
