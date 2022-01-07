@@ -1916,8 +1916,8 @@
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
 						<verbose>true</verbose>
-                        <source>15</source> <!--Tried different source/target versions-->
-                        <target>15</target>
+                        <source>16</source> <!--Tried different source/target versions-->
+                        <target>16</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
                         <showDeprecation>true</showDeprecation>
@@ -2700,6 +2700,8 @@
             </activation>
             <properties>
                 <maven.compiler.release>11</maven.compiler.release>
+                <!-- illegal-access=permit is for cglib (jDBI) -->
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
         </profile>
     </profiles>
