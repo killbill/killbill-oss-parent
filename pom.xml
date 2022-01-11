@@ -117,7 +117,7 @@
         <jetty.version>11.0.7</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.13</joda-time.version>
-        <jooby.version>2.12.0</jooby.version>
+        <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.15</killbill-base-plugin.version>
         <killbill-client.version>1.2.5</killbill-client.version>
@@ -654,17 +654,17 @@
             <dependency>
                 <groupId>jakarta.activation</groupId>
                 <artifactId>jakarta.activation-api</artifactId>
-                <version>2.0.1</version>
+                <version>1.2.2</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.ws.rs</groupId>
                 <artifactId>jakarta.ws.rs-api</artifactId>
-                <version>3.0.0</version>
+                <version>2.1.6</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
-                <version>3.0.1</version>
+                <version>2.3.3</version>
             </dependency>
             <dependency>
                 <groupId>javax.cache</groupId>
@@ -1112,7 +1112,7 @@
                 <version>0.1.0</version>
             </dependency>
             <dependency>
-                <groupId>io.jooby</groupId>
+                <groupId>org.jooby</groupId>
                 <artifactId>jooby</artifactId>
                 <version>${jooby.version}</version>
                 <exclusions>
@@ -1123,12 +1123,12 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>io.jooby</groupId>
+                <groupId>org.jooby</groupId>
                 <artifactId>jooby-jackson</artifactId>
                 <version>${jooby.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.jooby</groupId>
+                <groupId>org.jooby</groupId>
                 <artifactId>jooby-servlet</artifactId>
                 <version>${jooby.version}</version>
             </dependency>
