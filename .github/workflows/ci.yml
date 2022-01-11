@@ -18,14 +18,11 @@ jobs:
       matrix:
         java-version:
           - 14
-          - 15
           - 16
         java-distribution:
           - adopt
         suite:
-          - h2
           - mysql
-          - postgresql
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
