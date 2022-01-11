@@ -108,16 +108,16 @@
         <check.skip-spotbugs>false</check.skip-spotbugs>
         <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
-        <ehcache.version>3.9.7</ehcache.version>
+        <ehcache.version>3.9.9</ehcache.version>
         <guava.version>31.0.1-jre</guava.version>
-        <guice.version>4.2.3</guice.version>
-        <hk2.version>2.6.1</hk2.version>
-        <jackson.version>2.13.0</jackson.version>
-        <jersey.version>2.35</jersey.version>
-        <jetty.version>9.4.44.v20210927</jetty.version>
+        <guice.version>5.0.1</guice.version>
+        <hk2.version>3.0.2</hk2.version>
+        <jackson.version>2.13.1</jackson.version>
+        <jersey.version>3.0.3</jersey.version>
+        <jetty.version>11.0.7</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.13</joda-time.version>
-        <jooby.version>1.6.9</jooby.version>
+        <jooby.version>2.12.0</jooby.version>
         <killbill-api.version>0.53.17</killbill-api.version>
         <killbill-base-plugin.version>4.2.15</killbill-base-plugin.version>
         <killbill-client.version>1.2.5</killbill-client.version>
@@ -199,7 +199,7 @@
         <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
-        <osgi.version>5.0.0</osgi.version>
+        <osgi.version>6.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
@@ -1112,7 +1112,7 @@
                 <version>0.1.0</version>
             </dependency>
             <dependency>
-                <groupId>org.jooby</groupId>
+                <groupId>io.jooby</groupId>
                 <artifactId>jooby</artifactId>
                 <version>${jooby.version}</version>
                 <exclusions>
@@ -1123,12 +1123,12 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.jooby</groupId>
+                <groupId>io.jooby</groupId>
                 <artifactId>jooby-jackson</artifactId>
                 <version>${jooby.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jooby</groupId>
+                <groupId>io.jooby</groupId>
                 <artifactId>jooby-servlet</artifactId>
                 <version>${jooby.version}</version>
             </dependency>
