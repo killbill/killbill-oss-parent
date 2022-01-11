@@ -108,13 +108,13 @@
         <check.skip-spotbugs>false</check.skip-spotbugs>
         <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
-        <ehcache.version>3.9.9</ehcache.version>
+        <ehcache.version>3.9.7</ehcache.version>
         <guava.version>31.0.1-jre</guava.version>
-        <guice.version>5.0.1</guice.version>
+        <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
-        <jackson.version>2.13.1</jackson.version>
+        <jackson.version>2.13.0</jackson.version>
         <jersey.version>2.35</jersey.version>
-        <jetty.version>11.0.7</jetty.version>
+        <jetty.version>9.4.44.v20210927</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.13</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
@@ -124,15 +124,15 @@
         <killbill-commons.version>0.24.18</killbill-commons.version>
         <killbill-platform.version>0.40.11</killbill-platform.version>
         <killbill-plugin-api.version>0.26.4</killbill-plugin-api.version>
-        <logback.version>1.2.10</logback.version>
+        <logback.version>1.2.7</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
-        <netty.version>4.1.72.Final</netty.version>
+        <netty.version>4.1.70.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export/>
-        <osgi.extra-import/>
+        <osgi.export />
+        <osgi.extra-import />
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -215,7 +215,7 @@
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <shiro.version>1.8.0</shiro.version>
         <skipTests>false</skipTests>
-        <slf4j.version>2.0.0-alpha5</slf4j.version>
+        <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.3</swagger.version>
     </properties>
@@ -353,7 +353,7 @@
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-multibindings</artifactId>
-                <version>4.2.3</version>
+                <version>${guice.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
