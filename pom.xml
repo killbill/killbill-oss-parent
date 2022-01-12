@@ -1912,6 +1912,7 @@
                             <Embed-Transitive>${osgi.transitive-dependency}</Embed-Transitive>
                             <_noclassforname>${osgi.noclassforname}</_noclassforname>
                             <_noee>true</_noee>
+							<_noimportjava>true</_noimportjava>
                             <_fixupmessages>${osgi.fixupmessages}</_fixupmessages>
                         </instructions>
                     </configuration>
