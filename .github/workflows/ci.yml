@@ -63,6 +63,97 @@ jobs:
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
+      - name: Download dependencies and setup the various pom.xml
+        run: |
+          pushd $GITHUB_WORKSPACE/killbill-oss-parent
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+          mvn ${MAVEN_FLAGS} clean install
+          popd
+
+          declare -A property=(
+            [killbill-commons]=killbill-commons.version
+            [killbill-plugin-framework-java]=killbill-base-plugin.version
+            [killbill-platform]=killbill-platform.version
+            [killbill-client-java]=killbill-client.version
+          )
+          for i in killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+            pushd $GITHUB_WORKSPACE/$i
+            echo "Resolving current $i version"
+            version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+            echo "Current $i version is $version"
+            echo "Updating $i parent pom.xml to $pomVersion"
+            mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
+            echo "$i pom.xml changes:"
+            git --no-pager diff
+            echo "Building $i"
+            mvn ${MAVEN_FLAGS} clean install
+            popd
+
+            pushd $GITHUB_WORKSPACE/killbill-oss-parent
+            echo "Updating ${property[$i]} in parent pom.xml to $version"
+            mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=${property[$i]} -DnewVersion=$version
+            echo "killbill-oss-parent pom.xml changes:"
+            git --no-pager diff
+            echo "Building killbill-oss-parent"
+            mvn ${MAVEN_FLAGS} clean install
+            popd
+          done
+      - name: Build Kill Bill
+        run: |
+          pushd $GITHUB_WORKSPACE/killbill-oss-parent
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+          popd
+
+          pushd $GITHUB_WORKSPACE/killbill
+          echo "Updating killbill parent pom.xml to $pomVersion"
+          mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
+          echo "Building killbill"
+          mvn ${MAVEN_FLAGS} clean install
+          popd
+      - name: Review base pom.xml changes
+        run: |
+          pushd $GITHUB_WORKSPACE/killbill-oss-parent
+          echo "killbill-oss-parent pom.xml changes:"
+          git --no-pager diff
+          popd
+      - name: Run killbill-commons tests
+        run: |
+          i=killbill-commons
+          pushd $GITHUB_WORKSPACE/$i
+          echo "$i pom.xml changes:"
+          git --no-pager diff
+          echo "Running $i ${{ matrix.suite }} tests"
+          # Flaky...
+          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
+          popd
+      - name: Run killbill-plugin-framework-java tests
+        run: |
+          i=killbill-plugin-framework-java
+          pushd $GITHUB_WORKSPACE/$i
+          echo "$i pom.xml changes:"
+          git --no-pager diff
+          echo "Running $i ${{ matrix.suite }} tests"
+          mvn clean install -P${{ matrix.suite }}
+          popd
+      - name: Run killbill-platform tests
+        run: |
+          i=killbill-platform
+          pushd $GITHUB_WORKSPACE/$i
+          echo "$i pom.xml changes:"
+          git --no-pager diff
+          echo "Running $i ${{ matrix.suite }} tests"
+          # Flaky...
+          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
+          popd
+      - name: Run killbill-client-java tests
+        run: |
+          i=killbill-client-java
+          pushd $GITHUB_WORKSPACE/$i
+          echo "$i pom.xml changes:"
+          git --no-pager diff
+          echo "Running $i ${{ matrix.suite }} tests"
+          mvn clean install -P${{ matrix.suite }}
+          popd
       - name: Run killbill tests
         run: |
           i=killbill
@@ -71,5 +162,5 @@ jobs:
           git --no-pager diff
           echo "Running $i ${{ matrix.suite }} tests"
           # Flaky...
-          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }} -pl jaxrs -Dkillbill.test.apiListenerDelay=120000
+          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }} -Dkillbill.test.apiListenerDelay=120000
           popd
