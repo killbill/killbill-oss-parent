@@ -12,16 +12,20 @@ env:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 200
     strategy:
       fail-fast: false
       matrix:
         java-version:
+          - 14
           - 16
+          - 17
         java-distribution:
           - adopt
         suite:
+          - h2
           - mysql
+          - postgresql
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
