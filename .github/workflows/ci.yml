@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 14
+          - 15
           - 16
           - 17
         java-distribution:
@@ -27,6 +27,8 @@ jobs:
           - mysql
           - postgresql
     steps:
+      - name: Current Maven version
+        uses: JActions/maven-version@v1.0.0
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
@@ -59,7 +61,7 @@ jobs:
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
-          repository: vnandwana/killbill
+          repository: killbill/killbill
           ref: refs/heads/work-for-release-0.23.x
           path: killbill
       - name: Setup Java
