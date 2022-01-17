@@ -23,6 +23,10 @@ jobs:
         suite:
           - mysql
     steps:
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.2
+        with:
+          maven-version: 3.8.2
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
@@ -63,10 +67,6 @@ jobs:
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.2
-        with:
-          maven-version: 3.8.2
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
