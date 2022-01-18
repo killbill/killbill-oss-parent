@@ -17,16 +17,15 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 17
+          - 11
+          - 16
         java-distribution:
           - adopt
         suite:
+          - h2
           - mysql
+          - postgresql
     steps:
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.2
-        with:
-          maven-version: 3.8.2
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
@@ -71,7 +70,6 @@ jobs:
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
           pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
-          mvn -version
           mvn ${MAVEN_FLAGS} clean install
           popd
 
@@ -125,7 +123,6 @@ jobs:
         run: |
           i=killbill-commons
           pushd $GITHUB_WORKSPACE/$i
-          mvn -version
           echo "$i pom.xml changes:"
           git --no-pager diff
           echo "Running $i ${{ matrix.suite }} tests"
