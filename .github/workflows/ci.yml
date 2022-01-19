@@ -30,6 +30,18 @@ jobs:
         with:
           repository: killbill/killbill-oss-parent
           path: killbill-oss-parent
+      - name: Checkout killbill-api
+        uses: actions/checkout@v2
+        with:
+          repository: killbill/killbill-api
+          ref: refs/heads/work-for-release-0.23.x
+          path: killbill-api
+      - name: Checkout killbill-plugin-api
+        uses: actions/checkout@v2
+        with:
+          repository: killbill/killbill-plugin-api
+          ref: refs/heads/work-for-release-0.23.x
+          path: killbill-plugin-api
       - name: Checkout killbill-commons
         uses: actions/checkout@v2
         with:
@@ -73,12 +85,14 @@ jobs:
           popd
 
           declare -A property=(
+            [killbill-api]=killbill-api.version
+            [killbill-plugin-api]=killbill-plugin-api.version
             [killbill-commons]=killbill-commons.version
             [killbill-plugin-framework-java]=killbill-base-plugin.version
             [killbill-platform]=killbill-platform.version
             [killbill-client-java]=killbill-client.version
           )
-          for i in killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+          for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
             pushd $GITHUB_WORKSPACE/$i
             echo "Resolving current $i version"
             version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
