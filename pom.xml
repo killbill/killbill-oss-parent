@@ -2762,8 +2762,7 @@
             </activation>
             <properties>
                 <maven.compiler.release>11</maven.compiler.release>
-                <!-- illegal-access=permit is for cglib (jDBI) -->
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
             </properties>
         </profile>
     </profiles>
