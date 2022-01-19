@@ -19,7 +19,6 @@ jobs:
         java-version:
           - 11
           - 16
-          - 17
         java-distribution:
           - adopt
         suite:
