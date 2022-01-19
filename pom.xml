@@ -196,12 +196,13 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
-        <osgi.version>5.0.0</osgi.version>
+        <osgi.version>6.0.0</osgi.version>
+        <osgi.compendium.version>5.0.0</osgi.compendium.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -225,11 +226,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -762,12 +758,12 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.bundlerepository</artifactId>
-                <version>1.6.6</version>
+                <version>2.0.10</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.configadmin</artifactId>
-                <version>1.8.0</version>
+                <version>1.9.22</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -1646,7 +1642,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>3.11.2</version>
+                <version>4.1.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -1657,7 +1653,7 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
-                <version>${osgi.version}</version>
+                <version>${osgi.compendium.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
@@ -1738,7 +1734,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.4.0</version>
+                <version>7.5</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -1835,7 +1831,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.4.2.2</version>
+                    <version>4.5.0.0</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
@@ -1901,7 +1897,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>4.2.1</version>
+                    <version>5.1.4</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -1916,6 +1912,7 @@
                             <Embed-Transitive>${osgi.transitive-dependency}</Embed-Transitive>
                             <_noclassforname>${osgi.noclassforname}</_noclassforname>
                             <_noee>true</_noee>
+							<_noimportjava>true</_noimportjava>
                             <_fixupmessages>${osgi.fixupmessages}</_fixupmessages>
                         </instructions>
                     </configuration>
@@ -1966,14 +1963,6 @@
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
-                        <!-- Add the processor path for the plugin -->
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>systems.manifold</groupId>
-                                <artifactId>manifold-preprocessor</artifactId>
-                                <version>2021.1.11</version>
-                            </path>
-                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -2022,8 +2011,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- Clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <!-- All artificat IDs under this group -->
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2048,8 +2037,8 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
-                            <requireUpperBoundDeps />
+                            <banDuplicatePomDependencyVersions/>
+                            <requireUpperBoundDeps/>
                             <requireMavenVersion>
                                 <version>3.5.2</version>
                             </requireMavenVersion>
@@ -2238,8 +2227,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2772,7 +2761,7 @@
                 <jdk>[11,)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>8</maven.compiler.release>
+                <maven.compiler.release>11</maven.compiler.release>
                 <!-- illegal-access=permit is for cglib (jDBI) -->
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
