@@ -106,7 +106,7 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file />
+        <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <ehcache.version>3.9.7</ehcache.version>
         <guava.version>31.0.1-jre</guava.version>
@@ -131,8 +131,8 @@
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -196,12 +196,12 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>5.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -225,11 +225,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -761,99 +756,13 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.bundlerepository</artifactId>
-                <version>1.6.6</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.configadmin</artifactId>
-                <version>1.8.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.dependencymanager</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.dependencymanager.annotation</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.dependencymanager.compat</artifactId>
-                <version>3.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.dependencymanager.runtime</artifactId>
-                <version>3.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.dependencymanager.shell</artifactId>
-                <version>3.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.deploymentadmin</artifactId>
-                <version>0.9.5</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.fileinstall</artifactId>
-                <version>3.2.8</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>4.4.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.gogo.runtime</artifactId>
-                <version>0.12.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.log</artifactId>
                 <version>1.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.metatype</artifactId>
-                <version>1.0.10</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.scr</artifactId>
-                <version>1.8.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.scr.annotations</artifactId>
-                <version>1.9.8</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
-                <version>1.2.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.shell</artifactId>
-                <version>1.4.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.shell.remote</artifactId>
-                <version>1.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.webconsole</artifactId>
-                <version>4.2.2</version>
-                <classifier>all</classifier>
             </dependency>
             <!-- Because of https://issues.apache.org/jira/browse/SHIRO-679 (duplicate classes across artifacts),
                  we cannot upgrade until 2.0.0 is released (https://github.com/apache/shiro/pull/236) -->
@@ -1738,7 +1647,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.4.0</version>
+                <version>7.5</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -1901,7 +1810,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>4.2.1</version>
+                    <version>5.1.4</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -1916,6 +1825,7 @@
                             <Embed-Transitive>${osgi.transitive-dependency}</Embed-Transitive>
                             <_noclassforname>${osgi.noclassforname}</_noclassforname>
                             <_noee>true</_noee>
+                            <_noimportjava>true</_noimportjava>
                             <_fixupmessages>${osgi.fixupmessages}</_fixupmessages>
                         </instructions>
                     </configuration>
@@ -1958,22 +1868,9 @@
                         <fork>true</fork>
                         <parameters>true</parameters>
                         <compilerArgs>
-                            <!-- Configure manifold plugin -->
-                            <!-- Disabled as it caused issues compiling in IntelliJ with Java11
-                                 e.g Class XXX is public, should be declared in a file XXX.java
-                            <arg>-Xplugin:Manifold</arg>
-                            -->
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
-                        <!-- Add the processor path for the plugin -->
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>systems.manifold</groupId>
-                                <artifactId>manifold-preprocessor</artifactId>
-                                <version>2021.1.11</version>
-                            </path>
-                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -2022,8 +1919,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- Clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <!-- All artificat IDs under this group -->
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2048,8 +1945,8 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
-                            <requireUpperBoundDeps />
+                            <banDuplicatePomDependencyVersions/>
+                            <requireUpperBoundDeps/>
                             <requireMavenVersion>
                                 <version>3.5.2</version>
                             </requireMavenVersion>
@@ -2238,8 +2135,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2772,7 +2669,7 @@
                 <jdk>[11,)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>8</maven.compiler.release>
+                <maven.compiler.release>11</maven.compiler.release>
                 <!-- illegal-access=permit is for cglib (jDBI) -->
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
