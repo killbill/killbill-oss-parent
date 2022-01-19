@@ -201,7 +201,7 @@
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>5.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -225,11 +225,6 @@
                 <groupId>aopalliance</groupId>
                 <artifactId>aopalliance</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -1652,7 +1647,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.4.0</version>
+                <version>7.5</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -1815,7 +1810,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>4.2.1</version>
+                    <version>5.1.4</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -1830,6 +1825,7 @@
                             <Embed-Transitive>${osgi.transitive-dependency}</Embed-Transitive>
                             <_noclassforname>${osgi.noclassforname}</_noclassforname>
                             <_noee>true</_noee>
+                            <_noimportjava>true</_noimportjava>
                             <_fixupmessages>${osgi.fixupmessages}</_fixupmessages>
                         </instructions>
                     </configuration>
@@ -1872,22 +1868,9 @@
                         <fork>true</fork>
                         <parameters>true</parameters>
                         <compilerArgs>
-                            <!-- Configure manifold plugin -->
-                            <!-- Disabled as it caused issues compiling in IntelliJ with Java11
-                                 e.g Class XXX is public, should be declared in a file XXX.java
-                            <arg>-Xplugin:Manifold</arg>
-                            -->
                             <!-- Allow access to internal packages -->
                             <arg>-XDignore.symbol.file</arg>
                         </compilerArgs>
-                        <!-- Add the processor path for the plugin -->
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>systems.manifold</groupId>
-                                <artifactId>manifold-preprocessor</artifactId>
-                                <version>2021.1.11</version>
-                            </path>
-                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -1936,8 +1919,8 @@
                                 <excludes>
                                     <!-- Clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- Clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
+                                    <!-- All artificat IDs under this group -->
+                                    <exclude>cglib</exclude>
                                     <!-- Old versions of junit repackage hamcrest -->
                                     <exclude>junit:junit</exclude>
                                     <!-- Use guava -->
@@ -2686,7 +2669,7 @@
                 <jdk>[11,)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>8</maven.compiler.release>
+                <maven.compiler.release>11</maven.compiler.release>
                 <!-- illegal-access=permit is for cglib (jDBI) -->
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
