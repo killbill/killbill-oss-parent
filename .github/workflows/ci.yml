@@ -22,14 +22,8 @@ jobs:
         java-distribution:
           - adopt
         suite:
-          - h2
           - mysql
-          - postgresql
     steps:
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.2
-        with:
-          maven-version: 3.8.2
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
@@ -74,6 +68,7 @@ jobs:
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
           pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+          mvn -version
           mvn ${MAVEN_FLAGS} clean install
           popd
 
@@ -105,69 +100,4 @@ jobs:
             mvn ${MAVEN_FLAGS} clean install
             popd
           done
-      - name: Build Kill Bill
-        run: |
-          pushd $GITHUB_WORKSPACE/killbill-oss-parent
-          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
-          popd
 
-          pushd $GITHUB_WORKSPACE/killbill
-          echo "Updating killbill parent pom.xml to $pomVersion"
-          mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
-          echo "Building killbill"
-          mvn ${MAVEN_FLAGS} clean install
-          popd
-      - name: Review base pom.xml changes
-        run: |
-          pushd $GITHUB_WORKSPACE/killbill-oss-parent
-          echo "killbill-oss-parent pom.xml changes:"
-          git --no-pager diff
-          popd
-      - name: Run killbill-commons tests
-        run: |
-          i=killbill-commons
-          pushd $GITHUB_WORKSPACE/$i
-          echo "$i pom.xml changes:"
-          git --no-pager diff
-          echo "Running $i ${{ matrix.suite }} tests"
-          # Flaky...
-          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
-          popd
-      - name: Run killbill-plugin-framework-java tests
-        run: |
-          i=killbill-plugin-framework-java
-          pushd $GITHUB_WORKSPACE/$i
-          echo "$i pom.xml changes:"
-          git --no-pager diff
-          echo "Running $i ${{ matrix.suite }} tests"
-          mvn clean install -P${{ matrix.suite }}
-          popd
-      - name: Run killbill-platform tests
-        run: |
-          i=killbill-platform
-          pushd $GITHUB_WORKSPACE/$i
-          echo "$i pom.xml changes:"
-          git --no-pager diff
-          echo "Running $i ${{ matrix.suite }} tests"
-          # Flaky...
-          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
-          popd
-      - name: Run killbill-client-java tests
-        run: |
-          i=killbill-client-java
-          pushd $GITHUB_WORKSPACE/$i
-          echo "$i pom.xml changes:"
-          git --no-pager diff
-          echo "Running $i ${{ matrix.suite }} tests"
-          mvn clean install -P${{ matrix.suite }}
-          popd
-      - name: Run killbill tests
-        run: |
-          i=killbill
-          pushd $GITHUB_WORKSPACE/$i
-          echo "$i pom.xml changes:"
-          git --no-pager diff
-          echo "Running $i ${{ matrix.suite }} tests"
-          # Flaky...
-          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }} -Dkillbill.test.apiListenerDelay=120000
-          popd
