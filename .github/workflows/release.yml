@@ -121,7 +121,7 @@ jobs:
       - name: Configure settings.xml for release
         uses: actions/setup-java@v1
         with:
-          java-version: 8
+          java-version: 11
           server-id: ossrh-releases
           server-username: OSSRH_USER
           server-password: OSSRH_PASS
