@@ -112,7 +112,7 @@
         <guava.version>31.0.1-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <hk2.version>2.6.1</hk2.version>
-        <jackson.version>2.13.0</jackson.version>
+        <jackson.version>2.13.1</jackson.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>9.4.44.v20210927</jetty.version>
         <jjwt.version>0.11.2</jjwt.version>
@@ -124,7 +124,7 @@
         <killbill-commons.version>0.25.1-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.41.0-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-SNAPSHOT</killbill-plugin-api.version>
-        <logback.version>1.2.7</logback.version>
+        <logback.version>1.2.10</logback.version>
         <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
         <netty.version>4.1.70.Final</netty.version>
@@ -309,7 +309,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.5.0</version>
+                <version>4.5.3</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -814,7 +814,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.19.0</version>
+                <version>3.21.1</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
@@ -2065,7 +2065,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.12.0</version>
+                    <version>1.12.2</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
