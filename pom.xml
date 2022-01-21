@@ -217,7 +217,7 @@
         <skipTests>false</skipTests>
         <slf4j.version>1.7.32</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.3</swagger.version>
+        <swagger.version>1.6.4</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -314,7 +314,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.5.0</version>
+                <version>4.5.3</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -2168,7 +2168,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.12.0</version>
+                    <version>1.12.2</version>
                     <configuration>
                         <connectionType>developerConnection</connectionType>
                     </configuration>
