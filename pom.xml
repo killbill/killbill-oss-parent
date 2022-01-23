@@ -762,7 +762,7 @@
 				<exclusions>
 					<exclusion>
 						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.service.resolver</artifactId>
+						<artifactId>org.osgi.annotation</artifactId>
 					</exclusion>
 				</exclusions>
             </dependency>
@@ -1574,12 +1574,6 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
                 <version>${osgi.compendium.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.service.resolver</artifactId>
-					</exclusion>
-				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
