@@ -759,12 +759,6 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>7.0.3</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.apache.felix</groupId>
-						<artifactId>org.apache.felix.resolver</artifactId>
-					</exclusion>
-				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -2288,7 +2282,11 @@
                                 <groupId>org.jruby</groupId>
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
-                        </ignoredDependencies>
+							<dependency>
+								<groupId>org.osgi</groupId>
+								<artifactId>org.osgi.service.resolver</artifactId>
+							</dependency>
+						</ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
                             <ignoredResourcePattern>.*\.txt</ignoredResourcePattern>
