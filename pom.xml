@@ -200,7 +200,6 @@
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>8.0.0</osgi.version>
-		<osgi.compendium.version>5.0.0</osgi.compendium.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
@@ -759,6 +758,12 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>7.0.3</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.osgi</groupId>
+						<artifactId>org.osgi.annotation</artifactId>
+					</exclusion>
+				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -1568,6 +1573,12 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.core</artifactId>
                 <version>${osgi.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.osgi</groupId>
+						<artifactId>osgi.annotation</artifactId>
+					</exclusion>
+				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ow2.asm</groupId>
