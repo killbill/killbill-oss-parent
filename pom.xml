@@ -758,12 +758,6 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>7.0.3</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.compendium</artifactId>
-					</exclusion>
-				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -2292,6 +2286,10 @@
                                 <groupId>org.jruby</groupId>
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
+							<dependency>
+								<groupId>org.osgi</groupId>
+								<artifactId>org.osgi.compendium</artifactId>
+							</dependency>
 						</ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
