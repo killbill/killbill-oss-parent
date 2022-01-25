@@ -22,7 +22,7 @@
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
     <version>0.145.3-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
     <url>http://github.com/killbill/killbill-oss-parent</url>
@@ -757,7 +757,7 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
-                <version>4.4.1</version>
+                <version>7.0.3</version>
 				<!--<exclusions>
 					<exclusion>
 						<groupId>org.osgi</groupId>
@@ -1577,12 +1577,6 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.core</artifactId>
                 <version>${osgi.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.osgi</groupId>
-						<artifactId>osgi.annotation</artifactId>
-					</exclusion>
-				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ow2.asm</groupId>
@@ -2296,6 +2290,10 @@
                                 <groupId>org.jruby</groupId>
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
+							<dependency>
+								<groupId>org.osgi</groupId>
+								<artifactId>org.osgi.service.resolver</artifactId>
+							</dependency>
 						</ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
