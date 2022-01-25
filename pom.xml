@@ -760,12 +760,12 @@
                 <version>7.0.3</version>
 				<exclusions>
 					<exclusion>
-						<groupId>org.apache.felix</groupId>
-						<artifactId>org.apache.felix.resolver</artifactId>
+						<groupId>org.osgi</groupId>
+						<artifactId>org.osgi.core</artifactId>
 					</exclusion>
 					<exclusion>
 						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.annotation</artifactId>
+						<artifactId>org.annotation</artifactId>
 					</exclusion>
 				</exclusions>
             </dependency>
