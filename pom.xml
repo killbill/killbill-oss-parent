@@ -758,7 +758,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>7.0.3</version>
-				<exclusions>
+				<!--<exclusions>
 					<exclusion>
 						<groupId>org.osgi</groupId>
 						<artifactId>org.osgi.core</artifactId>
@@ -767,7 +767,7 @@
 						<groupId>org.osgi</groupId>
 						<artifactId>org.annotation</artifactId>
 					</exclusion>
-				</exclusions>
+				</exclusions>-->
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -2224,10 +2224,10 @@
                                     <class>org.apache.commons.collections.Buffer</class>
                                     <class>org.apache.commons.collections.BufferUnderflowException</class>
                                     <class>org.apache.commons.collections.FastHashMap</class>
-									<!--<class>org.osgi.service.resolver.HostedCapability</class>
+									<class>org.osgi.service.resolver.HostedCapability</class>
 									<class>org.osgi.service.resolver.ResolutionException</class>
 									<class>org.osgi.service.resolver.ResolveContext</class>
-									<class>org.osgi.service.resolver.Resolver</class>-->
+									<class>org.osgi.service.resolver.Resolver</class>
                                 </classes>
                             </exception>
                             <exception>
