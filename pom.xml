@@ -200,6 +200,7 @@
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>8.0.0</osgi.version>
+		<osgi.compendium.version>5.0.0</osgi.compendium.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
@@ -1565,14 +1566,13 @@
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>${osgi.compendium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
                 <artifactId>osgi.core</artifactId>
                 <version>${osgi.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.service.resolver</artifactId>
-					</exclusion>
-				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ow2.asm</groupId>
@@ -2214,10 +2214,6 @@
                                     <class>org.apache.commons.collections.Buffer</class>
                                     <class>org.apache.commons.collections.BufferUnderflowException</class>
                                     <class>org.apache.commons.collections.FastHashMap</class>
-									<class>org.osgi.service.resolver.HostedCapability</class>
-									<class>org.osgi.service.resolver.ResolutionException</class>
-									<class>org.osgi.service.resolver.ResolveContext</class>
-									<class>org.osgi.service.resolver.Resolver</class>
                                 </classes>
                             </exception>
                             <exception>
