@@ -758,16 +758,12 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>7.0.3</version>
-				<!--<exclusions>
+				<exclusions>
 					<exclusion>
 						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.core</artifactId>
+						<artifactId>org.osgi.service.resolver</artifactId>
 					</exclusion>
-					<exclusion>
-						<groupId>org.osgi</groupId>
-						<artifactId>org.annotation</artifactId>
-					</exclusion>
-				</exclusions>-->
+				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -1577,6 +1573,12 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.core</artifactId>
                 <version>${osgi.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.osgi</groupId>
+						<artifactId>org.osgi.service.resolver</artifactId>
+					</exclusion>
+				</exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ow2.asm</groupId>
@@ -2290,10 +2292,6 @@
                                 <groupId>org.jruby</groupId>
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
-							<dependency>
-								<groupId>org.osgi</groupId>
-								<artifactId>org.osgi.service.resolver</artifactId>
-							</dependency>
 						</ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
