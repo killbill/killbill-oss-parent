@@ -761,7 +761,7 @@
 				<exclusions>
 					<exclusion>
 						<groupId>org.osgi</groupId>
-						<artifactId>org.osgi.service.resolver</artifactId>
+						<artifactId>org.osgi.compendium</artifactId>
 					</exclusion>
 				</exclusions>
             </dependency>
