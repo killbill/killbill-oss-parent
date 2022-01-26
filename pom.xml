@@ -22,7 +22,7 @@
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
     <version>0.145.3-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
     <url>http://github.com/killbill/killbill-oss-parent</url>
@@ -131,8 +131,8 @@
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -196,7 +196,7 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>8.0.0</osgi.version>
@@ -822,11 +822,11 @@
                 <artifactId>janino</artifactId>
                 <version>3.1.6</version>
             </dependency>
-			<dependency>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>animal-sniffer-annotations</artifactId>
-				<version>1.20</version>
-			</dependency>
+            <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-annotations</artifactId>
+                <version>1.20</version>
+            </dependency>
             <dependency>
                 <groupId>org.easymock</groupId>
                 <artifactId>easymock</artifactId>
@@ -888,7 +888,7 @@
                 <artifactId>shiro-ehcache3</artifactId>
                 <version>1.0.0</version>
             </dependency>
-			<dependency>
+            <dependency>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
                 <version>4.0</version>
@@ -1072,7 +1072,7 @@
             <dependency>
                 <groupId>org.jruby</groupId>
                 <artifactId>jruby-core</artifactId>
-                <version>1.7.26</version>
+                <version>9.3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>org.jruby</groupId>
@@ -2141,8 +2141,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2287,11 +2287,11 @@
                                 <groupId>org.jruby</groupId>
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
-							<dependency>
-								<groupId>org.osgi</groupId>
-								<artifactId>org.osgi.compendium</artifactId>
-							</dependency>
-						</ignoredDependencies>
+                            <dependency>
+                                <groupId>org.osgi</groupId>
+                                <artifactId>org.osgi.compendium</artifactId>
+                            </dependency>
+                        </ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
                             <ignoredResourcePattern>.*\.txt</ignoredResourcePattern>
