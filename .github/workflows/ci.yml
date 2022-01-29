@@ -92,7 +92,7 @@ jobs:
             [killbill-platform]=killbill-platform.version
             [killbill-client-java]=killbill-client.version
           )
-          for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+          for i in killbill-platform; do
             pushd $GITHUB_WORKSPACE/$i
             echo "Resolving current $i version"
             version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -102,7 +102,7 @@ jobs:
             echo "$i pom.xml changes:"
             git --no-pager diff
             echo "Building $i"
-            mvn ${MAVEN_FLAGS} clean install
+            mvn ${MAVEN_FLAGS} clean install -rf :killbill-platform-service-registry -X
             popd
 
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
