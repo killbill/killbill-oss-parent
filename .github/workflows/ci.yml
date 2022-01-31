@@ -17,7 +17,6 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 11
           - 16
         java-distribution:
           - adopt
@@ -58,7 +57,7 @@ jobs:
       - name: Checkout killbill-platform
         uses: actions/checkout@v2
         with:
-          repository: killbill/killbill-platform
+          repository: vnandwana/killbill-platform
           ref: refs/heads/work-for-release-0.23.x
           path: killbill-platform
       - name: Checkout killbill-client-java
