@@ -57,7 +57,7 @@ jobs:
       - name: Checkout killbill-platform
         uses: actions/checkout@v2
         with:
-          repository: vnandwana/killbill-platform
+          repository: killbill/killbill-platform
           ref: refs/heads/work-for-release-0.23.x
           path: killbill-platform
       - name: Checkout killbill-client-java
