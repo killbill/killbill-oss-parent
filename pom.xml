@@ -699,11 +699,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>1.2.17</version>
-            </dependency>
-            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.28</version>
@@ -2034,6 +2029,8 @@
                                     <exclude>com.google.guava:listenablefuture</exclude>
                                     <!-- Contains FindBugs annotations, JSR-305 and JCIP annotations -->
                                     <exclude>com.google.code.findbugs:annotations</exclude>
+                                    <!-- Use slf4j-reload4j instead -->
+                                    <exclude>log4j:log4j</exclude>
                                     <!-- Use the official version at javax.servlet:javax.servlet-api -->
                                     <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
                                     <!-- We forked the code -->
