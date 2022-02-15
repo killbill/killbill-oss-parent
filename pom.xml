@@ -216,9 +216,9 @@
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <shiro.version>1.8.0</shiro.version>
         <skipTests>false</skipTests>
-        <slf4j.version>1.7.32</slf4j.version>
+        <slf4j.version>1.7.33</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.3</swagger.version>
+        <swagger.version>1.6.4</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -702,7 +702,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.27</version>
+                <version>8.0.28</version>
             </dependency>
             <dependency>
                 <groupId>net.bytebuddy</groupId>
@@ -1587,7 +1587,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>42.3.1</version>
+                <version>42.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.redisson</groupId>
@@ -1726,7 +1726,7 @@
                 <plugin>
                     <groupId>com.github.ekryd.sortpom</groupId>
                     <artifactId>sortpom-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.0.1</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <keepBlankLines>true</keepBlankLines>
@@ -1750,7 +1750,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.5.0.0</version>
+                    <version>4.5.3.0</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
@@ -2048,7 +2048,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M4</version>
+                    <version>3.0.0-M5</version>
                     <configuration>
                         <releaseProfiles>${release.release-profiles}</releaseProfiles>
                         <autoVersionSubmodules>${release.auto-version-submodules}</autoVersionSubmodules>
@@ -2195,7 +2195,7 @@
                 <plugin>
                     <groupId>org.basepom.maven</groupId>
                     <artifactId>duplicate-finder-maven-plugin</artifactId>
-                    <version>1.5.0</version>
+                    <version>1.5.1</version>
                     <configuration>
                         <skip>${check.skip-duplicate-finder}</skip>
                         <failBuildInCaseOfConflict>${check.fail-duplicate-finder}</failBuildInCaseOfConflict>
@@ -2320,7 +2320,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
