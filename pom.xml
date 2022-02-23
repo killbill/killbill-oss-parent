@@ -393,6 +393,11 @@
                         <groupId>javax.validation</groupId>
                         <artifactId>validation-api</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
@@ -409,11 +414,6 @@
                 <groupId>com.samskivert</groupId>
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.activation</groupId>
-                <artifactId>jakarta.activation</artifactId>
-                <version>2.0.1</version>
             </dependency>
             <dependency>
                 <groupId>com.typesafe</groupId>
@@ -815,6 +815,13 @@
                 <groupId>org.asynchttpclient</groupId>
                 <artifactId>async-http-client</artifactId>
                 <version>${async-http-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>jakarta.activation</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
@@ -956,6 +963,13 @@
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
                 <version>2.3.5</version>
+                <exclusions>
+                    <exclusion>
+                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>jakarta.activation</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.containers</groupId>
@@ -1976,6 +1990,8 @@
                                     <!-- Contains FindBugs annotations, JSR-305 and JCIP annotations -->
                                     <exclude>com.google.code.findbugs:annotations</exclude>
                                     <!-- Replaced with jakarta.activation:jakarta.activation-api -->
+                                    <exclude>com.sun.activation:jakarta.activation</exclude>
+                                    <exclude>javax.activation:javax.activation</exclude>
                                     <exclude>javax.activation:javax.activation-api</exclude>
                                     <!-- Replaced with jakarta.servlet:jakarta.servlet-api -->
                                     <exclude>javax.servlet:javax.servlet-api</exclude>
