@@ -1074,6 +1074,13 @@
                 <groupId>org.jooby</groupId>
                 <artifactId>jooby-servlet</artifactId>
                 <version>${jooby.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <!-- We use jakarta.servlet:jakarta.servlet-api instead -->
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>javax.servlet-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
