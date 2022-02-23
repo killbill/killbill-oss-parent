@@ -30,11 +30,11 @@ jobs:
         ref-plugin-api:
           - refs/heads/work-for-release-0.23.x
         ref-commons:
-          - refs/heads/work-for-release-0.23.x-osgi
+          - refs/heads/work-for-release-0.23.x-metrics
         ref-plugin-framework-java:
           - refs/heads/work-for-release-0.23.x-osgi
         ref-platform:
-          - refs/heads/work-for-release-0.23.x-osgi
+          - refs/heads/work-for-release-0.23.x-metrics
         ref-client-java:
           - refs/heads/work-for-release-0.23.x
         ref-killbill:
