@@ -119,7 +119,7 @@
         <jjwt.version>0.11.2</jjwt.version>
         <joda-time.version>2.10.13</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
-        <killbill-api.version>0.54.0-ec68485-SNAPSHOT</killbill-api.version>
+        <killbill-api.version>0.54.0-9ebe24d-SNAPSHOT</killbill-api.version>
         <killbill-base-plugin.version>5.0.0-09bc4c4-SNAPSHOT</killbill-base-plugin.version>
         <killbill-client.version>1.3.0-71814f6-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.25.1-78fd0ad-SNAPSHOT</killbill-commons.version>
