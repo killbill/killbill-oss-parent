@@ -26,19 +26,19 @@ jobs:
           - mysql
           - postgresql
         ref-api:
-          - refs/heads/work-for-release-0.23.x-metrics
+          - refs/heads/work-for-release-0.23.x
         ref-plugin-api:
           - refs/heads/work-for-release-0.23.x
         ref-commons:
-          - refs/heads/work-for-release-0.23.x-metrics
+          - refs/heads/work-for-release-0.23.x
         ref-plugin-framework-java:
           - refs/heads/work-for-release-0.23.x-osgi
         ref-platform:
-          - refs/heads/work-for-release-0.23.x-metrics
+          - refs/heads/work-for-release-0.23.x
         ref-client-java:
           - refs/heads/work-for-release-0.23.x
         ref-killbill:
-          - refs/heads/work-for-release-0.23.x-metrics
+          - refs/heads/work-for-release-0.23.x
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
