@@ -32,7 +32,7 @@ jobs:
         ref-commons:
           - refs/heads/work-for-release-0.23.x
         ref-plugin-framework-java:
-          - refs/heads/work-for-release-0.23.x-osgi
+          - refs/heads/work-for-release-0.23.x
         ref-platform:
           - refs/heads/work-for-release-0.23.x
         ref-client-java:
