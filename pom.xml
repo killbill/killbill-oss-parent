@@ -1586,7 +1586,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.16.6</version>
+                <version>3.17.0</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
