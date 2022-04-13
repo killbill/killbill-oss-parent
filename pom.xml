@@ -133,7 +133,7 @@
         <killbill-plugin-api.version>0.27.0-da2fb61-SNAPSHOT</killbill-plugin-api.version>
         <logback.version>1.2.10</logback.version>
         <metrics.version>4.2.8</metrics.version>
-        <netty.version>4.1.70.Final</netty.version>
+        <netty.version>4.1.76.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
@@ -733,7 +733,7 @@
             <dependency>
                 <groupId>org.awaitility</groupId>
                 <artifactId>awaitility</artifactId>
-                <version>4.1.1</version>
+                <version>4.2.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
