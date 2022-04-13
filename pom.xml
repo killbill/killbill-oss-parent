@@ -1786,6 +1786,14 @@
                         <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
                         <resolvers>
                             <resolver>
+                                <!-- Relaxed strategy for Kill Bill artifacts (especially useful for SNAPSHOT) -->
+                                <strategyName>two-digits-backward-compatible</strategyName>
+                                <includes>
+                                    <include>org.kill-bill.billing:*</include>
+                                    <include>org.kill-bill.billing.plugin:*</include>
+                                </includes>
+                            </resolver>
+                            <resolver>
                                 <strategyName>single-digit</strategyName>
                                 <includes>
                                     <include>com.google.guava:guava</include>
