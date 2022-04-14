@@ -225,7 +225,7 @@
         <skipTests>false</skipTests>
         <slf4j.version>1.7.36</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
-        <swagger.version>1.6.4</swagger.version>
+        <swagger.version>1.6.6</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
