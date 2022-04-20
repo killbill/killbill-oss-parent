@@ -1791,6 +1791,7 @@
                                 <includes>
                                     <include>org.kill-bill.billing:*</include>
                                     <include>org.kill-bill.billing.plugin:*</include>
+                                    <include>org.kill-bill.commons:*</include>
                                 </includes>
                             </resolver>
                             <resolver>
@@ -1969,7 +1970,26 @@
                                 </includes>
                             </bannedDependencies>
                             <banDuplicatePomDependencyVersions/>
-                            <requireUpperBoundDeps/>
+                            <requireUpperBoundDeps>
+                                <excludes>
+                                    <!-- Wildcards don't seem to work -->
+                                    <exclude>org.kill-bill.commons:killbill-automaton</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-clock</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-concurrent</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-config-magic</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-embeddeddb-common</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-embeddeddb-h2</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-embeddeddb-mysql</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-embeddeddb-postgresql</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-jdbi</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-locker</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-metrics</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-metrics-api</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-queue</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-skeleton</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-xmlloader</exclude>
+                                </excludes>
+                            </requireUpperBoundDeps>
                             <requireMavenVersion>
                                 <version>3.5.2</version>
                             </requireMavenVersion>
