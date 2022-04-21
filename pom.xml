@@ -131,7 +131,7 @@
         <killbill-commons.version>0.25.1-669cc2d-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.41.0-b7ffc71-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-da2fb61-SNAPSHOT</killbill-plugin-api.version>
-        <logback.version>1.2.10</logback.version>
+        <logback.version>1.2.11</logback.version>
         <metrics.version>4.2.8</metrics.version>
         <netty.version>4.1.76.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
