@@ -670,8 +670,12 @@
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>
-                <!-- 10.15.x requires Java 9 -->
-                <version>10.14.2.0</version>
+                <version>10.15.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derbytools</artifactId>
+                <version>10.15.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
