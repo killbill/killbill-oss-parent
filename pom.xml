@@ -714,7 +714,7 @@
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.21.0</version>
+                <version>3.22.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -2478,7 +2478,7 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.12.0</version>
+                <version>1.12.2</version>
             </extension>
         </extensions>
     </build>
