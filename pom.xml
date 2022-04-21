@@ -109,7 +109,7 @@
         <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
-        <ehcache.version>3.9.7</ehcache.version>
+        <ehcache.version>3.10.0</ehcache.version>
         <guava.version>31.1-jre</guava.version>
         <guice.version>5.1.0</guice.version>
         <hk2.version>2.6.1</hk2.version>
