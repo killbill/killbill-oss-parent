@@ -214,7 +214,7 @@
         <release.push-changes>true</release.push-changes>
         <release.release-profiles>sonatype-oss-release</release.release-profiles>
         <release.tag-name-format>@{project.artifactId}-@{project.version}</release.tag-name-format>
-        <reload4j.version>1.2.19</reload4j.version>
+        <reload4j.version>1.2.20</reload4j.version>
         <repository.release.id>sonatype-nexus-staging</repository.release.id>
         <repository.release.name>Nexus Release Repository</repository.release.name>
         <repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</repository.release.url>
