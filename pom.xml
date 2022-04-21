@@ -1033,21 +1033,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>org.jruby</groupId>
-                <artifactId>jruby</artifactId>
-                <version>1.7.26</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jruby</groupId>
-                <artifactId>jruby-core</artifactId>
-                <version>9.3.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jruby</groupId>
-                <artifactId>jruby-stdlib</artifactId>
-                <version>1.7.26</version>
-            </dependency>
-            <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-account</artifactId>
                 <version>${killbill.version}</version>
@@ -1240,11 +1225,6 @@
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-platform-osgi-bundles-influxdb</artifactId>
-                <version>${killbill-platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-platform-osgi-bundles-jruby</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
             <dependency>
@@ -2320,16 +2300,8 @@
                                 <artifactId>shiro-crypto-event</artifactId>
                             </dependency>
                             <dependency>
-                                <groupId>org.jruby</groupId>
-                                <artifactId>jruby-complete</artifactId>
-                            </dependency>
-                            <dependency>
                                 <groupId>org.osgi</groupId>
                                 <artifactId>org.osgi.compendium</artifactId>
-                            </dependency>
-                            <dependency>
-                                <groupId>org.jruby</groupId>
-                                <artifactId>jruby-core</artifactId>
                             </dependency>
                         </ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
