@@ -885,7 +885,7 @@
             <dependency>
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
-                <version>2.3.6</version>
+                <version>3.0.0-M5</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.activation:jakarta.activation-api instead -->
