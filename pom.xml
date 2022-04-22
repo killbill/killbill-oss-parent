@@ -1023,7 +1023,7 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.14.15</version>
+                <version>3.16.6</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
