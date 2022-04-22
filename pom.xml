@@ -401,7 +401,7 @@
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
-                <version>1.4.1</version>
+                <version>1.4.2</version>
             </dependency>
             <dependency>
                 <groupId>com.zaxxer</groupId>
@@ -749,7 +749,7 @@
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
                 <artifactId>janino</artifactId>
-                <version>3.1.6</version>
+                <version>3.1.7</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.mojo</groupId>
@@ -1838,7 +1838,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -2120,7 +2120,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
+                    <version>3.0.0-M6</version>
                     <configuration>
                         <argLine>${surefireArgLine}</argLine>
                         <runOrder>random</runOrder>
@@ -2350,7 +2350,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>1.6.13</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh-releases</serverId>
@@ -2445,7 +2445,7 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.12.0</version>
+                <version>1.12.2</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
