@@ -433,7 +433,7 @@
                 <groupId>io.airlift</groupId>
                 <artifactId>log</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>206</version>
+                <version>215</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -625,7 +625,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.12.3</version>
+                <version>1.12.9</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -1534,7 +1534,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>4.1.0</version>
+                <version>4.5.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -2350,7 +2350,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>1.6.13</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh-releases</serverId>
