@@ -427,7 +427,7 @@
                 <groupId>io.airlift</groupId>
                 <artifactId>concurrent</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>206</version>
+                <version>215</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -635,7 +635,7 @@
             <dependency>
                 <groupId>org.antlr</groupId>
                 <artifactId>ST4</artifactId>
-                <version>4.3.1</version>
+                <version>4.3.3</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -754,7 +754,7 @@
             <dependency>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-annotations</artifactId>
-                <version>1.20</version>
+                <version>1.21</version>
             </dependency>
             <dependency>
                 <groupId>org.easymock</groupId>
@@ -1560,7 +1560,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>42.3.3</version>
+                <version>42.3.4</version>
             </dependency>
             <dependency>
                 <groupId>org.redisson</groupId>
@@ -1864,7 +1864,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.3.0</version>
                     <configuration>
                         <skip>${check.skip-dependency}</skip>
                         <failOnWarning>${check.fail-dependency}</failOnWarning>
@@ -1873,6 +1873,10 @@
                             <!-- It doesn't always detect that org.osgi.framework.ServiceReference is used (by PluginConfigurationHandler for instance) -->
                             <ignoredUnusedDeclaredDependency>org.apache.felix:org.apache.felix.framework</ignoredUnusedDeclaredDependency>
                         </ignoredUnusedDeclaredDependencies>
+                        <ignoredNonTestScopedDependencies>
+                            <!-- See https://issues.apache.org/jira/browse/MDEP-753 and https://issues.apache.org/jira/browse/MDEP-791 -->
+                            <ignoredNonTestScopedDependency>*</ignoredNonTestScopedDependency>
+                        </ignoredNonTestScopedDependencies>
                     </configuration>
                     <executions>
                         <execution>
