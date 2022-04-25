@@ -208,7 +208,6 @@
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>8.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>11</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -1848,6 +1847,7 @@
                         <!-- See profiles section for <release> configuration -->
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
@@ -2051,6 +2051,7 @@
                     <configuration>
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmemory>${build.jvmsize}</maxmemory>
                         <additionalOptions>-Xdoclint:none</additionalOptions>
@@ -2695,7 +2696,7 @@
                 <jdk>[11,17)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>11</maven.compiler.release>
+                <project.build.targetJdk>11</project.build.targetJdk>
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
             </properties>
         </profile>
@@ -2705,7 +2706,7 @@
                 <jdk>[17,)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>16</maven.compiler.release>
+                <project.build.targetJdk>17</project.build.targetJdk>
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.base=ALL-UNNAMED</surefireArgLine>
             </properties>
         </profile>
