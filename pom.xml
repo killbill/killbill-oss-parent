@@ -135,6 +135,7 @@
         <metrics.version>4.2.9</metrics.version>
         <netty.version>4.1.76.Final</netty.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
+        <osgi.annotation.version>8.1.0</osgi.annotation.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
@@ -1546,6 +1547,11 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
                 <version>${osgi.compendium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi.annotation</artifactId>
+                <version>${osgi.annotation.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
