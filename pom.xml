@@ -134,6 +134,7 @@
         <logback.version>1.2.11</logback.version>
         <metrics.version>4.2.9</metrics.version>
         <netty.version>4.1.76.Final</netty.version>
+        <org.osgi.core.version>6.0.0</org.osgi.core.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.annotation.version>8.1.0</osgi.annotation.version>
         <osgi.compendium.version>5.0.0</osgi.compendium.version>
@@ -477,33 +478,38 @@
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <!-- Conflict between async-http-client and redisson -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-codec</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <!-- Conflict between async-http-client and redisson -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-common</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <!-- Conflict between async-http-client and redisson -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-handler</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <!-- Conflict between async-http-client and redisson -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-resolver</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <!-- Conflict between async-http-client and redisson -->
                 <groupId>io.netty</groupId>
                 <artifactId>netty-transport</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-transport-classes-epoll</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-transport-classes-kqueue</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
@@ -1549,6 +1555,12 @@
                 <version>${osgi.compendium.version}</version>
             </dependency>
             <dependency>
+                <!-- Conflict between mariadb-java-client and osgi-over-slf4j -->
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>${org.osgi.core.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.annotation</artifactId>
                 <version>${osgi.annotation.version}</version>
@@ -1907,8 +1919,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <!-- Issues with 3.0.0 -->
-                    <version>3.0.0-M3</version>
+                    <version>3.0.0</version>
                     <configuration>
                         <skip>${check.skip-enforcer}</skip>
                         <fail>${check.fail-enforcer}</fail>
@@ -1994,7 +2005,7 @@
                         <dependency>
                             <groupId>org.codehaus.mojo</groupId>
                             <artifactId>extra-enforcer-rules</artifactId>
-                            <version>1.2</version>
+                            <version>1.5.1</version>
                         </dependency>
                     </dependencies>
                     <executions>
