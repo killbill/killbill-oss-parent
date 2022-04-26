@@ -122,8 +122,8 @@
         <jersey-client.version>${jersey.version}</jersey-client.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>9.4.46.v20220331</jetty.version>
-        <jjwt.version>0.11.2</jjwt.version>
-        <joda-time.version>2.10.13</joda-time.version>
+        <jjwt.version>0.11.3</jjwt.version>
+        <joda-time.version>2.10.14</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.54.0-ca5c628-SNAPSHOT</killbill-api.version>
         <killbill-base-plugin.version>5.0.0-1ea581f-SNAPSHOT</killbill-base-plugin.version>
@@ -131,8 +131,8 @@
         <killbill-commons.version>0.25.1-669cc2d-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.41.0-b7ffc71-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-da2fb61-SNAPSHOT</killbill-plugin-api.version>
-        <logback.version>1.2.10</logback.version>
-        <metrics.version>4.2.8</metrics.version>
+        <logback.version>1.2.11</logback.version>
+        <metrics.version>4.2.9</metrics.version>
         <netty.version>4.1.76.Final</netty.version>
         <org.osgi.core.version>6.0.0</org.osgi.core.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
@@ -215,7 +215,7 @@
         <release.push-changes>true</release.push-changes>
         <release.release-profiles>sonatype-oss-release</release.release-profiles>
         <release.tag-name-format>@{project.artifactId}-@{project.version}</release.tag-name-format>
-        <reload4j.version>1.2.19</reload4j.version>
+        <reload4j.version>1.2.20</reload4j.version>
         <repository.release.id>sonatype-nexus-staging</repository.release.id>
         <repository.release.name>Nexus Release Repository</repository.release.name>
         <repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</repository.release.url>
@@ -323,7 +323,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.5.3</version>
+                <version>4.6.0</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -402,12 +402,12 @@
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
-                <version>1.4.1</version>
+                <version>1.4.2</version>
             </dependency>
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>4.0.3</version>
+                <version>5.0.1</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -428,13 +428,13 @@
                 <groupId>io.airlift</groupId>
                 <artifactId>concurrent</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>206</version>
+                <version>215</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>log</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>206</version>
+                <version>215</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -626,7 +626,7 @@
             <dependency>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy</artifactId>
-                <version>1.12.3</version>
+                <version>1.12.9</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -636,7 +636,7 @@
             <dependency>
                 <groupId>org.antlr</groupId>
                 <artifactId>ST4</artifactId>
-                <version>4.3.1</version>
+                <version>4.3.3</version>
             </dependency>
             <dependency>
                 <groupId>org.antlr</groupId>
@@ -750,12 +750,12 @@
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
                 <artifactId>janino</artifactId>
-                <version>3.1.6</version>
+                <version>3.1.7</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-annotations</artifactId>
-                <version>1.20</version>
+                <version>1.21</version>
             </dependency>
             <dependency>
                 <groupId>org.easymock</groupId>
@@ -886,7 +886,7 @@
             <dependency>
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
-                <version>2.3.5</version>
+                <version>2.3.6</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.activation:jakarta.activation-api instead -->
@@ -1535,7 +1535,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>4.1.0</version>
+                <version>4.5.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -1567,12 +1567,12 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>42.3.3</version>
+                <version>42.3.4</version>
             </dependency>
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.17.0</version>
+                <version>3.17.1</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -1800,7 +1800,7 @@
                 <plugin>
                     <groupId>org.antlr</groupId>
                     <artifactId>antlr3-maven-plugin</artifactId>
-                    <version>3.5.2</version>
+                    <version>3.5.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.felix</groupId>
@@ -1829,7 +1829,7 @@
                             <!-- Need a more recent version to turn off scanning for Class.forName usage -->
                             <groupId>biz.aQute.bnd</groupId>
                             <artifactId>biz.aQute.bndlib</artifactId>
-                            <version>6.1.0</version>
+                            <version>6.2.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1845,12 +1845,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.10.1</version>
                     <configuration>
                         <!-- See profiles section for <release> configuration -->
                         <source>${project.build.targetJdk}</source>
@@ -1871,7 +1871,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.3.0</version>
                     <configuration>
                         <skip>${check.skip-dependency}</skip>
                         <failOnWarning>${check.fail-dependency}</failOnWarning>
@@ -1880,6 +1880,10 @@
                             <!-- It doesn't always detect that org.osgi.framework.ServiceReference is used (by PluginConfigurationHandler for instance) -->
                             <ignoredUnusedDeclaredDependency>org.apache.felix:org.apache.felix.framework</ignoredUnusedDeclaredDependency>
                         </ignoredUnusedDeclaredDependencies>
+                        <ignoredNonTestScopedDependencies>
+                            <!-- See https://issues.apache.org/jira/browse/MDEP-753 and https://issues.apache.org/jira/browse/MDEP-791 -->
+                            <ignoredNonTestScopedDependency>*</ignoredNonTestScopedDependency>
+                        </ignoredNonTestScopedDependencies>
                     </configuration>
                     <executions>
                         <execution>
@@ -2032,7 +2036,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.2.2</version>
                     <configuration>
                         <skipIfEmpty>true</skipIfEmpty>
                     </configuration>
@@ -2049,7 +2053,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.4.0</version>
                     <configuration>
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
@@ -2106,7 +2110,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.9.1</version>
+                    <version>3.12.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -2126,7 +2130,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
+                    <version>3.0.0-M6</version>
                     <configuration>
                         <argLine>${surefireArgLine}</argLine>
                         <runOrder>random</runOrder>
@@ -2356,7 +2360,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>1.6.13</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh-releases</serverId>
@@ -2451,7 +2455,7 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.12.0</version>
+                <version>1.12.2</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
