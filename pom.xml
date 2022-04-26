@@ -118,7 +118,7 @@
         <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
         <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
         <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
-        <jaxb-api.version>2.3.3</jaxb-api.version>
+        <jaxb-api.version>3.0.0</jaxb-api.version>
         <jersey-client.version>${jersey.version}</jersey-client.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>9.4.46.v20220331</jetty.version>
