@@ -1775,40 +1775,6 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                    <version>2.0.4</version>
-                    <configuration>
-                        <skip>${check.skip-dependency-versions}</skip>
-                        <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
-                        <resolvers>
-                            <resolver>
-                                <!-- Relaxed strategy for Kill Bill artifacts (especially useful for SNAPSHOT) -->
-                                <strategyName>two-digits-backward-compatible</strategyName>
-                                <includes>
-                                    <include>org.kill-bill.billing:*</include>
-                                    <include>org.kill-bill.billing.plugin:*</include>
-                                    <include>org.kill-bill.commons:*</include>
-                                </includes>
-                            </resolver>
-                            <resolver>
-                                <strategyName>single-digit</strategyName>
-                                <includes>
-                                    <include>com.google.guava:guava</include>
-                                </includes>
-                            </resolver>
-                        </resolvers>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <phase>verify</phase>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <groupId>org.antlr</groupId>
                     <artifactId>antlr3-maven-plugin</artifactId>
                     <version>3.5.3</version>
@@ -2230,6 +2196,40 @@
                 </plugin>
                 <plugin>
                     <groupId>org.basepom.maven</groupId>
+                    <artifactId>dependency-versions-check-maven-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <skip>${check.skip-dependency-versions}</skip>
+                        <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
+                        <resolvers>
+                            <resolver>
+                                <!-- Relaxed strategy for Kill Bill artifacts (especially useful for SNAPSHOT) -->
+                                <strategy>single-digit</strategy>
+                                <includes>
+                                    <include>org.kill-bill.billing:*</include>
+                                    <include>org.kill-bill.billing.plugin:*</include>
+                                    <include>org.kill-bill.commons:*</include>
+                                </includes>
+                            </resolver>
+                            <resolver>
+                                <strategy>single-digit</strategy>
+                                <includes>
+                                    <include>com.google.guava:guava</include>
+                                </includes>
+                            </resolver>
+                        </resolvers>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.basepom.maven</groupId>
                     <artifactId>duplicate-finder-maven-plugin</artifactId>
                     <version>1.5.1</version>
                     <configuration>
@@ -2410,10 +2410,6 @@
                 <artifactId>dependency-scope-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>com.ning.maven.plugins</groupId>
-                <artifactId>maven-dependency-versions-check-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
             </plugin>
@@ -2456,6 +2452,10 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>dependency-versions-check-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.basepom.maven</groupId>
