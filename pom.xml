@@ -1928,6 +1928,8 @@
                             <requireUpperBoundDeps>
                                 <excludes>
                                     <!-- Wildcards don't seem to work -->
+                                    <exclude>org.kill-bill.billing:killbill-api</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
                                     <exclude>org.kill-bill.commons:killbill-automaton</exclude>
                                     <exclude>org.kill-bill.commons:killbill-clock</exclude>
                                     <exclude>org.kill-bill.commons:killbill-concurrent</exclude>
@@ -2186,7 +2188,7 @@
                 <plugin>
                     <groupId>org.basepom.maven</groupId>
                     <artifactId>dependency-versions-check-maven-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                     <configuration>
                         <skip>${check.skip-dependency-versions}</skip>
                         <failBuildInCaseOfConflict>${check.fail-dependency-versions}</failBuildInCaseOfConflict>
