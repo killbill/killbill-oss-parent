@@ -1923,6 +1923,9 @@
                             <requireUpperBoundDeps>
                                 <excludes>
                                     <!-- Wildcards don't seem to work -->
+                                    <exclude>org.kill-bill.billing:killbill-api</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
+                                    <exclude>org.kill-bill.billing.plugin.java:killbill-base-plugin</exclude>
                                     <exclude>org.kill-bill.commons:killbill-automaton</exclude>
                                     <exclude>org.kill-bill.commons:killbill-clock</exclude>
                                     <exclude>org.kill-bill.commons:killbill-concurrent</exclude>
