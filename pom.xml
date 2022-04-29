@@ -2676,12 +2676,21 @@
         <profile>
             <id>javac-release</id>
             <activation>
-                <jdk>[11,)</jdk>
+                <jdk>[11,17)</jdk>
             </activation>
             <properties>
                 <maven.compiler.release>11</maven.compiler.release>
                 <!-- illegal-access=permit is for cglib (jDBI) -->
                 <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+            </properties>
+        </profile>
+        <profile>
+            <id>javac17-release</id>
+            <activation>
+                <jdk>[17,)</jdk>
+            </activation>
+            <properties>
+                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.base=ALL-UNNAMED</surefireArgLine>
             </properties>
         </profile>
     </profiles>
