@@ -34,6 +34,10 @@ updates:
     - dependency-name: org.eclipse.jetty:*
       versions:
         - ">= 10.0.0"
+    # https://github.com/killbill/killbill-oss-parent/pull/431#issuecomment-1112488332
+    - dependency-name: org.ehcache:*
+      versions:
+        - ">= 3.10.0"
     # We've forked the code
     - dependency-name: org.flywaydb:*
     - dependency-name: org.glassfish.hk2:*
@@ -42,6 +46,7 @@ updates:
     - dependency-name: org.glassfish.jaxb:jaxb-runtime
       versions:
         - ">= 3.0.0"
+    # https://eclipse-ee4j.github.io/jersey.github.io/documentation/3.0.0/user-guide.html#mig-2.26
     - dependency-name: org.glassfish.jersey.*:*
       versions:
         - ">= 3.0.0"
@@ -49,9 +54,10 @@ updates:
     - dependency-name: org.jooby:*
       versions:
         - ">= 2.0.0"
-    - dependency-name: org.ow2.asm:asm
+    # https://github.com/killbill/killbill-oss-parent/pull/411#issuecomment-1111986725
+    - dependency-name: org.jooq:*
       versions:
-        - ">= 6.0.0"
+        - ">= 3.16.0"
     - dependency-name: org.slf4j:*
       versions:
         - ">= 2.0.0"

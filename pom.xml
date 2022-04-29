@@ -109,7 +109,7 @@
         <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
-        <ehcache.version>3.9.7</ehcache.version>
+        <ehcache.version>3.9.9</ehcache.version>
         <guava.version>31.1-jre</guava.version>
         <guice.version>5.1.0</guice.version>
         <hk2.version>2.6.1</hk2.version>
@@ -122,7 +122,7 @@
         <jersey-client.version>${jersey.version}</jersey-client.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>9.4.46.v20220331</jetty.version>
-        <jjwt.version>0.11.4</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version>
         <joda-time.version>2.10.14</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.54.0-ca5c628-SNAPSHOT</killbill-api.version>
@@ -386,11 +386,6 @@
                 <version>2.1.212</version>
             </dependency>
             <dependency>
-                <groupId>com.mchange</groupId>
-                <artifactId>c3p0</artifactId>
-                <version>0.9.5.5</version>
-            </dependency>
-            <dependency>
                 <groupId>com.ning</groupId>
                 <artifactId>compress-lzf</artifactId>
                 <version>1.1</version>
@@ -400,6 +395,7 @@
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
             </dependency>
+            <!-- Used by the base plugin because of Jooby -->
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
@@ -409,16 +405,6 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>5.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>1.15</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.11.0</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -649,26 +635,13 @@
                 <artifactId>stringtemplate</artifactId>
                 <version>3.2.1</version>
             </dependency>
+            <!-- Used to manipulate OSGI archives in platform tests for instance -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>1.21</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-email</artifactId>
-                <version>1.5</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-jexl</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
-            </dependency>
+            <!-- Used for linear regressions in healthchecks for instance -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-math3</artifactId>
@@ -1030,7 +1003,7 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.14.15</version>
+                <version>3.15.10</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
@@ -1262,11 +1235,6 @@
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-platform-osgi-bundles-test-payment</artifactId>
-                <version>${killbill-platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-platform-osgi-bundles-webconsolebranding</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
             <dependency>
@@ -1571,11 +1539,6 @@
                 <version>${osgi.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm</artifactId>
-                <version>5.0.3</version>
-            </dependency>
-            <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>42.3.4</version>
@@ -1771,7 +1734,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>5.1.4</version>
+                    <version>5.1.5</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -1930,6 +1893,7 @@
                                     <!-- Wildcards don't seem to work -->
                                     <exclude>org.kill-bill.billing:killbill-api</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
+                                    <exclude>org.kill-bill.billing.plugin.java:killbill-base-plugin</exclude>
                                     <exclude>org.kill-bill.commons:killbill-automaton</exclude>
                                     <exclude>org.kill-bill.commons:killbill-clock</exclude>
                                     <exclude>org.kill-bill.commons:killbill-concurrent</exclude>
