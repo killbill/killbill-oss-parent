@@ -109,7 +109,7 @@
         <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
-        <ehcache.version>3.9.7</ehcache.version>
+        <ehcache.version>3.9.9</ehcache.version>
         <guava.version>31.1-jre</guava.version>
         <guice.version>5.1.0</guice.version>
         <hk2.version>2.6.1</hk2.version>
@@ -122,7 +122,7 @@
         <jersey-client.version>${jersey.version}</jersey-client.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>9.4.46.v20220331</jetty.version>
-        <jjwt.version>0.11.4</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version>
         <joda-time.version>2.10.14</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
         <killbill-api.version>0.54.0-ca5c628-SNAPSHOT</killbill-api.version>
@@ -1029,7 +1029,7 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.14.15</version>
+                <version>3.15.10</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
@@ -1570,11 +1570,6 @@
                 <version>${osgi.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm</artifactId>
-                <version>5.0.3</version>
-            </dependency>
-            <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>42.3.4</version>
@@ -1804,7 +1799,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>5.1.4</version>
+                    <version>5.1.5</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
