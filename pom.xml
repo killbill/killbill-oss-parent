@@ -395,6 +395,7 @@
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
             </dependency>
+            <!-- Used by the base plugin because of Jooby -->
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
@@ -634,6 +635,7 @@
                 <artifactId>stringtemplate</artifactId>
                 <version>3.2.1</version>
             </dependency>
+            <!-- Used to manipulate OSGI archives in platform tests for instance -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
