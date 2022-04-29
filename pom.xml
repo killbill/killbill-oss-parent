@@ -386,11 +386,6 @@
                 <version>2.1.212</version>
             </dependency>
             <dependency>
-                <groupId>com.mchange</groupId>
-                <artifactId>c3p0</artifactId>
-                <version>0.9.5.5</version>
-            </dependency>
-            <dependency>
                 <groupId>com.ning</groupId>
                 <artifactId>compress-lzf</artifactId>
                 <version>1.1</version>
@@ -400,6 +395,7 @@
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
             </dependency>
+            <!-- Used by the base plugin because of Jooby -->
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
@@ -409,16 +405,6 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>5.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>1.15</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.11.0</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
@@ -649,26 +635,13 @@
                 <artifactId>stringtemplate</artifactId>
                 <version>3.2.1</version>
             </dependency>
+            <!-- Used to manipulate OSGI archives in platform tests for instance -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>1.21</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-email</artifactId>
-                <version>1.5</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-jexl</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
-            </dependency>
+            <!-- Used for linear regressions in healthchecks for instance -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-math3</artifactId>
@@ -1262,11 +1235,6 @@
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-platform-osgi-bundles-test-payment</artifactId>
-                <version>${killbill-platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-platform-osgi-bundles-webconsolebranding</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
             <dependency>
@@ -1957,6 +1925,9 @@
                             <requireUpperBoundDeps>
                                 <excludes>
                                     <!-- Wildcards don't seem to work -->
+                                    <exclude>org.kill-bill.billing:killbill-api</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
+                                    <exclude>org.kill-bill.billing.plugin.java:killbill-base-plugin</exclude>
                                     <exclude>org.kill-bill.commons:killbill-automaton</exclude>
                                     <exclude>org.kill-bill.commons:killbill-clock</exclude>
                                     <exclude>org.kill-bill.commons:killbill-concurrent</exclude>
