@@ -33,7 +33,7 @@ updates:
         - "< 2.0.0"
     - dependency-name: org.eclipse.jetty:*
       versions:
-        - ">= 10.0.0"
+        - ">= 11.0.0"
     # https://github.com/killbill/killbill-oss-parent/pull/431#issuecomment-1112488332
     - dependency-name: org.ehcache:*
       versions:
