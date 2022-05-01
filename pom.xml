@@ -226,7 +226,7 @@
         <shiro.version>1.8.0</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.36</slf4j.version>
-        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
+        <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
         <swagger.version>1.6.6</swagger.version>
     </properties>
     <dependencyManagement>
@@ -1833,6 +1833,7 @@
                         <!-- See profiles section for <release> configuration -->
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${build.jvmsize}</maxmem>
                         <failOnWarning>${compiler.fail-warnings}</failOnWarning>
@@ -2038,6 +2039,7 @@
                     <configuration>
                         <quiet>true</quiet>
                         <source>${project.build.targetJdk}</source>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmemory>${build.jvmsize}</maxmemory>
                         <additionalOptions>-Xdoclint:none</additionalOptions>
@@ -2662,12 +2664,18 @@
         <profile>
             <id>javac-release</id>
             <activation>
-                <jdk>[11,)</jdk>
+                <jdk>[11,17)</jdk>
+            </activation>
+        </profile>
+        <profile>
+            <id>javac17-release</id>
+            <activation>
+                <jdk>[17,)</jdk>
             </activation>
             <properties>
-                <maven.compiler.release>11</maven.compiler.release>
-                <!-- illegal-access=permit is for cglib (jDBI) -->
-                <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m --illegal-access=permit</surefireArgLine>
+                <!-- Need to upgrade the maven-shade-plugin to 3.3.0 for this (https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version6 / https://issues.apache.org/jira/browse/MSHADE-379), but it breaks CI (https://github.com/killbill/killbill-oss-parent/pull/443) -->
+                <!-- <project.build.targetJdk>17</project.build.targetJdk> -->
+                <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.base=ALL-UNNAMED</surefireArgLine>
             </properties>
         </profile>
     </profiles>
