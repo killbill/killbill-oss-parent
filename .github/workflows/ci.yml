@@ -18,9 +18,9 @@ jobs:
       matrix:
         java-version:
           - 11
-          - 16
+          - 17
         java-distribution:
-          - adopt
+          - temurin
         suite:
           - h2
           - mysql
