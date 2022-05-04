@@ -1244,6 +1244,16 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-metrics</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-platform-osgi-bundles-prometheus</artifactId>
+                <version>${killbill-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-platform-osgi-bundles-test-beatrix</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
