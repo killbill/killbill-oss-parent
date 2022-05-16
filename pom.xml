@@ -2119,6 +2119,7 @@
                                     <exclude>.circleci/**</exclude>
                                     <exclude>.github/**</exclude>
                                     <exclude>.logs</exclude>
+                                    <exclude>.mvn/**</exclude>
                                     <!-- The built-in notes guesser is limited: https://github.com/apache/creadur-rat/blob/master/apache-rat-core/src/main/java/org/apache/rat/document/impl/guesser/NoteGuesser.java -->
                                     <exclude>**/*.md</exclude>
                                     <exclude>**/*.txt</exclude>
