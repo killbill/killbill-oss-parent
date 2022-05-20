@@ -1888,6 +1888,15 @@
                                     <!-- Wildcards don't seem to work -->
                                     <exclude>org.kill-bill.billing:killbill-api</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-catalog</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-control</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-currency</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-entitlement</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-invoice</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-notification</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-payment</exclude>
+                                    <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-usage</exclude>
                                     <exclude>org.kill-bill.billing.plugin.java:killbill-base-plugin</exclude>
                                     <exclude>org.kill-bill.commons:killbill-automaton</exclude>
                                     <exclude>org.kill-bill.commons:killbill-clock</exclude>
