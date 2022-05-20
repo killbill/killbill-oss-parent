@@ -1897,6 +1897,27 @@
                                     <!-- Wildcards don't seem to work -->
                                     <exclude>org.kill-bill.billing:killbill-api</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-api</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-base</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-lifecycle</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-all-bundles</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-api</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-defaultbundles</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-eureka</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-graphite</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-influxdb</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-kpm</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-lib-killbill</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-lib-slf4j-osgi</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-logger</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-metrics</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-test-beatrix</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-test-payment</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-lib-bundles</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-test-bundles</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-server</exclude>
+                                    <exclude>org.kill-bill.billing:killbill-platform-test</exclude>
                                     <exclude>org.kill-bill.billing.plugin:killbill-plugin-api</exclude>
                                     <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-catalog</exclude>
                                     <exclude>org.kill-bill.billing.plugin:killbill-plugin-api-control</exclude>
