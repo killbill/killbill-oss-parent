@@ -658,7 +658,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.22.1</version>
+                <version>3.22.2</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
