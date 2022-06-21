@@ -1457,6 +1457,11 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-utils</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-xmlloader</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
@@ -1942,6 +1947,7 @@
                                     <exclude>org.kill-bill.commons:killbill-metrics-api</exclude>
                                     <exclude>org.kill-bill.commons:killbill-queue</exclude>
                                     <exclude>org.kill-bill.commons:killbill-skeleton</exclude>
+                                    <exclude>org.kill-bill.commons:killbill-utils</exclude>
                                     <exclude>org.kill-bill.commons:killbill-xmlloader</exclude>
                                 </excludes>
                             </requireUpperBoundDeps>
