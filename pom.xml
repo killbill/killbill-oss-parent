@@ -322,7 +322,7 @@
             <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
-                <version>4.7.0</version>
+                <version>4.7.1</version>
             </dependency>
             <dependency>
                 <groupId>com.github.tomakehurst</groupId>
@@ -1570,7 +1570,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.6.0</version>
+                <version>7.6.1</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
