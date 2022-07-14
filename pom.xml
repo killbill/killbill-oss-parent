@@ -1570,7 +1570,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.6.0</version>
+                <version>7.6.1</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -1966,7 +1966,7 @@
                         <dependency>
                             <groupId>org.codehaus.mojo</groupId>
                             <artifactId>extra-enforcer-rules</artifactId>
-                            <version>1.5.1</version>
+                            <version>1.6.0</version>
                         </dependency>
                     </dependencies>
                     <executions>
