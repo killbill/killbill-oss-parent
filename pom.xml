@@ -658,7 +658,7 @@
                 <!-- Conflict between guava and postgresql -->
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.22.2</version>
+                <version>3.23.0</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
@@ -1667,7 +1667,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.6.0.0</version>
+                    <version>4.7.1.0</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
