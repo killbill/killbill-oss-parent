@@ -114,6 +114,7 @@ jobs:
             [killbill-client-java]=killbill-client.version
           )
           for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+            echo "::group::Update $i parent"
             pushd $GITHUB_WORKSPACE/$i
             echo "Resolving current $i version"
             version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -125,7 +126,9 @@ jobs:
             echo "Building $i"
             mvn ${MAVEN_FLAGS} clean install
             popd
+            echo "::endgroup::"
 
+            echo "::group::Update $i in killbill-oss-parent"
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
             echo "Updating ${property[$i]} in parent pom.xml to $version"
             mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=${property[$i]} -DnewVersion=$version
@@ -134,6 +137,7 @@ jobs:
             echo "Building killbill-oss-parent"
             mvn ${MAVEN_FLAGS} clean install
             popd
+            echo "::endgroup::"
           done
       - name: Build Kill Bill
         run: |
