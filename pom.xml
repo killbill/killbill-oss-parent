@@ -128,7 +128,7 @@
         <killbill-base-plugin.version>5.0.0-50df228-SNAPSHOT</killbill-base-plugin.version>
         <killbill-client.version>1.3.0-22ee96a-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.25.1-775465f-SNAPSHOT</killbill-commons.version>
-        <killbill-platform.version>0.41.0-7108290-SNAPSHOT</killbill-platform.version>
+        <killbill-platform.version>0.41.0-637c799-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-560c5b7-SNAPSHOT</killbill-plugin-api.version>
         <logback.version>1.2.11</logback.version>
         <metrics.version>4.2.10</metrics.version>
