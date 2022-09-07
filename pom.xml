@@ -118,7 +118,7 @@
         <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
         <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
         <jaxb-api.version>2.3.3</jaxb-api.version>
-        <jersey-client.version>${jersey.version}</jersey-client.version>
+        <jersey-client.version>2.37</jersey-client.version>
         <jersey.version>2.35</jersey.version>
         <jetty.version>10.0.9</jetty.version>
         <jjwt.version>0.11.5</jjwt.version>
