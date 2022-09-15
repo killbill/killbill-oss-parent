@@ -952,7 +952,8 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.15.12</version>
+                <!-- We cannot upgrade to 3.15.x, yet. See https://github.com/killbill/killbill-oss-parent/issues/552 -->
+                <version>3.14.16</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.xml.bind:jakarta.xml.bind-api instead -->
