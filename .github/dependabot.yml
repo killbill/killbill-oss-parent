@@ -58,6 +58,3 @@ updates:
     - dependency-name: org.jooq:*
       versions:
         - ">= 3.16.0"
-    - dependency-name: org.slf4j:*
-      versions:
-        - ">= 2.0.0"
