@@ -3,31 +3,13 @@ updates:
   - package-ecosystem: maven
     directory: "/"
     schedule:
-      interval: weekly
+      interval: "daily"
+    open-pull-requests-limit: 15
+    target-branch: "work-for-release-0.23.x"
     ignore:
     - dependency-name: ch.qos.logback:*
       versions:
         - ">= 1.3.0"
-    # https://github.com/killbill/killbill-oss-parent/issues/37
-    - dependency-name: com.izettle:dropwizard-metrics-influxdb
-      versions:
-        - "> 1.2.1-rc1"
-    # 5.0.0 requires Java 11
-    - dependency-name: com.zaxxer:HikariCP
-      versions:
-        - ">= 5.0.0"
-    # 207 requires Java 11
-    - dependency-name: io.airlift:concurrent
-      versions:
-        - ">= 207"
-    # 207 requires Java 11
-    - dependency-name: io.airlift:log
-      versions:
-        - ">= 207"
-    # https://github.com/brettwooldridge/HikariCP/issues/335
-    - dependency-name: io.dropwizard.metrics:*
-      versions:
-        - ">= 4.0.0"
     # https://github.com/killbill/killbill-oss-parent/issues/40
     - dependency-name: io.jooby:*
     - dependency-name: io.netty:*
@@ -45,12 +27,6 @@ updates:
     - dependency-name: org.antlr:stringtemplate
       versions:
         - ">= 4.0.0"
-    # 10.15.x requires Java 9
-    - dependency-name: org.apache.derby:derby
-      versions:
-        - ">= 10.15.0"
-    # https://github.com/killbill/killbill-oss-parent/issues/34
-    - dependency-name: org.apache.felix:*
     # https://github.com/killbill/killbill-oss-parent/issues/36
     - dependency-name: org.apache.shiro:*
       versions:
@@ -58,6 +34,10 @@ updates:
     - dependency-name: org.eclipse.jetty:*
       versions:
         - ">= 10.0.0"
+    # https://github.com/killbill/killbill-oss-parent/pull/431#issuecomment-1112488332
+    - dependency-name: org.ehcache:*
+      versions:
+        - ">= 3.10.0"
     # We've forked the code
     - dependency-name: org.flywaydb:*
     - dependency-name: org.glassfish.hk2:*
@@ -66,6 +46,7 @@ updates:
     - dependency-name: org.glassfish.jaxb:jaxb-runtime
       versions:
         - ">= 3.0.0"
+    # https://eclipse-ee4j.github.io/jersey.github.io/documentation/3.0.0/user-guide.html#mig-2.26
     - dependency-name: org.glassfish.jersey.*:*
       versions:
         - ">= 3.0.0"
@@ -73,16 +54,10 @@ updates:
     - dependency-name: org.jooby:*
       versions:
         - ">= 2.0.0"
-    # 3.15.0 requires Java 11
-    - dependency-name: org.jooq:jooq
+    # https://github.com/killbill/killbill-oss-parent/pull/411#issuecomment-1111986725
+    - dependency-name: org.jooq:*
       versions:
-        - ">= 3.15.0"
-    - dependency-name: org.jruby:*
-      versions:
-        - ">= 1.8.0"
-    - dependency-name: org.ow2.asm:asm
-      versions:
-        - ">= 6.0.0"
+        - ">= 3.16.0"
     - dependency-name: org.slf4j:*
       versions:
         - ">= 2.0.0"
