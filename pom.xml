@@ -419,7 +419,7 @@
                 <groupId>io.airlift</groupId>
                 <artifactId>log</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>218</version>
+                <version>219</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
