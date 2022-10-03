@@ -224,7 +224,7 @@
         <shiro.version>1.9.1</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.36</slf4j.version>
-        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
+        <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
         <swagger.version>1.6.6</swagger.version>
     </properties>
     <dependencyManagement>
