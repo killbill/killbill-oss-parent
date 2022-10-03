@@ -105,7 +105,7 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file/>
+        <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
         <ehcache.version>3.9.9</ehcache.version>
@@ -221,10 +221,10 @@
         <repository.snapshot.id>sonatype-nexus-snapshots</repository.snapshot.id>
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
-        <shiro.version>1.8.0</shiro.version>
+        <shiro.version>1.9.1</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>1.7.36</slf4j.version>
-        <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
+        <surefireArgLine>-Xmx${build.jvmsize} -XX:MaxDirectMemorySize=512m</surefireArgLine>
         <swagger.version>1.6.6</swagger.version>
     </properties>
     <dependencyManagement>
