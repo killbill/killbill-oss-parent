@@ -62,3 +62,10 @@ updates:
     - dependency-name: org.apache.derby:*
       versions:
         - ">= 10.16.0.0"
+    # Some problems:
+    #   - annotation-api 2.x start using jakarta.* instead of javax.*
+    #   - attempt to update jersey version to 3.x.x (to match jakarta.annotation 2.x.x version) will fail because
+    #     HttpServlet not in javax.http anymore
+    - dependency-name: jakarta.annotation:*
+      versions:
+        - ">= 2.0.0"
