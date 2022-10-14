@@ -58,3 +58,7 @@ updates:
     - dependency-name: org.jooq:*
       versions:
         - ">= 3.16.0"
+    # derby 10.16.x require Java 17
+    - dependency-name: org.apache.derby:*
+      versions:
+        - ">= 10.16.0.0"
