@@ -108,7 +108,7 @@
         <check.spotbugs-exclude-filter-file />
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
-        <derby.version>10.15.2.0</derby.version>
+        <derby.version>10.16.1.1</derby.version>
         <ehcache.version>3.9.10</ehcache.version>
         <embedded-postgres.version>2.0.1</embedded-postgres.version>
         <guava.version>31.1-jre</guava.version>
