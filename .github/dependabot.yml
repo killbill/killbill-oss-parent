@@ -69,3 +69,9 @@ updates:
     - dependency-name: jakarta.annotation:*
       versions:
         - ">= 2.0.0"
+    # Start from 1.4.0, LogService implements LoggerFactory. See:
+    # - 1.3.0 : https://docs.osgi.org/javadoc/r6/enterprise/org/osgi/service/log/LogService.html
+    # - 1.4.0 : https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/log/LogService.html
+    - dependency-name: org.osgi:org.osgi.service.log
+      versions:
+        - ">= 1.4.0"
