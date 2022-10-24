@@ -61,7 +61,7 @@ updates:
     # derby 10.16.x require Java 17
     - dependency-name: org.apache.derby:*
       versions:
-        - ">= 10.16.0.0"
+        - ">= 10.16"
     # Some problems:
     #   - annotation-api 2.x start using jakarta.* instead of javax.*
     #   - attempt to update jersey version to 3.x.x (to match jakarta.annotation 2.x.x version) will fail because
