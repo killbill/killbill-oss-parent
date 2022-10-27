@@ -69,3 +69,7 @@ updates:
     - dependency-name: jakarta.annotation:*
       versions:
         - ">= 2.0.0"
+    # See https://github.com/killbill/killbill-platform/issues/120
+    - dependency-name: org.osgi:org.osgi.service.log
+      versions:
+        - ">= 1.4.0"
