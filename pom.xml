@@ -134,6 +134,7 @@
         <killbill-commons.version>0.25.1-24a3b5f-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.41.0-fcc3d99-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-f59cc90-SNAPSHOT</killbill-plugin-api.version>
+        <killbill-testing-mysql.version>8.0.31-1-e4e12a4-SNAPSHOT</killbill-testing-mysql.version>
         <logback.version>1.2.11</logback.version>
         <metrics.version>4.2.12</metrics.version>
         <netty.version>4.1.82.Final</netty.version>
@@ -425,6 +426,7 @@
                 <!-- 207 requires Java 11 -->
                 <version>219</version>
             </dependency>
+            <!-- FIXME: Deprecated. Will be replaced by killbill's version -->
             <dependency>
                 <groupId>io.airlift</groupId>
                 <artifactId>testing-mysql-server</artifactId>
@@ -1469,6 +1471,11 @@
                 <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-xmlloader</artifactId>
                 <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.testing</groupId>
+                <artifactId>testing-mysql-server</artifactId>
+                <version>${killbill-testing-mysql.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
