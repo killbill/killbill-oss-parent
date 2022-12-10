@@ -17,51 +17,87 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 8
+          - 11
+          - 17
+        java-distribution:
+          - temurin
         suite:
           - h2
           - mysql
           - postgresql
+        ref-api:
+          - refs/heads/work-for-release-0.23.x
+        ref-plugin-api:
+          - refs/heads/work-for-release-0.23.x
+        ref-commons:
+          - refs/heads/work-for-release-0.23.x
+        ref-plugin-framework-java:
+          - refs/heads/work-for-release-0.23.x
+        ref-platform:
+          - refs/heads/work-for-release-0.23.x
+        ref-client-java:
+          - refs/heads/work-for-release-0.23.x
+        ref-killbill:
+          - refs/heads/work-for-release-0.23.x
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-oss-parent
           path: killbill-oss-parent
+      - name: Checkout killbill-api
+        uses: actions/checkout@v2
+        with:
+          repository: killbill/killbill-api
+          ref: ${{ matrix.ref-api }}
+          path: killbill-api
+      - name: Checkout killbill-plugin-api
+        uses: actions/checkout@v2
+        with:
+          repository: killbill/killbill-plugin-api
+          ref: ${{ matrix.ref-plugin-api }}
+          path: killbill-plugin-api
       - name: Checkout killbill-commons
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-commons
-          ref: refs/heads/master
+          ref: ${{ matrix.ref-commons }}
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-plugin-framework-java
-          ref: refs/heads/master
+          ref: ${{ matrix.ref-plugin-framework-java }}
           path: killbill-plugin-framework-java
       - name: Checkout killbill-platform
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-platform
-          ref: refs/heads/master
+          ref: ${{ matrix.ref-platform }}
           path: killbill-platform
       - name: Checkout killbill-client-java
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill-client-java
-          ref: refs/heads/master
+          ref: ${{ matrix.ref-client-java }}
           path: killbill-client-java
       - name: Checkout killbill
         uses: actions/checkout@v2
         with:
           repository: killbill/killbill
-          ref: refs/heads/master
+          ref: ${{ matrix.ref-killbill }}
           path: killbill
       - name: Setup Java
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
+          distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
+      - name: Configure Sonatype mirror
+        uses: s4u/maven-settings-action@v2.4.1
+        # Go to Sonatype directly to avoid delay syncs (could get rid of this if actions/setup-java were to support mirrors).
+        with:
+          mirrors: '[{"id": "oss-releases", "name": "Sonatype releases", "mirrorOf": "central", "url": "https://oss.sonatype.org/content/repositories/releases"}]'
+          sonatypeSnapshots: true
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
@@ -70,12 +106,15 @@ jobs:
           popd
 
           declare -A property=(
+            [killbill-api]=killbill-api.version
+            [killbill-plugin-api]=killbill-plugin-api.version
             [killbill-commons]=killbill-commons.version
             [killbill-plugin-framework-java]=killbill-base-plugin.version
             [killbill-platform]=killbill-platform.version
             [killbill-client-java]=killbill-client.version
           )
-          for i in killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+          for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+            echo "::group::Update $i parent"
             pushd $GITHUB_WORKSPACE/$i
             echo "Resolving current $i version"
             version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -87,7 +126,9 @@ jobs:
             echo "Building $i"
             mvn ${MAVEN_FLAGS} clean install
             popd
+            echo "::endgroup::"
 
+            echo "::group::Update $i in killbill-oss-parent"
             pushd $GITHUB_WORKSPACE/killbill-oss-parent
             echo "Updating ${property[$i]} in parent pom.xml to $version"
             mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=${property[$i]} -DnewVersion=$version
@@ -96,6 +137,7 @@ jobs:
             echo "Building killbill-oss-parent"
             mvn ${MAVEN_FLAGS} clean install
             popd
+            echo "::endgroup::"
           done
       - name: Build Kill Bill
         run: |
@@ -161,5 +203,5 @@ jobs:
           git --no-pager diff
           echo "Running $i ${{ matrix.suite }} tests"
           # Flaky...
-          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }}
+          $GITHUB_WORKSPACE/killbill-oss-parent/bin/retry mvn clean install -P${{ matrix.suite }} -Dkillbill.test.apiListenerDelay=120000
           popd

@@ -33,7 +33,7 @@ updates:
         - "< 2.0.0"
     - dependency-name: org.eclipse.jetty:*
       versions:
-        - ">= 10.0.0"
+        - ">= 11.0.0"
     # https://github.com/killbill/killbill-oss-parent/pull/431#issuecomment-1112488332
     - dependency-name: org.ehcache:*
       versions:
@@ -58,6 +58,18 @@ updates:
     - dependency-name: org.jooq:*
       versions:
         - ">= 3.16.0"
-    - dependency-name: org.slf4j:*
+    # derby 10.16.x require Java 17
+    - dependency-name: org.apache.derby:*
+      versions:
+        - ">= 10.16.0.0"
+    # Some problems:
+    #   - annotation-api 2.x start using jakarta.* instead of javax.*
+    #   - attempt to update jersey version to 3.x.x (to match jakarta.annotation 2.x.x version) will fail because
+    #     HttpServlet not in javax.http anymore
+    - dependency-name: jakarta.annotation:*
       versions:
         - ">= 2.0.0"
+    # See https://github.com/killbill/killbill-platform/issues/120
+    - dependency-name: org.osgi:org.osgi.service.log
+      versions:
+        - ">= 1.4.0"
