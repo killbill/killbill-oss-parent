@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 15
-    target-branch: "work-for-release-0.23.x"
+    target-branch: "master"
     ignore:
     - dependency-name: ch.qos.logback:*
       versions:
