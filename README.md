@@ -14,6 +14,7 @@ Kill Bill OSS Parent: base pom for the various Kill Bill projects.
 | 0.143.y            | 0.22.z            |
 | 0.144.y            | 0.22.z            |
 | 0.145.y            | 0.23.z            |
+| 0.146.y            | 0.24.z            |
 
 We've upgraded numerous dependencies in 0.144.x (required for Java 11 support).
 
