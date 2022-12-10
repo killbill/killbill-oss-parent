@@ -127,13 +127,15 @@
         <jjwt.version>0.11.5</jjwt.version>
         <joda-time.version>2.12.2</joda-time.version>
         <jooby.version>1.6.9</jooby.version>
-        <!-- We cannot upgrade to 3.15.x, yet. See https://github.com/killbill/killbill-oss-parent/issues/552 -->
+        <!-- We cannot upgrade to 3.16.x, yet. See
+             https://github.com/killbill/killbill-oss-parent/issues/557
+             https://github.com/killbill/killbill-oss-parent/pull/411 -->
         <jooq.version>3.15.12</jooq.version>
-        <killbill-api.version>0.54.0-484670d-SNAPSHOT</killbill-api.version>
-        <killbill-base-plugin.version>5.0.0-aa650a0-SNAPSHOT</killbill-base-plugin.version>
+        <killbill-api.version>0.54.0-19db89f-SNAPSHOT</killbill-api.version>
+        <killbill-base-plugin.version>5.0.0-66dc6d4-SNAPSHOT</killbill-base-plugin.version>
         <killbill-client.version>1.3.0-22ee96a-SNAPSHOT</killbill-client.version>
         <killbill-commons.version>0.25.1-209ec51-SNAPSHOT</killbill-commons.version>
-        <killbill-platform.version>0.41.0-fcc3d99-SNAPSHOT</killbill-platform.version>
+        <killbill-platform.version>0.41.0-1461460-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0-f59cc90-SNAPSHOT</killbill-plugin-api.version>
         <killbill-testing-mysql.version>8.0.31-1-e4e12a4-SNAPSHOT</killbill-testing-mysql.version>
         <logback.version>1.2.11</logback.version>
