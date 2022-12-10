@@ -26,11 +26,11 @@ jobs:
           - mysql
           - postgresql
         ref-api:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-plugin-api:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-commons:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-plugin-framework-java:
           - refs/heads/work-for-release-0.23.x
         ref-platform:
