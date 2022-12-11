@@ -137,7 +137,7 @@
         <killbill-commons.version>0.25.1-209ec51-SNAPSHOT</killbill-commons.version>
         <killbill-platform.version>0.41.0-1461460-SNAPSHOT</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0</killbill-plugin-api.version>
-        <killbill-testing-mysql.version>8.0.31-1-e4e12a4-SNAPSHOT</killbill-testing-mysql.version>
+        <killbill-testing-mysql.version>1.0.2</killbill-testing-mysql.version>
         <logback.version>1.2.11</logback.version>
         <metrics.version>4.2.12</metrics.version>
         <netty.version>4.1.84.Final</netty.version>
