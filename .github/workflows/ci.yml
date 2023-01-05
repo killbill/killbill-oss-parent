@@ -32,13 +32,13 @@ jobs:
         ref-commons:
           - refs/heads/master
         ref-plugin-framework-java:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-platform:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-client-java:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
         ref-killbill:
-          - refs/heads/work-for-release-0.23.x
+          - refs/heads/master
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v2
