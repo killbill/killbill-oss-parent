@@ -231,7 +231,7 @@
         <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
         <shiro.version>1.10.1</shiro.version>
         <skipTests>false</skipTests>
-        <slf4j.version>1.7.36</slf4j.version>
+        <slf4j.version>2.0.6</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
         <swagger.version>1.6.7</swagger.version>
     </properties>
