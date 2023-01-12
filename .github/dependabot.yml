@@ -73,3 +73,8 @@ updates:
     - dependency-name: org.osgi:org.osgi.service.log
       versions:
         - ">= 1.4.0"
+
+    # See https://github.com/killbill/killbill-oss-parent/pull/654
+    - dependency-name: jakarta.servlet:jakarta.servlet-api
+      versions:
+        - ">= 5.0.0"
