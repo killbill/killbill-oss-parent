@@ -41,59 +41,59 @@ jobs:
           - refs/heads/master
     steps:
       - name: Checkout killbill-oss-parent
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-oss-parent
           path: killbill-oss-parent
       - name: Checkout killbill-api
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-api
           ref: ${{ matrix.ref-api }}
           path: killbill-api
       - name: Checkout killbill-plugin-api
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-plugin-api
           ref: ${{ matrix.ref-plugin-api }}
           path: killbill-plugin-api
       - name: Checkout killbill-commons
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-commons
           ref: ${{ matrix.ref-commons }}
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-plugin-framework-java
           ref: ${{ matrix.ref-plugin-framework-java }}
           path: killbill-plugin-framework-java
       - name: Checkout killbill-platform
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-platform
           ref: ${{ matrix.ref-platform }}
           path: killbill-platform
       - name: Checkout killbill-client-java
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill-client-java
           ref: ${{ matrix.ref-client-java }}
           path: killbill-client-java
       - name: Checkout killbill
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: killbill/killbill
           ref: ${{ matrix.ref-killbill }}
           path: killbill
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
       - name: Configure Sonatype mirror
-        uses: s4u/maven-settings-action@v2.4.1
+        uses: s4u/maven-settings-action@v2.8.0
         # Go to Sonatype directly to avoid delay syncs (could get rid of this if actions/setup-java were to support mirrors).
         with:
           mirrors: '[{"id": "oss-releases", "name": "Sonatype releases", "mirrorOf": "central", "url": "https://oss.sonatype.org/content/repositories/releases"}]'
