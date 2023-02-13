@@ -2058,6 +2058,7 @@
                     <version>3.0.0-M7</version>
                     <configuration>
                         <releaseProfiles>${release.release-profiles}</releaseProfiles>
+                        <arguments>-P${release.release-profiles}</arguments>
                         <autoVersionSubmodules>${release.auto-version-submodules}</autoVersionSubmodules>
                         <mavenExecutorId>forked-path</mavenExecutorId>
                         <pushChanges>${release.push-changes}</pushChanges>
