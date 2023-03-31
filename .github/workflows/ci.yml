@@ -32,7 +32,7 @@ jobs:
         ref-commons:
           - refs/heads/master
         ref-plugin-framework-java:
-          - refs/heads/fix-snakeyml-version
+          - refs/heads/master
         ref-platform:
           - refs/heads/master
         ref-client-java:
