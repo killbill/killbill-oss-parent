@@ -138,7 +138,7 @@
         <killbill-platform.version>0.41.1</killbill-platform.version>
         <killbill-plugin-api.version>0.27.0</killbill-plugin-api.version>
         <killbill-testing-mysql.version>1.0.2</killbill-testing-mysql.version>
-        <logback.version>1.2.11</logback.version>
+        <logback.version>1.2.12</logback.version>
         <metrics.version>4.2.12</metrics.version>
         <netty.version>4.1.84.Final</netty.version>
         <org.osgi.core.version>6.0.0</org.osgi.core.version>
