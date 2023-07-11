@@ -1,6 +1,9 @@
 name: release
 
 on:
+  repository_dispatch:
+    types: [update_kb_commons_version, update_kb_base_plugin_version, update_kb_platform_version, update_kb_client_version]
+
   workflow_dispatch:
     inputs:
       commons_version:
