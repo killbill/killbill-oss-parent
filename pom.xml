@@ -126,7 +126,8 @@
         <jetty.version>10.0.16</jetty.version>
         <jjwt.version>0.11.5</jjwt.version>
         <joda-time.version>2.12.5</joda-time.version>
-        <jooby.version>3.0.7</jooby.version>
+        <org.jooby.version>1.6.9</org.jooby.version>
+        <io.jooby.version>3.0.7</io.jooby.version>
         <!-- We cannot upgrade to 3.16.x, yet. See
              https://github.com/killbill/killbill-oss-parent/issues/557
              https://github.com/killbill/killbill-oss-parent/pull/411 -->
@@ -945,7 +946,7 @@
             <dependency>
                 <groupId>org.jooby</groupId>
                 <artifactId>jooby-servlet</artifactId>
-                <version>${jooby.version}</version>
+                <version>${org.jooby.version}</version>
                 <exclusions>
                     <exclusion>
                         <!-- We use jakarta.servlet:jakarta.servlet-api instead -->
@@ -953,6 +954,11 @@
                         <artifactId>javax.servlet-api</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.jooby</groupId>
+                <artifactId>jooby-servlet</artifactId>
+                <version>${io.jooby.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
