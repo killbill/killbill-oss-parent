@@ -2173,6 +2173,7 @@
                                 </licenses>
                                 <excludes combine.children="append">
                                     <exclude>.circleci/**</exclude>
+                                    <exclude>.vscode/**</exclude>
                                     <exclude>.github/**</exclude>
                                     <exclude>.logs</exclude>
                                     <exclude>.mvn/**</exclude>
