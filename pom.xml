@@ -111,6 +111,7 @@
         <derby.version>10.15.2.0</derby.version>
         <ehcache.version>3.9.10</ehcache.version>
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
+        <flyway.version>9.22.3</flyway.version>
         <guava.version>31.1-jre</guava.version>
         <guice.version>5.1.0</guice.version>
         <hk2.version>2.6.1</hk2.version>
@@ -768,7 +769,7 @@
             <dependency>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
-                <version>4.0</version>
+                <version>${flyway.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.hk2</groupId>
