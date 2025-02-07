@@ -766,11 +766,6 @@
                 <version>1.0.0</version>
             </dependency>
             <dependency>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-core</artifactId>
-                <version>4.0</version>
-            </dependency>
-            <dependency>
                 <groupId>org.glassfish.hk2</groupId>
                 <artifactId>guice-bridge</artifactId>
                 <version>${hk2.version}</version>
