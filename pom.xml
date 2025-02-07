@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.146.48-SNAPSHOT</version>
+    <version>0.146.48</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -68,7 +68,7 @@
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:killbill/killbill-oss-parent.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>killbill-oss-parent-0.146.48</tag>
         <url>http://github.com/killbill/killbill-oss-parent/tree/master</url>
     </scm>
     <issueManagement>
