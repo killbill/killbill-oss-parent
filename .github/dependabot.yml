@@ -39,7 +39,6 @@ updates:
       versions:
         - ">= 3.10.0"
     # We've forked the code
-    - dependency-name: org.flywaydb:*
     - dependency-name: org.glassfish.hk2:*
       versions:
         - ">= 3.0.0"
