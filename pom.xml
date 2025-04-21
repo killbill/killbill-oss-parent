@@ -416,7 +416,7 @@
                 <groupId>io.airlift</groupId>
                 <artifactId>concurrent</artifactId>
                 <!-- 207 requires Java 11 -->
-                <version>219</version>
+                <version>332</version>
             </dependency>
             <dependency>
                 <groupId>io.airlift</groupId>
