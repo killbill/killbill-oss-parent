@@ -225,10 +225,10 @@
         <reload4j.version>1.2.25</reload4j.version>
         <repository.release.id>sonatype-nexus-staging</repository.release.id>
         <repository.release.name>Nexus Release Repository</repository.release.name>
-        <repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</repository.release.url>
+        <repository.release.url>https://central.sonatype.com/service/local/staging/deploy/maven2/</repository.release.url>
         <repository.snapshot.id>sonatype-nexus-snapshots</repository.snapshot.id>
         <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
-        <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
+        <repository.snapshot.url>https://central.sonatype.com/content/repositories/snapshots/</repository.snapshot.url>
         <shiro.version>1.12.0</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>2.0.9</slf4j.version>
@@ -2318,17 +2318,14 @@
                     </dependencies>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.13</version>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.7.0</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <serverId>ossrh-releases</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
-                        <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
+                        <autoPublish>true</autoPublish>
+                        <publishingServerId>central</publishingServerId>
+                        <waitUntil>published</waitUntil>
                     </configuration>
                 </plugin>
                 <plugin>
