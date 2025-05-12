@@ -223,11 +223,11 @@
         <release.release-profiles>sonatype-oss-release</release.release-profiles>
         <release.tag-name-format>@{project.artifactId}-@{project.version}</release.tag-name-format>
         <reload4j.version>1.2.25</reload4j.version>
-        <repository.release.id>sonatype-nexus-staging</repository.release.id>
-        <repository.release.name>Nexus Release Repository</repository.release.name>
+        <repository.release.id>central</repository.release.id>
+        <repository.release.name>Central Release Repository</repository.release.name>
         <repository.release.url>https://central.sonatype.com/service/local/staging/deploy/maven2/</repository.release.url>
-        <repository.snapshot.id>sonatype-nexus-snapshots</repository.snapshot.id>
-        <repository.snapshot.name>Sonatype Nexus Snapshots</repository.snapshot.name>
+        <repository.snapshot.id>central</repository.snapshot.id>
+        <repository.snapshot.name>Central Snapshots Repository</repository.snapshot.name>
         <repository.snapshot.url>https://central.sonatype.com/repository/maven-snapshots/</repository.snapshot.url>
         <shiro.version>1.12.0</shiro.version>
         <skipTests>false</skipTests>
