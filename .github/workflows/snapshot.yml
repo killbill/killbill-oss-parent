@@ -6,7 +6,7 @@ on:
 
 jobs:
   snapshot:
-    uses: killbill/gh-actions-shared/.github/workflows/snapshot.yml@ossrh-migration
+    uses: killbill/gh-actions-shared/.github/workflows/snapshot.yml@main
     secrets:
       MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
