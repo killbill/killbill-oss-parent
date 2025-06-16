@@ -132,8 +132,8 @@ jobs:
       - name: Release artifacts
         if: github.event.inputs.perform_version == ''
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_PASS: ${{ secrets.OSSRH_PASS }}
+          OSSRH_USER: ${{ secrets.MAVEN_USERNAME }}
+          OSSRH_PASS: ${{ secrets.MAVEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         # It will still check the remote but hopefully not download much (0 B at 0 B/s). -o isn't safe because of MDEP-82 (see above).
         run: |
@@ -141,8 +141,8 @@ jobs:
       - name: Perform release
         if: github.event.inputs.perform_version != ''
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_PASS: ${{ secrets.OSSRH_PASS }}
+          OSSRH_USER: ${{ secrets.MAVEN_USERNAME }}
+          OSSRH_PASS: ${{ secrets.MAVEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         # It will still check the remote but hopefully not download much (0 B at 0 B/s). -o isn't safe because of MDEP-82 (see above).
         # See https://issues.apache.org/jira/browse/SCM-729 for why the release.properties file is required.
