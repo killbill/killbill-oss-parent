@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.146.53-SNAPSHOT</version>
+    <version>0.146.64-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -132,10 +132,10 @@
              https://github.com/killbill/killbill-oss-parent/pull/411 -->
         <jooq.version>3.15.12</jooq.version>
         <killbill-api.version>0.54.0</killbill-api.version>
-        <killbill-base-plugin.version>5.1.6</killbill-base-plugin.version>
-        <killbill-client.version>1.3.8</killbill-client.version>
-        <killbill-commons.version>0.26.6</killbill-commons.version>
-        <killbill-platform.version>0.41.15</killbill-platform.version>
+        <killbill-base-plugin.version>5.1.9</killbill-base-plugin.version>
+        <killbill-client.version>1.3.10</killbill-client.version>
+        <killbill-commons.version>0.26.11</killbill-commons.version>
+        <killbill-platform.version>0.41.18</killbill-platform.version>
         <killbill-plugin-api.version>0.27.3</killbill-plugin-api.version>
         <killbill-testing-mysql.version>1.0.2</killbill-testing-mysql.version>
         <logback.version>1.3.14</logback.version>
