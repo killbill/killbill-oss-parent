@@ -10,7 +10,28 @@ env:
   MAVEN_OPTS: "-Xmx2G -XX:+ExitOnOutOfMemoryError -Dmaven.wagon.rto=60000"
 
 jobs:
+  resolve-branch-refs:
+    runs-on: ubuntu-22.04
+    outputs:
+      ci-ref: ${{ steps.refs.outputs.ci-ref }}
+    steps:
+      - name: Resolve CI branch refs
+        id: refs
+        shell: bash
+        run: |
+          branch=master
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.base_ref }}" == "java2x" ]]; then
+            branch=java2x
+          elif [[ "${{ github.ref_type }}" == "branch" && "${{ github.ref_name }}" == "java2x" ]]; then
+            branch=java2x
+          fi
+
+          echo "ci-ref=refs/heads/$branch" >> "$GITHUB_OUTPUT"
+          echo "Using downstream CI ref refs/heads/$branch"
+
   tests:
+    needs:
+      - resolve-branch-refs
     runs-on: ubuntu-22.04
     timeout-minutes: 200
     strategy:
@@ -25,20 +46,6 @@ jobs:
           - h2
           - mysql
           - postgresql
-        ref-api:
-          - refs/heads/master
-        ref-plugin-api:
-          - refs/heads/master
-        ref-commons:
-          - refs/heads/master
-        ref-plugin-framework-java:
-          - refs/heads/master
-        ref-platform:
-          - refs/heads/master
-        ref-client-java:
-          - refs/heads/master
-        ref-killbill:
-          - refs/heads/master
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v3
@@ -49,43 +56,43 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-api
-          ref: ${{ matrix.ref-api }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-api
       - name: Checkout killbill-plugin-api
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-plugin-api
-          ref: ${{ matrix.ref-plugin-api }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-plugin-api
       - name: Checkout killbill-commons
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-commons
-          ref: ${{ matrix.ref-commons }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-commons
       - name: Checkout killbill-plugin-framework-java
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-plugin-framework-java
-          ref: ${{ matrix.ref-plugin-framework-java }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-plugin-framework-java
       - name: Checkout killbill-platform
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-platform
-          ref: ${{ matrix.ref-platform }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-platform
       - name: Checkout killbill-client-java
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill-client-java
-          ref: ${{ matrix.ref-client-java }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill-client-java
       - name: Checkout killbill
         uses: actions/checkout@v3
         with:
           repository: killbill/killbill
-          ref: ${{ matrix.ref-killbill }}
+          ref: ${{ needs.resolve-branch-refs.outputs.ci-ref }}
           path: killbill
       - name: Setup Java
         uses: actions/setup-java@v3
