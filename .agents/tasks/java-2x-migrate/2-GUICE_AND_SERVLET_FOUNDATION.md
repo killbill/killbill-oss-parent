@@ -1,0 +1,53 @@
+# Task 2: Guice And Servlet Foundation
+
+## Objective
+
+Create the first executable migration slice in `killbill-commons` for Guice and
+servlet-facing foundation code without dragging in the full application stack.
+
+## Primary repo scope
+
+- `killbill-commons`
+- especially `skeleton` and `metrics`
+
+## Verified reasons this is early
+
+- `killbill-commons` is foundational and is consumed by both
+  `killbill-platform` and `killbill`.
+- `killbill-commons/skeleton` owns Guice servlet listeners, base servlet
+  modules, and shared server wiring.
+
+## Verified anchors
+
+- `killbill-commons/skeleton/pom.xml`
+- `killbill-commons/skeleton/src/main/java/org/killbill/commons/skeleton/listeners/GuiceServletContextListener.java`
+- `killbill-commons/skeleton/src/main/java/org/killbill/commons/skeleton/modules/BaseServerModule.java`
+- `killbill-commons/skeleton/src/main/java/org/killbill/commons/skeleton/modules/JerseyBaseServerModule.java`
+- `killbill-commons/metrics/pom.xml`
+
+## Library focus
+
+- `com.google.inject:*`
+- `com.google.inject.extensions:guice-servlet`
+- `jakarta.servlet:jakarta.servlet-api`
+- legacy `javax.servlet` imports and types that still survive in commons code
+
+## Deliverables
+
+1. Inventory all Guice servlet and servlet namespace usage in commons.
+2. Define the minimal code and dependency changes needed in commons before
+   platform adoption.
+3. Validate that the changes can build and test in `killbill-commons` without
+   immediately changing downstream repos.
+
+## Safe point
+
+This task should be kept revertable at the `killbill-commons` layer. Avoid
+mixing `killbill-platform` or `killbill` adoption changes into the same patch
+series unless absolutely required.
+
+## Exit criteria
+
+- Commons compiles and its relevant tests pass.
+- The Guice/servlet foundation is ready for platform consumption.
+- Any remaining blockers are documented explicitly.
