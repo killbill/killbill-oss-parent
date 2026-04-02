@@ -9,8 +9,10 @@ full and reliable coverage during the migration.
 
 - `killbill-oss-parent`
 - `killbill-commons`
-- `killbill-platform`
 - `killbill-plugin-framework-java`
+- `killbill-platform`
+- `killbill-api`
+- `killbill-client-java`
 - `killbill`
 
 ## Why this is early
