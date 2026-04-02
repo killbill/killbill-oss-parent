@@ -9,6 +9,7 @@ full and reliable coverage during the migration.
 
 - `killbill-oss-parent`
 - `killbill-commons`
+- `killbill-plugin-api`
 - `killbill-plugin-framework-java`
 - `killbill-platform`
 - `killbill-api`
@@ -49,16 +50,15 @@ This task should be revertable without rolling back application code changes.
 - `killbill-oss-parent` required a real change: [`.github/workflows/ci.yml`](./../../../.github/workflows/ci.yml)
   hard-coded all downstream checkout refs to `refs/heads/master`, which would
   validate migration PRs against the wrong branch set.
-- `killbill-commons`, `killbill-platform`, and
-  `killbill-plugin-framework-java` currently use reusable workflows with an
+- `killbill-commons`, `killbill-plugin-api`, `killbill-platform`,
+  `killbill-plugin-framework-java`, `killbill-api`, and
+  `killbill-client-java` currently use reusable workflows with an
   unfiltered `pull_request` trigger. Based on the checked-in workflow files,
   PRs targeting `java2x` are already picked up there without extra branch
   targeting changes.
-- `killbill` also has an unfiltered `pull_request` trigger for its main CI
-  workflow, but its local e2e job still checks out
-  `killbill-integration-tests` from `refs/heads/master`. That is a separate
-  repository-level follow-up if the migration lane also needs branch-coupled
-  integration tests there.
+- `killbill` required a real change as well: its push-based CI and CodeQL
+  workflows only covered `master`, and its e2e workflow checked out
+  `killbill-integration-tests` from `refs/heads/master`.
 
 ## Implementation notes
 
@@ -71,13 +71,25 @@ This task should be revertable without rolling back application code changes.
   `killbill-api`, `killbill-plugin-api`, `killbill-commons`,
   `killbill-plugin-framework-java`, `killbill-platform`,
   `killbill-client-java`, and `killbill`.
+- `killbill` CI now:
+  - runs push-based `ci` and `codeql-analysis` for both `master` and `java2x`
+  - resolves the `killbill-integration-tests` checkout ref from the branch
+    context so `java2x` PRs and pushes use `refs/heads/java2x`
+  - keeps `master` as the default fallback outside the migration lane
+- `java2x` branches are now in place for:
+  `killbill-oss-parent`, `killbill-commons`, `killbill-plugin-api`,
+  `killbill-platform`, `killbill-plugin-framework-java`, `killbill-api`,
+  `killbill-client-java`, and `killbill`
 - No library or application migration logic was mixed into this task.
 
 ## Temporary exceptions
 
-- `killbill` e2e coverage is not fully branch-coupled yet because
-  `killbill-integration-tests` is still pinned to `refs/heads/master` in that
-  repository's workflow.
 - The shared-workflow repositories rely on `killbill/gh-actions-shared@main`.
   Their `java2x` PR coverage is currently inherited from the repository-level
   `pull_request` trigger, not from any migration-specific branch logic.
+- `killbill-commons`, `killbill-plugin-api`, `killbill-platform`,
+  `killbill-plugin-framework-java`, `killbill-api`, and
+  `killbill-client-java` still rely on
+  `killbill/gh-actions-shared@main` for the actual reusable CI behavior. That
+  shared layer was inspected and is branch-agnostic for the `ci` and
+  `codeql-analysis` workflows currently used here.

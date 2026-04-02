@@ -12,12 +12,14 @@ This document is the master task board for the Java 2x migration.
 
 ### Current WIP
 
-Work on `.agents/tasks/java-2x-migrate/1-CI_FOR_JAVA2X_BRANCHES.md`.
-`killbill-oss-parent` CI branch targeting is updated to follow `java2x` PRs and
-pushes. Verified that `killbill-commons`, `killbill-platform`, and
-`killbill-plugin-framework-java` already accept `java2x` PRs via unfiltered
-`pull_request` workflows. Remaining follow-up is in `killbill`, where the e2e
-job still pins `killbill-integration-tests` to `master`.
+Work on `.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md`.
+Task 1 CI setup is complete: `java2x` branches are ready upstream for the
+critical-path repositories, including `killbill-plugin-api`, `killbill-oss-parent`
+and `killbill` have the needed repo-local CI updates, and the shared
+`gh-actions-shared` `ci` and `codeql-analysis` workflows were verified as
+branch-agnostic. Task 2 is scoped only to `killbill-commons`; before continuing
+there, I need you to refresh me again with the current `killbill-commons`
+branch/worktree state from your other session.
 
 Example:
 
@@ -38,7 +40,7 @@ Start here:
 
 ## Checklist
 
-- [ ] [`1-CI_FOR_JAVA2X_BRANCHES.md`](./.agents/tasks/java-2x-migrate/1-CI_FOR_JAVA2X_BRANCHES.md)
+- [x] [`1-CI_FOR_JAVA2X_BRANCHES.md`](./.agents/tasks/java-2x-migrate/1-CI_FOR_JAVA2X_BRANCHES.md)
 - [ ] [`2-GUICE_AND_SERVLET_FOUNDATION.md`](./.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md)
 - [ ] [`3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md`](./.agents/tasks/java-2x-migrate/3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md)
 - [ ] [`4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md`](./.agents/tasks/java-2x-migrate/4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md)
