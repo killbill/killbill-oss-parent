@@ -126,7 +126,6 @@
         <jetty.version>10.0.16</jetty.version>
         <jjwt.version>0.11.5</jjwt.version>
         <joda-time.version>2.12.5</joda-time.version>
-        <jooby.version>1.6.9</jooby.version>
         <!-- We cannot upgrade to 3.16.x, yet. See
              https://github.com/killbill/killbill-oss-parent/issues/557
              https://github.com/killbill/killbill-oss-parent/pull/411 -->
@@ -396,7 +395,7 @@
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
             </dependency>
-            <!-- Used by the base plugin because of Jooby -->
+            <!-- Used by the base plugin because of Jooby. FIXME: Check if this still relevant -->
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
@@ -917,39 +916,6 @@
                 <version>1.0.3</version>
             </dependency>
             <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>funzy</artifactId>
-                <version>0.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby</artifactId>
-                <version>${jooby.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>ch.qos.logback</groupId>
-                        <artifactId>logback-classic</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby-jackson</artifactId>
-                <version>${jooby.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby-servlet</artifactId>
-                <version>${jooby.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.servlet:jakarta.servlet-api instead -->
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>javax.servlet-api</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
                 <version>${jooq.version}</version>
@@ -1422,6 +1388,11 @@
                 <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-jdbi</artifactId>
                 <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-jooby</artifactId>
+                <version>0.26.14-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
