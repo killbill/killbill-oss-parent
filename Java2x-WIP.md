@@ -12,14 +12,11 @@ This document is the master task board for the Java 2x migration.
 
 ### Current WIP
 
-Work on `.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md`.
-Task 1 CI setup is complete: `java2x` branches are ready upstream for the
-critical-path repositories, including `killbill-plugin-api`, `killbill-oss-parent`
-and `killbill` have the needed repo-local CI updates, and the shared
-`gh-actions-shared` `ci` and `codeql-analysis` workflows were verified as
-branch-agnostic. Task 2 is scoped only to `killbill-commons`; before continuing
-there, I need you to refresh me again with the current `killbill-commons`
-branch/worktree state from your other session.
+Work on `.agents/tasks/java-2x-migrate/2-1-COMMONS_INVENTORY_AND_BOUNDARY_MAPPING.md`.
+Read-only inventory is in progress in `killbill-commons`, explicitly excluding
+`killbill-commons/jooby`. Verified so far that the non-Jooby Guice/servlet
+surface is concentrated in `skeleton` and `metrics`, where POMs already depend
+on `jakarta.servlet-api` but code still imports `javax.servlet`.
 
 Example:
 

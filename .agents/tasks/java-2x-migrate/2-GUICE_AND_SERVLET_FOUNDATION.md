@@ -51,3 +51,10 @@ series unless absolutely required.
 - Commons compiles and its relevant tests pass.
 - The Guice/servlet foundation is ready for platform consumption.
 - Any remaining blockers are documented explicitly.
+
+## Suggested execution split
+
+- [`2-1-COMMONS_INVENTORY_AND_BOUNDARY_MAPPING.md`](./2-1-COMMONS_INVENTORY_AND_BOUNDARY_MAPPING.md)
+- [`2-2-COMMONS_NON_JOOBY_FOUNDATION_CHANGES.md`](./2-2-COMMONS_NON_JOOBY_FOUNDATION_CHANGES.md)
+- [`2-3-COMMONS_JOOBY_INTEGRATION_ALIGNMENT.md`](./2-3-COMMONS_JOOBY_INTEGRATION_ALIGNMENT.md)
+- [`2-4-COMMONS_JAKARTA_ADOPTION_SLICE.md`](./2-4-COMMONS_JAKARTA_ADOPTION_SLICE.md)
