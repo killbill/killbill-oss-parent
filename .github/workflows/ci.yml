@@ -38,8 +38,7 @@ jobs:
       fail-fast: false
       matrix:
         java-version:
-          - 11
-          - 17
+          - 21
         java-distribution:
           - temurin
         suite:
