@@ -183,3 +183,13 @@ upgrades or runtime behavior changes.
 - `killbill-commons/jooby` was intentionally excluded from this scan and still
   needs separate read-only analysis under Task 2.5 when that boundary becomes
   relevant.
+
+
+## Completion status
+
+Completed.
+
+The inventory was consumed by the completed commons migration. The important
+verified conclusion held through execution: outside `killbill-commons/jooby`,
+the non-Jooby servlet/Guice surface was concentrated in `skeleton` and
+`metrics`, and those modules were migrated successfully.

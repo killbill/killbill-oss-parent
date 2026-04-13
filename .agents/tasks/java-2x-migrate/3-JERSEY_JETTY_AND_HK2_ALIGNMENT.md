@@ -44,3 +44,22 @@ consume an already-prepared commons shape rather than redefining it.
 - The shared Jersey/Jetty/HK2 stack has a verified upgrade direction.
 - Commons is no longer the blocker for those libraries.
 - Platform-specific follow-up, if any, is clearly isolated.
+
+
+## Updated status
+
+`killbill-commons` is no longer the blocker for this task.
+
+Reported completed commons-side state:
+
+- Jakarta-ready commons repository
+- Guice `7.0.0`
+- Jetty `11`
+- Java `21`
+
+Remaining scope for Task 3 is therefore primarily:
+
+- parent/BOM alignment in `killbill-oss-parent`
+- downstream runtime adoption in `killbill-platform` and other consumers
+- verification that the shared Jersey / HK2 / Jetty direction is consistent
+  across the remaining repositories

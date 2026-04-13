@@ -48,3 +48,11 @@ into the same patch series unless a blocker is proven and documented.
 - Commons compiles against the intended servlet namespace.
 - Relevant commons tests pass.
 - Remaining downstream migration blockers, if any, are documented explicitly.
+
+
+## Completion status
+
+Completed.
+
+`killbill-commons` is now reported as Jakarta-ready, with Guice `7.0.0`,
+Jetty `11`, and Java `21` as the effective completed state for this task lane.

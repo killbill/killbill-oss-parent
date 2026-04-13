@@ -12,11 +12,11 @@ This document is the master task board for the Java 2x migration.
 
 ### Current WIP
 
-Work on `.agents/tasks/java-2x-migrate/2-1-COMMONS_INVENTORY_AND_BOUNDARY_MAPPING.md`.
-Read-only inventory is in progress in `killbill-commons`, explicitly excluding
-`killbill-commons/jooby`. Verified so far that the non-Jooby Guice/servlet
-surface is concentrated in `skeleton` and `metrics`, where POMs already depend
-on `jakarta.servlet-api` but code still imports `javax.servlet`.
+Work on `.agents/tasks/java-2x-migrate/8-JAVA21_BASELINE_AND_VALIDATION.md`.
+Task 2 is complete in `killbill-commons`, and `killbill-commons` release CI has
+been updated to Java `21`. The remaining CI work is now in
+`killbill-oss-parent`: align the parent POM, normal CI, and release workflow
+with the Java 21 baseline before downstream production adoption.
 
 Example:
 
@@ -38,7 +38,7 @@ Start here:
 ## Checklist
 
 - [x] [`1-CI_FOR_JAVA2X_BRANCHES.md`](./.agents/tasks/java-2x-migrate/1-CI_FOR_JAVA2X_BRANCHES.md)
-- [ ] [`2-GUICE_AND_SERVLET_FOUNDATION.md`](./.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md)
+- [x] [`2-GUICE_AND_SERVLET_FOUNDATION.md`](./.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md)
 - [ ] [`3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md`](./.agents/tasks/java-2x-migrate/3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md)
 - [ ] [`4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md`](./.agents/tasks/java-2x-migrate/4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md)
 - [ ] [`5-JOOBY_AND_PLUGIN_RUNTIME.md`](./.agents/tasks/java-2x-migrate/5-JOOBY_AND_PLUGIN_RUNTIME.md)

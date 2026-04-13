@@ -44,3 +44,13 @@ This task is inspection and documentation only. Do not modify files under
   Jooby boundary.
 - Any required future Jooby-side work is documented explicitly for the session
   that owns that directory.
+
+
+## Completion status
+
+Completed as a planning / boundary task.
+
+The Jooby lane was sufficiently understood and aligned for the commons
+migration to finish successfully. Further Jooby work, if any, now belongs to
+post-commons downstream adoption rather than the original Task 2 discovery
+phase.

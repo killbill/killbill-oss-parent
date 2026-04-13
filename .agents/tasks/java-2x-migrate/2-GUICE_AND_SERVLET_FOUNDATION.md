@@ -58,3 +58,24 @@ series unless absolutely required.
 - [`2-2-COMMONS_NON_JOOBY_FOUNDATION_CHANGES.md`](./2-2-COMMONS_NON_JOOBY_FOUNDATION_CHANGES.md)
 - [`2-3-COMMONS_JOOBY_INTEGRATION_ALIGNMENT.md`](./2-3-COMMONS_JOOBY_INTEGRATION_ALIGNMENT.md)
 - [`2-4-COMMONS_JAKARTA_ADOPTION_SLICE.md`](./2-4-COMMONS_JAKARTA_ADOPTION_SLICE.md)
+
+
+## Completion status
+
+Completed in `killbill-commons`.
+
+Verified end state reported for the completed commons lane:
+
+- `killbill-commons` is Jakarta-namespace ready for the servlet / web-stack
+  path.
+- Guice moved to `7.0.0`.
+- Jetty moved to `11`.
+- The commons repository now targets Java `21`.
+- Remaining `javax.annotation` usage is treated as non-blocking for this task.
+- A working demonstration exists in:
+  `/mnt/data/vcs/git/github/xsalefter/kb-jooby-demo`
+
+Implication for the migration plan:
+
+- Task 2 is no longer the blocker.
+- The next work should move to parent/BOM alignment and downstream adoption.

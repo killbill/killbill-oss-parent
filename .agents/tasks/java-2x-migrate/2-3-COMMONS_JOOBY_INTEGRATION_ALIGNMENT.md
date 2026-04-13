@@ -52,3 +52,12 @@ commons-side alignment.
 - Required commons-side alignment changes are complete or clearly blocked on
   the fork lane.
 - No hidden Jooby assumptions remain in the commons foundation work.
+
+
+## Completion status
+
+Completed from the commons side.
+
+The Jooby fork lane and the commons migration were aligned sufficiently for the
+repository to reach a working Jakarta-ready state. A working demo is available
+at `/mnt/data/vcs/git/github/xsalefter/kb-jooby-demo`.
