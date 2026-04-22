@@ -707,6 +707,12 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-alpn-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-deploy</artifactId>
                 <version>${jetty.version}</version>
@@ -777,6 +783,18 @@
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-xml</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>http2-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-jetty-api</artifactId>
                 <version>${jetty.version}</version>
             </dependency>
             <dependency>
