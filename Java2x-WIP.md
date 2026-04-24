@@ -12,18 +12,11 @@ This document is the master task board for the Java 2x migration.
 
 ### Current WIP
 
-Work on `.agents/tasks/java-2x-migrate/8-JAVA21_BASELINE_AND_VALIDATION.md`.
-Task 2 is complete in `killbill-commons`, and `killbill-commons` release CI has
-been updated to Java `21`. The remaining CI work is now in
-`killbill-oss-parent`: align the parent POM, normal CI, and release workflow
-with the Java 21 baseline before downstream production adoption.
-
-Example:
-
-Work on `.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md`.
-Code migration for guice is completed.
-Library up-to-date.
-Still fixing unit tests.
+Tasks 1–3 and 8 are complete for `killbill-oss-parent`. Task 7 is partially
+done (major libraries upgraded, minor families remain). Remaining open work
+is downstream runtime adoption in `killbill-platform` (Task 4),
+`killbill-plugin-framework-java` / Jooby (Task 5), and the `killbill` app
+layer (Task 6).
 
 ## Task Directory
 
@@ -39,10 +32,10 @@ Start here:
 
 - [x] [`1-CI_FOR_JAVA2X_BRANCHES.md`](./.agents/tasks/java-2x-migrate/1-CI_FOR_JAVA2X_BRANCHES.md)
 - [x] [`2-GUICE_AND_SERVLET_FOUNDATION.md`](./.agents/tasks/java-2x-migrate/2-GUICE_AND_SERVLET_FOUNDATION.md)
-- [ ] [`3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md`](./.agents/tasks/java-2x-migrate/3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md)
+- [x] [`3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md`](./.agents/tasks/java-2x-migrate/3-JERSEY_JETTY_AND_HK2_ALIGNMENT.md) — Jersey 3.1.11, HK2 3.0.6, Jetty 11.0.26, JAX-RS 3.1.0, Swagger 2.2.28. Parent BOM aligned.
 - [ ] [`4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md`](./.agents/tasks/java-2x-migrate/4-PLATFORM_OSGI_AND_LOGGING_RUNTIME.md)
 - [ ] [`5-JOOBY_AND_PLUGIN_RUNTIME.md`](./.agents/tasks/java-2x-migrate/5-JOOBY_AND_PLUGIN_RUNTIME.md)
 - [ ] [`6-SHIRO_WEB_AND_APPLICATION_ADOPTION.md`](./.agents/tasks/java-2x-migrate/6-SHIRO_WEB_AND_APPLICATION_ADOPTION.md)
-- [ ] [`7-SUPPORTING_LIBRARY_UPGRADES.md`](./.agents/tasks/java-2x-migrate/7-SUPPORTING_LIBRARY_UPGRADES.md)
-- [ ] [`8-JAVA21_BASELINE_AND_VALIDATION.md`](./.agents/tasks/java-2x-migrate/8-JAVA21_BASELINE_AND_VALIDATION.md)
+- [~] [`7-SUPPORTING_LIBRARY_UPGRADES.md`](./.agents/tasks/java-2x-migrate/7-SUPPORTING_LIBRARY_UPGRADES.md) — Done: Jackson 2.21.2, Logback 1.5.32, Metrics 4.2.38, Ehcache 3.11.1, Shiro 2.0.6, Netty 4.2.7 (pinned — hard-won cross-repo match), Javassist 3.30.2, JAXB 4.0.x. Remaining: jOOQ (blocked #557), Derby, ANTLR, OSGi log.
+- [x] [`8-JAVA21_BASELINE_AND_VALIDATION.md`](./.agents/tasks/java-2x-migrate/8-JAVA21_BASELINE_AND_VALIDATION.md) — POM targetJdk=21, CI matrix Java 21, enforcer rules, release workflow all aligned.
 - [ ] [`99-CI_RETURN_TO_MASTER.md`](./.agents/tasks/java-2x-migrate/99-CI_RETURN_TO_MASTER.md)
