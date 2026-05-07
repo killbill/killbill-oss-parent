@@ -229,3 +229,5 @@ Temporary Items
 *.tmproj
 *.tmproject
 tmtags
+/.codex
+/.idea/copilot.data.migration.ask2agent.xml
