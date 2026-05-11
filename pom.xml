@@ -112,7 +112,7 @@
         <ehcache.version>3.9.10</ehcache.version>
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
         <guava.version>31.1-jre</guava.version>
-        <guice.version>5.1.0</guice.version>
+        <guice.version>7.0.0</guice.version>
         <hk2.version>2.6.1</hk2.version>
         <jackson-databind.version>2.13.4.2</jackson-databind.version>
         <jackson.version>2.13.4</jackson.version>
