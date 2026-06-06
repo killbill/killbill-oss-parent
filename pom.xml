@@ -1666,6 +1666,14 @@
                         <keepBlankLines>true</keepBlankLines>
                         <lineSeparator>\n</lineSeparator>
                         <expandEmptyElements>false</expandEmptyElements>
+                        <!--
+                            Match the empty-element style produced by maven-release-plugin and versions-maven-plugin
+                            (Maven core's Xpp3DomWriter writes "<foo />" with a leading space and is NOT configurable).
+                            Without this, sortpom rewrites every "<foo />" to "<foo/>" on each `mvn verify`, silently
+                            mutating pom.xml after every release / version bump and causing CI to flag pom.xml as
+                            auto-modified.
+                        -->
+                        <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
                         <nrOfIndentSpace>4</nrOfIndentSpace>
                         <sortDependencies>groupId,artifactId,scope</sortDependencies>
                         <sortPlugins>groupId,artifactId,scope</sortPlugins>
