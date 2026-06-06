@@ -115,11 +115,11 @@ jobs:
           for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
             echo "::group::Update $i parent"
             pushd $GITHUB_WORKSPACE/$i
+            echo "Updating $i parent pom.xml to $pomVersion"
+            mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
             echo "Resolving current $i version"
             version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
             echo "Current $i version is $version"
-            echo "Updating $i parent pom.xml to $pomVersion"
-            mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
             echo "$i pom.xml changes:"
             git --no-pager diff
             echo "Building $i"
