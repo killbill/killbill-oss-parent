@@ -89,6 +89,7 @@
     </distributionManagement>
     <properties>
         <build.jvmsize>1024m</build.jvmsize>
+        <caffeine.version>3.2.4</caffeine.version>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
         <check.fail-dependency-versions>true</check.fail-dependency-versions>
@@ -111,7 +112,7 @@
         <derby.version>10.15.2.0</derby.version>
         <ehcache.version>3.11.1</ehcache.version>
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
-        <guava.version>31.1-jre</guava.version>
+        <guava.version>33.6.0-jre</guava.version>
         <guice.version>7.0.0</guice.version>
         <hk2.version>3.0.6</hk2.version>
         <jackson-annotation.version>2.21</jackson-annotation.version>
@@ -330,6 +331,11 @@
                 <version>1.2.0</version>
             </dependency>
             <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
                 <version>4.7.2</version>
@@ -338,11 +344,6 @@
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
                 <version>3.0.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.errorprone</groupId>
-                <artifactId>error_prone_annotations</artifactId>
-                <version>2.16</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
