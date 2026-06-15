@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.146.79-SNAPSHOT</version>
+    <version>0.147.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -68,7 +68,7 @@
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:killbill/killbill-oss-parent.git</developerConnection>
-        <tag>killbill-oss-parent-0.146.69</tag>
+        <tag>HEAD</tag>
         <url>http://github.com/killbill/killbill-oss-parent/tree/master</url>
     </scm>
     <issueManagement>
@@ -89,6 +89,7 @@
     </distributionManagement>
     <properties>
         <build.jvmsize>1024m</build.jvmsize>
+        <caffeine.version>3.2.4</caffeine.version>
         <check.fail-dependency>true</check.fail-dependency>
         <check.fail-dependency-scope>true</check.fail-dependency-scope>
         <check.fail-dependency-versions>true</check.fail-dependency-versions>
@@ -105,49 +106,56 @@
         <check.skip-enforcer>false</check.skip-enforcer>
         <check.skip-rat>false</check.skip-rat>
         <check.skip-spotbugs>false</check.skip-spotbugs>
-        <check.spotbugs-exclude-filter-file />
+        <check.spotbugs-exclude-filter-file/>
         <compiler.fail-warnings>false</compiler.fail-warnings>
         <deploy.deploy-at-end>true</deploy.deploy-at-end>
         <derby.version>10.15.2.0</derby.version>
-        <ehcache.version>3.9.10</ehcache.version>
+        <ehcache.version>3.11.1</ehcache.version>
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
-        <guava.version>31.1-jre</guava.version>
-        <guice.version>5.1.0</guice.version>
-        <hk2.version>2.6.1</hk2.version>
-        <jackson-databind.version>2.13.4.2</jackson-databind.version>
-        <jackson.version>2.13.4</jackson.version>
-        <jakarta.annotation-api.version>1.3.5</jakarta.annotation-api.version>
-        <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
-        <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
-        <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
-        <jaxb-api.version>2.3.3</jaxb-api.version>
+        <guava.version>33.6.0-jre</guava.version>
+        <guice.version>7.0.0</guice.version>
+        <hk2.version>3.0.6</hk2.version>
+        <jackson-annotation.version>2.21</jackson-annotation.version>
+        <jackson-databind.version>2.21.2</jackson-databind.version>
+        <jackson.version>2.21.2</jackson.version>
+        <jakarta.activation-api.version>2.1.4</jakarta.activation-api.version>
+        <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
+        <jakarta.inject-api.version>2.0.1</jakarta.inject-api.version>
+        <!--
+        Tempted to update directly to 6.x, but the answer of prompt below hold me back:
+        "jakarta servlet 5 vs 6 vs 6.1 is there any breaking changes from 5 to 6.x"
+        -->
+        <jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
+        <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
+        <jakarta.ws.rs-api.version>3.1.0</jakarta.ws.rs-api.version>
+        <jaxb-api.version>4.0.5</jaxb-api.version>
+        <jaxb-runtime.version>4.0.7</jaxb-runtime.version>
         <jersey-client.version>${jersey.version}</jersey-client.version>
-        <jersey.version>2.39.1</jersey.version>
-        <jetty.version>10.0.16</jetty.version>
+        <jersey.version>3.1.11</jersey.version>
+        <jetty.version>11.0.26</jetty.version>
         <jjwt.version>0.11.5</jjwt.version>
-        <joda-time.version>2.12.5</joda-time.version>
-        <jooby.version>1.6.9</jooby.version>
+        <joda-time.version>2.12.7</joda-time.version>
         <!-- We cannot upgrade to 3.16.x, yet. See
              https://github.com/killbill/killbill-oss-parent/issues/557
              https://github.com/killbill/killbill-oss-parent/pull/411 -->
         <jooq.version>3.15.12</jooq.version>
-        <killbill-api.version>0.54.0</killbill-api.version>
-        <killbill-base-plugin.version>5.1.12</killbill-base-plugin.version>
-        <killbill-client.version>1.4.0</killbill-client.version>
-        <killbill-commons.version>0.26.15</killbill-commons.version>
-        <killbill-platform.version>0.41.21</killbill-platform.version>
-        <killbill-plugin-api.version>0.27.3</killbill-plugin-api.version>
+        <killbill-api.version>0.55.0-f25d74b-SNAPSHOT</killbill-api.version>
+        <killbill-base-plugin.version>5.2.0-b98ff57-SNAPSHOT</killbill-base-plugin.version>
+        <killbill-client.version>1.4.1-a285cee-SNAPSHOT</killbill-client.version>
+        <killbill-commons.version>0.27.1-1f25dad-SNAPSHOT</killbill-commons.version>
+        <killbill-platform.version>0.42.0-a10b98f-SNAPSHOT</killbill-platform.version>
+        <killbill-plugin-api.version>0.28.0-b8017ea-SNAPSHOT</killbill-plugin-api.version>
         <killbill-testing-mysql.version>1.0.2</killbill-testing-mysql.version>
-        <logback.version>1.3.14</logback.version>
-        <metrics.version>4.2.12</metrics.version>
-        <netty.version>4.1.84.Final</netty.version>
+        <logback.version>1.5.32</logback.version>
+        <metrics.version>4.2.38</metrics.version>
+        <netty.version>4.2.7.Final</netty.version>
         <org.osgi.core.version>6.0.0</org.osgi.core.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.annotation.version>8.1.0</osgi.annotation.version>
         <osgi.dependency>*;scope=compile|runtime;inline=true</osgi.dependency>
         <osgi.description>${project.description}</osgi.description>
-        <osgi.export />
-        <osgi.extra-import />
+        <osgi.export/>
+        <osgi.extra-import/>
         <osgi.fixupmessages>"Classes found in the wrong directory...","Unused Import-Package instructions...","While traversing the type tree for...";is:=ignore</osgi.fixupmessages>
         <osgi.import>
             ${osgi.extra-import},
@@ -211,12 +219,12 @@
         </osgi.import>
         <osgi.name>${project.name}</osgi.name>
         <osgi.noclassforname>true</osgi.noclassforname>
-        <osgi.private />
+        <osgi.private/>
         <osgi.symbolic-name>${project.groupId}.${project.artifactId}</osgi.symbolic-name>
         <osgi.transitive-dependency>true</osgi.transitive-dependency>
         <osgi.version>8.0.0</osgi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>11</project.build.targetJdk>
+        <project.build.targetJdk>21</project.build.targetJdk>
         <release.auto-version-submodules>true</release.auto-version-submodules>
         <release.preparation-goals>clean verify</release.preparation-goals>
         <release.push-changes>true</release.push-changes>
@@ -229,11 +237,11 @@
         <repository.snapshot.id>central</repository.snapshot.id>
         <repository.snapshot.name>Central Snapshots Repository</repository.snapshot.name>
         <repository.snapshot.url>https://central.sonatype.com/repository/maven-snapshots/</repository.snapshot.url>
-        <shiro.version>1.12.0</shiro.version>
+        <shiro.version>2.0.6</shiro.version>
         <skipTests>false</skipTests>
-        <slf4j.version>2.0.9</slf4j.version>
+        <slf4j.version>2.0.17</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
-        <swagger.version>1.6.7</swagger.version>
+        <swagger.version>2.2.28</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -265,7 +273,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson-annotation.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -303,18 +311,18 @@
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.jaxrs</groupId>
-                <artifactId>jackson-jaxrs-base</artifactId>
+                <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+                <artifactId>jackson-jakarta-rs-base</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.jaxrs</groupId>
-                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
+                <artifactId>jackson-jakarta-rs-json-provider</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
-                <artifactId>jackson-module-jaxb-annotations</artifactId>
+                <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
@@ -323,31 +331,19 @@
                 <version>1.2.0</version>
             </dependency>
             <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
                 <version>4.7.2</version>
             </dependency>
             <dependency>
-                <groupId>com.github.tomakehurst</groupId>
-                <artifactId>wiremock</artifactId>
-                <version>2.27.2</version>
-                <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.mortbay.jetty</groupId>
-                        <artifactId>servlet-api</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
                 <version>3.0.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.errorprone</groupId>
-                <artifactId>error_prone_annotations</artifactId>
-                <version>2.16</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -396,7 +392,7 @@
                 <artifactId>jmustache</artifactId>
                 <version>1.15</version>
             </dependency>
-            <!-- Used by the base plugin because of Jooby -->
+            <!-- Used by the base plugin because of Jooby. FIXME: Check if this still relevant -->
             <dependency>
                 <groupId>com.typesafe</groupId>
                 <artifactId>config</artifactId>
@@ -455,30 +451,23 @@
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations-jakarta</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-jaxrs</artifactId>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-integration-jakarta</artifactId>
                 <version>${swagger.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.ws.rs:jakarta.ws.rs-api instead -->
-                        <groupId>javax.ws.rs</groupId>
-                        <artifactId>jsr311-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <!-- We use jakarta.validation:jakarta.validation-api instead -->
-                        <groupId>javax.validation</groupId>
-                        <artifactId>validation-api</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-models</artifactId>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-jaxrs2-jakarta</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-models-jakarta</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
@@ -507,12 +496,17 @@
             <dependency>
                 <groupId>jakarta.activation</groupId>
                 <artifactId>jakarta.activation-api</artifactId>
-                <version>1.2.2</version>
+                <version>${jakarta.activation-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.annotation</groupId>
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>${jakarta.annotation-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.inject</groupId>
+                <artifactId>jakarta.inject-api</artifactId>
+                <version>${jakarta.inject-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.servlet</groupId>
@@ -538,11 +532,6 @@
                 <groupId>javax.cache</groupId>
                 <artifactId>cache-api</artifactId>
                 <version>1.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.inject</groupId>
-                <artifactId>javax.inject</artifactId>
-                <version>1</version>
             </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
@@ -618,8 +607,16 @@
                 <artifactId>org.apache.felix.log</artifactId>
                 <version>1.2.6</version>
             </dependency>
-            <!-- Because of https://issues.apache.org/jira/browse/SHIRO-679 (duplicate classes across artifacts),
-                 we cannot upgrade until 2.0.0 is released (https://github.com/apache/shiro/pull/236) -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-cache</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-config-core</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
@@ -627,20 +624,30 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-crypto-core</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-crypto-hash</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-guice</artifactId>
                 <version>${shiro.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.annotation:jakarta.annotation-api instead -->
-                        <groupId>javax.annotation</groupId>
-                        <artifactId>javax.annotation-api</artifactId>
-                    </exclusion>
-                </exclusions>
+                <classifier>jakarta</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-lang</artifactId>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-web</artifactId>
                 <version>${shiro.version}</version>
+                <classifier>jakarta</classifier>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
@@ -682,6 +689,12 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-alpn-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-deploy</artifactId>
                 <version>${jetty.version}</version>
@@ -715,6 +728,10 @@
                         <!-- We use jakarta.servlet:jakarta.servlet-api instead -->
                         <groupId>org.eclipse.jetty.toolchain</groupId>
                         <artifactId>jetty-servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.eclipse.jetty.toolchain</groupId>
+                        <artifactId>jetty-jakarta-servlet-api</artifactId>
                     </exclusion>
                     <exclusion>
                         <!-- https://github.com/eclipse/jetty.project/issues/5943 -->
@@ -751,14 +768,44 @@
                 <version>${jetty.version}</version>
             </dependency>
             <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>http2-server</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <!-- required by Jooby in killbill-commons -->
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-jetty-api</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
+                <classifier>jakarta</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-runtime</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache-clustered</artifactId>
                 <version>${ehcache.version}</version>
+                <exclusions>
+                    <!-- To avoid "java.lang.NoClassDefFoundError: javax/xml/bind/ValidationEventHandler" -->
+                    <exclusion>
+                        <groupId>org.ehcache</groupId>
+                        <artifactId>ehcache</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.ehcache.integrations.shiro</groupId>
@@ -814,14 +861,7 @@
             <dependency>
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
-                <version>2.3.6</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.activation:jakarta.activation-api instead -->
-                        <groupId>com.sun.activation</groupId>
-                        <artifactId>jakarta.activation</artifactId>
-                    </exclusion>
-                </exclusions>
+                <version>${jaxb-runtime.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.containers</groupId>
@@ -909,45 +949,12 @@
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.29.2-GA</version>
+                <version>3.30.2-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.joda</groupId>
                 <artifactId>joda-money</artifactId>
                 <version>1.0.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>funzy</artifactId>
-                <version>0.1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby</artifactId>
-                <version>${jooby.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>ch.qos.logback</groupId>
-                        <artifactId>logback-classic</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby-jackson</artifactId>
-                <version>${jooby.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooby</groupId>
-                <artifactId>jooby-servlet</artifactId>
-                <version>${jooby.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <!-- We use jakarta.servlet:jakarta.servlet-api instead -->
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>javax.servlet-api</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
@@ -1139,11 +1146,6 @@
             <dependency>
                 <groupId>org.kill-bill.billing</groupId>
                 <artifactId>killbill-platform-osgi-bundles-defaultbundles</artifactId>
-                <version>${killbill-platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kill-bill.billing</groupId>
-                <artifactId>killbill-platform-osgi-bundles-eureka</artifactId>
                 <version>${killbill-platform.version}</version>
             </dependency>
             <dependency>
@@ -1425,6 +1427,11 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-jooby</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-locker</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
@@ -1594,6 +1601,12 @@
                 <version>1.23</version>
             </dependency>
             <dependency>
+                <groupId>org.wiremock</groupId>
+                <artifactId>wiremock</artifactId>
+                <version>3.13.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.xerial.snappy</groupId>
                 <artifactId>snappy-java</artifactId>
                 <version>1.1.10.4</version>
@@ -1602,7 +1615,7 @@
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
-                <version>2.0</version>
+                <version>2.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -1680,7 +1693,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.7.2.1</version>
+                    <version>4.9.8.3</version>
                     <configuration>
                         <skip>${check.skip-spotbugs}</skip>
                         <jvmArgs>-Xmx${build.jvmsize}</jvmArgs>
@@ -1909,7 +1922,7 @@
                                     <include>junit:junit:[4.11,)</include>
                                 </includes>
                             </bannedDependencies>
-                            <banDuplicatePomDependencyVersions />
+                            <banDuplicatePomDependencyVersions/>
                             <requireUpperBoundDeps>
                                 <excludes>
                                     <!-- Wildcards don't seem to work -->
@@ -1922,7 +1935,6 @@
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-api</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-defaultbundles</exclude>
-                                    <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-eureka</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-graphite</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-influxdb</exclude>
                                     <exclude>org.kill-bill.billing:killbill-platform-osgi-bundles-kpm</exclude>
@@ -1979,7 +1991,7 @@
                         <dependency>
                             <groupId>org.codehaus.mojo</groupId>
                             <artifactId>extra-enforcer-rules</artifactId>
-                            <version>1.6.1</version>
+                            <version>1.12.0</version>
                         </dependency>
                     </dependencies>
                     <executions>
@@ -2154,8 +2166,8 @@
                                 <skip>${check.skip-rat}</skip>
                                 <ignoreErrors>${check.ignore-rat}</ignoreErrors>
                                 <licenseFamilies>
-                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" />
-                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily" />
+                                    <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily"/>
+                                    <licenseFamily implementation="org.apache.rat.license.MITLicenseFamily"/>
                                 </licenseFamilies>
                                 <useDefaultExcludes>true</useDefaultExcludes>
                                 <parseSCMIgnoresAsExcludes>true</parseSCMIgnoresAsExcludes>
@@ -2280,6 +2292,14 @@
                             <dependency>
                                 <groupId>org.apache.shiro</groupId>
                                 <artifactId>shiro-crypto-event</artifactId>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.ehcache</groupId>
+                                <artifactId>ehcache</artifactId>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.ehcache</groupId>
+                                <artifactId>ehcache-clustered</artifactId>
                             </dependency>
                         </ignoredDependencies>
                         <ignoredResourcePatterns combine.children="append">
