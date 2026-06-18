@@ -31,7 +31,7 @@ jobs:
         ref-commons:
           - refs/heads/master
         ref-plugin-framework-java:
-          - refs/heads/java2x
+          - refs/heads/master
         ref-platform:
           - refs/heads/java2x
         ref-client-java:
