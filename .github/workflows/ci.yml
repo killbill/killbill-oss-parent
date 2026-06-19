@@ -35,7 +35,7 @@ jobs:
         ref-platform:
           - refs/heads/master
         ref-client-java:
-          - refs/heads/java2x
+          - refs/heads/master
         ref-killbill:
           - refs/heads/java2x
     steps:
