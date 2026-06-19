@@ -33,7 +33,7 @@ jobs:
         ref-plugin-framework-java:
           - refs/heads/master
         ref-platform:
-          - refs/heads/java2x
+          - refs/heads/master
         ref-client-java:
           - refs/heads/java2x
         ref-killbill:
