@@ -116,7 +116,7 @@
         <guice.version>7.0.0</guice.version>
         <hk2.version>3.0.6</hk2.version>
         <jackson-annotation.version>2.21</jackson-annotation.version>
-        <jackson-databind.version>2.21.2</jackson-databind.version>
+        <jackson-databind.version>2.22.0</jackson-databind.version>
         <jackson.version>2.21.2</jackson.version>
         <jakarta.activation-api.version>2.1.4</jakarta.activation-api.version>
         <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
