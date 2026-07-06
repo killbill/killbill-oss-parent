@@ -68,7 +68,7 @@
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:killbill/killbill-oss-parent.git</developerConnection>
-        <tag>killbill-oss-parent-0.146.69</tag>
+        <tag>killbill-oss-parent-0.146.79</tag>
         <url>http://github.com/killbill/killbill-oss-parent/tree/master</url>
     </scm>
     <issueManagement>
