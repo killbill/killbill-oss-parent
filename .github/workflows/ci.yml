@@ -37,7 +37,7 @@ jobs:
         ref-client-java:
           - refs/heads/master
         ref-killbill:
-          - refs/heads/java2x
+          - refs/heads/master
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v6
