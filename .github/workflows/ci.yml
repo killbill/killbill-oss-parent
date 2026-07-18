@@ -37,7 +37,7 @@ jobs:
         ref-client-java:
           - refs/heads/master
         ref-killbill:
-          - refs/heads/master
+          - refs/heads/shiro-2.2.1-support
     steps:
       - name: Checkout killbill-oss-parent
         uses: actions/checkout@v6
