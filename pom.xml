@@ -231,13 +231,20 @@
         <release.release-profiles>oss-release</release.release-profiles>
         <release.tag-name-format>@{project.artifactId}-@{project.version}</release.tag-name-format>
         <reload4j.version>1.2.25</reload4j.version>
+        <!--
+        Cloudsmith repository slug (the "XXX" in https://maven.cloudsmith.io/killbill/XXX/).
+        Defaults to ${project.artifactId} so single-module projects need no configuration.
+        Multi-module projects (e.g. killbill-commons) should override this property once
+        in their aggregator pom so every submodule deploys to the same Cloudsmith repo.
+        -->
+        <repository.cloudsmith.repo>${project.artifactId}</repository.cloudsmith.repo>
         <repository.release.id>cloudsmith</repository.release.id>
         <repository.release.name>Cloudsmith Release Repository</repository.release.name>
         <!-- Cloudsmith push endpoint (different from the dl.cloudsmith.io pull endpoint used in <repositories>) -->
-        <repository.release.url>https://maven.cloudsmith.io/killbill/killbill-oss-parent/</repository.release.url>
+        <repository.release.url>https://maven.cloudsmith.io/killbill/${repository.cloudsmith.repo}/</repository.release.url>
         <repository.snapshot.id>cloudsmith</repository.snapshot.id>
         <repository.snapshot.name>Cloudsmith Snapshots Repository</repository.snapshot.name>
-        <repository.snapshot.url>https://maven.cloudsmith.io/killbill/killbill-oss-parent/</repository.snapshot.url>
+        <repository.snapshot.url>https://maven.cloudsmith.io/killbill/${repository.cloudsmith.repo}/</repository.snapshot.url>
         <shiro.version>2.2.1</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>2.0.18</slf4j.version>
