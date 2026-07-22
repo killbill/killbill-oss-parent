@@ -54,10 +54,20 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
+      - name: Configure Cloudsmith credentials
+        uses: s4u/maven-settings-action@v4.0.0
+        with:
+          # id=central authenticates the Cloudsmith proxy declared in pom.xml <repositories>/<pluginRepositories>.
+          # id=cloudsmith authenticates the Cloudsmith deploy target declared in pom.xml <distributionManagement>.
+          servers: |
+            [
+              {"id": "central",    "username": "${{ secrets.CLOUDSMITH_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
+              {"id": "cloudsmith", "username": "${{ secrets.CLOUDSMITH_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_PASSWORD }}"}
+            ]
       - name: Download Java dependencies
         # We do as much as we can, but it may not be enough (https://issues.apache.org/jira/browse/MDEP-82)
         run: |
-          mvn ${MAVEN_FLAGS} clean install dependency:resolve dependency:resolve-plugins -DskipTests=true -Dgpg.skip=true -Psonatype-oss-release
+          mvn ${MAVEN_FLAGS} clean install dependency:resolve dependency:resolve-plugins -DskipTests=true -Dgpg.skip=true -Poss-release
       - name: Update killbill-commons
         if: github.event.inputs.commons_version != ''
         run: |
@@ -119,16 +129,14 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
-          server-id: central
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
+          # NOTE: server-id/server-username/server-password are intentionally NOT set here — they would
+          # overwrite the multi-server ~/.m2/settings.xml already produced by the "Configure Cloudsmith
+          # credentials" step above. This step only imports the GPG key.
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
       - name: Release artifacts
         if: github.event.inputs.perform_version == ''
         env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         # It will still check the remote but hopefully not download much (0 B at 0 B/s). -o isn't safe because of MDEP-82 (see above).
         run: |
@@ -136,10 +144,9 @@ jobs:
       - name: Perform release
         if: github.event.inputs.perform_version != ''
         env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         # It will still check the remote but hopefully not download much (0 B at 0 B/s). -o isn't safe because of MDEP-82 (see above).
+        # See https://issues.apache.org/jira/browse/SCM-729 for why the release.properties file is required.
         # See https://issues.apache.org/jira/browse/SCM-729 for why the release.properties file is required.
         run: |
           echo "scm.url=scm\:git\:git@github.com\:${GITHUB_REPOSITORY}.git" > release.properties
