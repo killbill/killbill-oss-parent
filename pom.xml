@@ -148,7 +148,6 @@
         <killbill-testing-mysql.version>1.0.2</killbill-testing-mysql.version>
         <logback.version>1.5.38</logback.version>
         <metrics.version>4.2.38</metrics.version>
-        <netty.version>4.2.7.Final</netty.version>
         <org.osgi.core.version>6.0.0</org.osgi.core.version>
         <osgi.activator>$${classes;EXTENDS;org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase}</osgi.activator>
         <osgi.annotation.version>8.1.0</osgi.annotation.version>
@@ -446,11 +445,6 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
                 <version>${jjwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-buffer</artifactId>
-                <version>${netty.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
@@ -1534,7 +1528,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.17.7</version>
+                <version>3.52.0</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
