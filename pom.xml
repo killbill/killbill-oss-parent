@@ -1478,6 +1478,7 @@
                 <artifactId>redisson</artifactId>
                 <!-- This is the only version that not causing problem with various jackson deps -->
                 <version>3.50.0</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
