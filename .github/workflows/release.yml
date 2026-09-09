@@ -129,6 +129,7 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
+          overwrite-settings: false
           # NOTE: server-id/server-username/server-password are intentionally NOT set here — they would
           # overwrite the multi-server ~/.m2/settings.xml already produced by the "Configure Cloudsmith
           # credentials" step above. This step only imports the GPG key.
