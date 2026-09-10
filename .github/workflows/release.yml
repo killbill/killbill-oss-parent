@@ -54,15 +54,20 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
-      - name: Configure Cloudsmith credentials
+      - name: Configure credentials
         uses: s4u/maven-settings-action@v4.0.0
         with:
           # id=central authenticates the Cloudsmith proxy declared in pom.xml <repositories>/<pluginRepositories>.
           # id=cloudsmith authenticates the Cloudsmith deploy target declared in pom.xml <distributionManagement>.
+          # id=gpg.passphrase lets maven-gpg-plugin sign non-interactively; ${env.GPG_PASSPHRASE} is Maven's
+          # own settings.xml syntax (resolved by mvn from the env var at build time), not GitHub Actions
+          # interpolation, so the real passphrase is never written to disk here.
+          # `configuration: {}` is a hack for maven-settings-action validation (it requires id + (username or configuration)).
           servers: |
             [
               {"id": "central",    "username": "${{ secrets.CLOUDSMITH_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
-              {"id": "cloudsmith", "username": "${{ secrets.CLOUDSMITH_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_PASSWORD }}"}
+              {"id": "cloudsmith", "username": "${{ secrets.CLOUDSMITH_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_PASSWORD }}"},
+              {"id": "gpg.passphrase", "passphrase": "${env.GPG_PASSPHRASE}", "configuration": {}}
             ]
       - name: Download Java dependencies
         # We do as much as we can, but it may not be enough (https://issues.apache.org/jira/browse/MDEP-82)
@@ -124,17 +129,16 @@ jobs:
           git add pom.xml
           # Will be pushed as part of the release process, only if the release is successful
           git commit -m "pom.xml: update killbill-client to ${{ github.event.inputs.java_client_version }}"
-      - name: Configure settings.xml for release
+      - name: Import GPG signing key
         uses: actions/setup-java@v5
         with:
           java-version: 21
           distribution: temurin
+          # Required: setup-java always (re)writes ~/.m2/settings.xml unconditionally, even when
+          # server-id/username/password/gpg-passphrase inputs are omitted. Without this, it would
+          # overwrite the multi-server settings.xml from "Configure credentials" above.
           overwrite-settings: false
-          # NOTE: server-id/server-username/server-password are intentionally NOT set here — they would
-          # overwrite the multi-server ~/.m2/settings.xml already produced by the "Configure Cloudsmith
-          # credentials" step above. This step only imports the GPG key.
           gpg-private-key: ${{ secrets.GPG_SIGNING_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE
       - name: Release artifacts
         if: github.event.inputs.perform_version == ''
         env:
