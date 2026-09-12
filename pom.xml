@@ -1573,42 +1573,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <repositories>
-        <!--
-            Override Maven's built-in "central" repository (defined by the super POM) so ALL artifact
-            downloads go through the Cloudsmith proxy of Maven Central. Using id=central is what
-            shadows the super POM entry; a different id would leave repo.maven.apache.org active.
-        -->
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <id>central</id>
-            <name>Cloudsmith Kill Bill OSS (proxy of Maven Central)</name>
-            <url>https://dl.cloudsmith.io/basic/killbill/oss/maven/</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <!-- Same override for plugin resolution: force everything through Cloudsmith. -->
-        <pluginRepository>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <id>central</id>
-            <name>Cloudsmith Kill Bill OSS (proxy of Maven Central)</name>
-            <url>https://dl.cloudsmith.io/basic/killbill/oss/maven/</url>
-        </pluginRepository>
-    </pluginRepositories>
     <build>
         <resources>
             <resource>
