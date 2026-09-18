@@ -91,6 +91,7 @@ jobs:
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
+          show-download-progress: true
       - name: Configure Cloudsmith credentials
         uses: s4u/maven-settings-action@v4.0.0
         with:
