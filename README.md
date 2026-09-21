@@ -1,5 +1,4 @@
 # killbill-oss-parent
-![Maven Central](https://img.shields.io/maven-central/v/org.kill-bill.billing/killbill-oss-parent?color=blue&label=Maven%20Central)
 
 Kill Bill OSS Parent: base pom for the various Kill Bill projects.
 

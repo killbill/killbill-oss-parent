@@ -91,12 +91,50 @@ jobs:
         with:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
-      - name: Configure Sonatype mirror
+          show-download-progress: true
+      - name: Configure Cloudsmith credentials
         uses: s4u/maven-settings-action@v4.0.0
-        # Go to Sonatype directly to avoid delay syncs (could get rid of this if actions/setup-java were to support mirrors).
         with:
-          mirrors: '[{"id": "oss-releases", "name": "Sonatype releases", "mirrorOf": "central", "url": "https://repo.maven.apache.org/maven2"}]'
-          sonatypeSnapshots: true
+          # CI workflow doesn't need "cloudsmith".
+          servers: |
+            [
+              {"id": "central", "username": "-", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
+              {"id": "killbill-maven-repository", "username": "-", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"}
+            ]
+          repositories: |
+            [
+              {
+                "id": "central", 
+                "name": "Proxied Maven Central OSS repository at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/oss/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              },
+              {
+                "id": "killbill-maven-repository", 
+                "name": "Proxy for most Kill Bill artifacts at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/killbill-maven-repository/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              }
+            ]
+          pluginRepositories: |
+            [
+              {
+                "id": "central", 
+                "name": "Proxy of Central OSS repository at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/oss/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              },
+              {
+                "id": "killbill-maven-repository", 
+                "name": "Proxy for most Kill Bill artifacts at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/killbill-maven-repository/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              }
+            ]
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
