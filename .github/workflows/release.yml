@@ -3,6 +3,10 @@ name: release
 on:
   workflow_dispatch:
     inputs:
+      api_version:
+        description: 'New killbill-api version'
+        required: false
+        default: ''
       commons_version:
         description: 'New killbill-commons version'
         required: false
@@ -119,6 +123,20 @@ jobs:
         # We do as much as we can, but it may not be enough (https://issues.apache.org/jira/browse/MDEP-82)
         run: |
           mvn ${MAVEN_FLAGS} clean install dependency:resolve dependency:resolve-plugins -DskipTests=true -Dgpg.skip=true -Poss-release
+      - name: Update killbill-api
+        if: github.event.inputs.api_version != ''
+        run: |
+          echo "Updating pom.xml to ${{ github.event.inputs.api_version }}:"
+          mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=killbill-api.version -DnewVersion=${{ github.event.inputs.api_version }}
+
+          echo "pom.xml changes:"
+          git --no-pager diff
+          echo "Downloading new dependencies:"
+          mvn ${MAVEN_FLAGS} -U clean install -DskipTests
+
+          git add pom.xml
+          # Will be pushed as part of the release process, only if the release is successful
+          git commit -m "pom.xml: update killbill-api to ${{ github.event.inputs.api_version }}"
       - name: Update killbill-commons
         if: github.event.inputs.commons_version != ''
         run: |
