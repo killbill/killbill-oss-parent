@@ -7,6 +7,10 @@ on:
         description: 'New killbill-api version'
         required: false
         default: ''
+      plugin_api_version:
+        description: 'New killbill-plugin-api version'
+        required: false
+        default: ''
       commons_version:
         description: 'New killbill-commons version'
         required: false
@@ -137,6 +141,20 @@ jobs:
           git add pom.xml
           # Will be pushed as part of the release process, only if the release is successful
           git commit -m "pom.xml: update killbill-api to ${{ github.event.inputs.api_version }}"
+      - name: Update killbill-plugin-api
+        if: github.event.inputs.plugin_api_version != ''
+        run: |
+          echo "Updating pom.xml to ${{ github.event.inputs.plugin_api_version }}:"
+          mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=killbill-plugin-api.version -DnewVersion=${{ github.event.inputs.plugin_api_version }}
+
+          echo "pom.xml changes:"
+          git --no-pager diff
+          echo "Downloading new dependencies:"
+          mvn ${MAVEN_FLAGS} -U clean install -DskipTests
+
+          git add pom.xml
+          # Will be pushed as part of the release process, only if the release is successful
+          git commit -m "pom.xml: update killbill-plugin-api to ${{ github.event.inputs.plugin_api_version }}"
       - name: Update killbill-commons
         if: github.event.inputs.commons_version != ''
         run: |
