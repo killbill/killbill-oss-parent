@@ -1,9 +1,25 @@
 version: 2
+registries:
+  central:
+    type: maven-repository
+    url: https://dl.cloudsmith.io/basic/killbill/oss/maven/
+    username: "-"
+    password: "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"
+    replaces-base: true
+  killbill-maven-repository:
+    type: maven-repository
+    url: https://dl.cloudsmith.io/basic/killbill/killbill-maven-repository/maven/
+    username: "-"
+    password: "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"
+    replaces-base: true
 updates:
   - package-ecosystem: maven
     directory: "/"
     schedule:
       interval: "daily"
+    registries:
+      - central
+      - killbill-maven-repository
     open-pull-requests-limit: 15
     target-branch: "master"
     ignore:
