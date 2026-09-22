@@ -1443,7 +1443,7 @@
                 on their main branch. -->
                 <groupId>org.objenesis</groupId>
                 <artifactId>objenesis</artifactId>
-                <version>3.4</version>
+                <version>3.6</version>
             </dependency>
             <dependency>
                 <!-- Conflict between mariadb-java-client and osgi-over-slf4j -->
