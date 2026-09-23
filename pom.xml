@@ -242,7 +242,7 @@
         <repository.snapshot.id>cloudsmith</repository.snapshot.id>
         <repository.snapshot.name>Cloudsmith Snapshots Repository</repository.snapshot.name>
         <repository.snapshot.url>https://maven.cloudsmith.io/killbill/${repository.cloudsmith.repo}/</repository.snapshot.url>
-        <shiro.version>2.2.1</shiro.version>
+        <shiro.version>3.0.1</shiro.version>
         <skipTests>false</skipTests>
         <slf4j.version>2.0.18</slf4j.version>
         <surefireArgLine>-Xmx${build.jvmsize} --illegal-access=permit</surefireArgLine>
