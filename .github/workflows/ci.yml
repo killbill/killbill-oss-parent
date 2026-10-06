@@ -16,7 +16,182 @@ env:
   MAVEN_OPTS: "-Xmx2G -XX:+ExitOnOutOfMemoryError -Dmaven.wagon.rto=60000"
 
 jobs:
+  # Runs once, ahead of the `tests` matrix, so all 3 suites (h2/mysql/postgresql) hit a warm
+  # Maven cache instead of racing each other for a cold-cache download of the same dependency.
+  warm-cache:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 200
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout killbill-oss-parent
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-oss-parent
+          path: killbill-oss-parent
+      - name: Checkout killbill-api
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-api
+          ref: refs/heads/master
+          path: killbill-api
+      - name: Checkout killbill-plugin-api
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-plugin-api
+          ref: refs/heads/master
+          path: killbill-plugin-api
+      - name: Checkout killbill-commons
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-commons
+          ref: refs/heads/master
+          path: killbill-commons
+      - name: Checkout killbill-plugin-framework-java
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-plugin-framework-java
+          ref: refs/heads/master
+          path: killbill-plugin-framework-java
+      - name: Checkout killbill-platform
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-platform
+          ref: refs/heads/master
+          path: killbill-platform
+      - name: Checkout killbill-client-java
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill-client-java
+          ref: refs/heads/master
+          path: killbill-client-java
+      - name: Checkout killbill
+        uses: actions/checkout@v6
+        with:
+          repository: killbill/killbill
+          ref: refs/heads/master
+          path: killbill
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+          show-download-progress: true
+      - name: Purge Maven dependency cache
+        if: inputs.purge-cache
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh cache list --key maven- --ref "${{ github.ref }}" --limit 100 --json id --jq '.[].id' \
+            | xargs -r -n1 gh cache delete
+      - name: Cache Maven repository
+        uses: actions/cache@v5
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
+      - name: Configure Cloudsmith credentials
+        uses: s4u/maven-settings-action@v4.0.0
+        with:
+          # CI workflow doesn't need "cloudsmith".
+          servers: |
+            [
+              {"id": "central", "username": "-", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
+              {"id": "killbill-maven-repository", "username": "-", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"}
+            ]
+          repositories: |
+            [
+              {
+                "id": "central", 
+                "name": "Proxied Maven Central OSS repository at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/oss/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              },
+              {
+                "id": "killbill-maven-repository", 
+                "name": "Proxy for most Kill Bill artifacts at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/killbill-maven-repository/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              }
+            ]
+          pluginRepositories: |
+            [
+              {
+                "id": "central", 
+                "name": "Proxy of Central OSS repository at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/oss/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              },
+              {
+                "id": "killbill-maven-repository", 
+                "name": "Proxy for most Kill Bill artifacts at Cloudsmith",
+                "url": "https://dl.cloudsmith.io/basic/killbill/killbill-maven-repository/maven/",
+                "releases": { "enabled": "true", "updatePolicy": "always" },
+                "snapshots": { "enabled": "true", "updatePolicy": "always" }
+              }
+            ]
+      - name: Download dependencies and setup the various pom.xml
+        run: |
+          pushd $GITHUB_WORKSPACE/killbill-oss-parent
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+          mvn ${MAVEN_FLAGS} clean install
+          popd
+
+          declare -A property=(
+            [killbill-api]=killbill-api.version
+            [killbill-plugin-api]=killbill-plugin-api.version
+            [killbill-commons]=killbill-commons.version
+            [killbill-plugin-framework-java]=killbill-base-plugin.version
+            [killbill-platform]=killbill-platform.version
+            [killbill-client-java]=killbill-client.version
+          )
+          for i in killbill-api killbill-plugin-api killbill-commons killbill-plugin-framework-java killbill-platform killbill-client-java; do
+            echo "::group::Update $i parent"
+            pushd $GITHUB_WORKSPACE/$i
+            echo "Resolving current $i version"
+            version=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+            echo "Current $i version is $version"
+            echo "Updating $i parent pom.xml to $pomVersion"
+            mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
+            echo "$i pom.xml changes:"
+            git --no-pager diff
+            echo "Building $i"
+            mvn ${MAVEN_FLAGS} clean install
+            popd
+            echo "::endgroup::"
+
+            echo "::group::Update $i in killbill-oss-parent"
+            pushd $GITHUB_WORKSPACE/killbill-oss-parent
+            echo "Updating ${property[$i]} in parent pom.xml to $version"
+            mvn ${MAVEN_FLAGS} versions:set-property -Dproperty=${property[$i]} -DnewVersion=$version
+            echo "killbill-oss-parent pom.xml changes:"
+            git --no-pager diff
+            echo "Building killbill-oss-parent"
+            mvn ${MAVEN_FLAGS} clean install
+            popd
+            echo "::endgroup::"
+          done
+      - name: Build Kill Bill
+        run: |
+          pushd $GITHUB_WORKSPACE/killbill-oss-parent
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
+          popd
+
+          pushd $GITHUB_WORKSPACE/killbill
+          echo "Updating killbill parent pom.xml to $pomVersion"
+          mvn ${MAVEN_FLAGS} versions:update-parent -DallowSnapshots -DgenerateBackupPoms=false -DparentVersion="[$pomVersion]"
+          echo "Building killbill"
+          mvn ${MAVEN_FLAGS} clean install
+          popd
+
   tests:
+    needs: warm-cache
     runs-on: ubuntu-22.04
     timeout-minutes: 200
     permissions:
@@ -101,14 +276,6 @@ jobs:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
           show-download-progress: true
-      - name: Purge Maven dependency cache
-        if: inputs.purge-cache
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh cache list --key maven- --ref "${{ github.ref }}" --limit 100 --json id --jq '.[].id' \
-            | xargs -r -n1 gh cache delete
       - name: Cache Maven repository
         uses: actions/cache@v5
         with:
