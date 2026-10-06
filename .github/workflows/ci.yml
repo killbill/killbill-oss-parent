@@ -3,6 +3,7 @@ name: ci
 on:
   pull_request:
   push:
+    branches: [ master ]
   workflow_dispatch:
     inputs:
       purge-cache:
@@ -139,8 +140,8 @@ jobs:
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
-          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
           mvn ${MAVEN_FLAGS} clean install
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
           popd
 
           declare -A property=(
@@ -329,8 +330,8 @@ jobs:
       - name: Download dependencies and setup the various pom.xml
         run: |
           pushd $GITHUB_WORKSPACE/killbill-oss-parent
-          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
           mvn ${MAVEN_FLAGS} clean install
+          pomVersion=$(mvn ${MAVEN_FLAGS} help:evaluate -Dexpression=project.version -q -DforceStdout)
           popd
 
           declare -A property=(
