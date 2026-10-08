@@ -70,9 +70,6 @@ jobs:
           # - Profile with auto-generated ID (doesn't matter because this ID never referenced by others)
           # - Make the profile enable by default (`<activeByDefault>true</activeByDefault>`)
           #
-          # (At the time of writing) The "username" actually not required for downloading artifact from Cloudsmith.
-          # The only reason why "username" set as "-" because it is required by s4u/maven-settings-action.
-          #
           # The "cloudsmith" need to be declared here, and will be referenced by <distributionManagement/> during
           # deploying/uploading artifact to get the username and password.
           #
@@ -82,8 +79,8 @@ jobs:
           # `configuration: {}` is a hack for maven-settings-action validation (it requires id + (username or configuration)).
           servers: |
             [
-              {"id": "central", "username": "-", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
-              {"id": "killbill-maven-repository", "username": "-", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"},
+              {"id": "central", "username": "token", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
+              {"id": "killbill-maven-repository", "username": "token", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"},
               {"id": "cloudsmith", "username": "${{ secrets.CLOUDSMITH_DISTRIBUTION_MAN_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_DISTRIBUTION_MAN_PASSWORD }}"},
               {"id": "gpg.passphrase", "passphrase": "${env.GPG_PASSPHRASE}", "configuration": {}}
             ]
