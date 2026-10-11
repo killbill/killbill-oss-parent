@@ -15,12 +15,22 @@ on:
 env:
   MAVEN_FLAGS: "-B -ff -Dcheck.skip-spotbugs=true -DskipTests=true"
   MAVEN_OPTS: "-Xmx2G -XX:+ExitOnOutOfMemoryError -Dmaven.wagon.rto=60000"
+  # Pinned version needed. Otherwise, we will get surprised because GitHub Actions
+  # updates the runner's pre-installed Maven version periodically.
+  MAVEN_VERSION: "3.10.0"
 
 jobs:
   # Runs once, ahead of the `tests` matrix, so all 3 suites (h2/mysql/postgresql) hit a warm
   # Maven cache instead of racing each other for a cold-cache download of the same dependency.
   warm-cache:
     runs-on: ubuntu-22.04
+    env:
+      # Workaround until https://github.com/s4u/maven-settings-action/issues/464 is fixed:
+      # this action cannot emit Maven's native <repositoryOrigins> server field, so
+      # credentials configured for ids like "central"/"killbill-maven-repository" (reused
+      # to point at Cloudsmith) are silently dropped under Maven 3.10+'s stricter,
+      # origin-based credential scoping. Fall back to legacy id-only credential matching.
+      MAVEN_ARGS: -ntp -Dmaven.repository.credentialScope=id
     timeout-minutes: 200
     permissions:
       contents: read
@@ -79,6 +89,13 @@ jobs:
           distribution: temurin
           java-version: 21
           show-download-progress: true
+      - name: Pin Maven version
+        # This workflow calls "mvn" directly (no ./mvnw wrapper), so pin the version by
+        # installing it and putting it ahead of the runner's own Maven on PATH.
+        run: |
+          curl -fsSL "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -o "$RUNNER_TEMP/maven.tar.gz"
+          tar -xzf "$RUNNER_TEMP/maven.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/apache-maven-${MAVEN_VERSION}/bin" >> "$GITHUB_PATH"
       - name: Purge Maven dependency cache
         if: inputs.purge-cache
         continue-on-error: true
@@ -194,6 +211,13 @@ jobs:
   tests:
     needs: warm-cache
     runs-on: ubuntu-22.04
+    env:
+      # Workaround until https://github.com/s4u/maven-settings-action/issues/464 is fixed:
+      # this action cannot emit Maven's native <repositoryOrigins> server field, so
+      # credentials configured for ids like "central"/"killbill-maven-repository" (reused
+      # to point at Cloudsmith) are silently dropped under Maven 3.10+'s stricter,
+      # origin-based credential scoping. Fall back to legacy id-only credential matching.
+      MAVEN_ARGS: -ntp -Dmaven.repository.credentialScope=id
     timeout-minutes: 200
     permissions:
       contents: read
@@ -277,6 +301,13 @@ jobs:
           distribution: ${{ matrix.java-distribution }}
           java-version: ${{ matrix.java-version }}
           show-download-progress: true
+      - name: Pin Maven version
+        # This workflow calls "mvn" directly (no ./mvnw wrapper), so pin the version by
+        # installing it and putting it ahead of the runner's own Maven on PATH.
+        run: |
+          curl -fsSL "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -o "$RUNNER_TEMP/maven.tar.gz"
+          tar -xzf "$RUNNER_TEMP/maven.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/apache-maven-${MAVEN_VERSION}/bin" >> "$GITHUB_PATH"
       - name: Cache Maven repository
         uses: actions/cache@v5
         with:
