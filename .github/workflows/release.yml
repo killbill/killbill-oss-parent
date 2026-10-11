@@ -35,10 +35,20 @@ on:
 env:
   MAVEN_FLAGS: "-B --no-transfer-progress"
   MAVEN_OPTS: "-Xmx2G -XX:+ExitOnOutOfMemoryError -Dmaven.wagon.rto=60000 -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dmaven.wagon.http.retryHandler.count=3"
+  # Pinned version needed. Otherwise, we will get surprised because GitHub Actions
+  # updates the runner's pre-installed Maven version periodically.
+  MAVEN_VERSION: "3.10.0"
 
 jobs:
   release:
     runs-on: ubuntu-24.04
+    env:
+      # Workaround until https://github.com/s4u/maven-settings-action/issues/464 is fixed:
+      # this action cannot emit Maven's native <repositoryOrigins> server field, so
+      # credentials configured for ids like "central"/"killbill-maven-repository" (reused
+      # to point at Cloudsmith) are silently dropped under Maven 3.10+'s stricter,
+      # origin-based credential scoping. Fall back to legacy id-only credential matching.
+      MAVEN_ARGS: -ntp -Dmaven.repository.credentialScope=id
     steps:
       - name: Checkout code
         if: github.event.inputs.perform_version == ''
@@ -62,6 +72,13 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
+      - name: Pin Maven version
+        # This workflow calls "mvn" directly (no ./mvnw wrapper), so pin the version by
+        # installing it and putting it ahead of the runner's own Maven on PATH.
+        run: |
+          curl -fsSL "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -o "$RUNNER_TEMP/maven.tar.gz"
+          tar -xzf "$RUNNER_TEMP/maven.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/apache-maven-${MAVEN_VERSION}/bin" >> "$GITHUB_PATH"
       - name: Configure Maven settings.xml profiles, repositories and pluginRepositories
         uses: s4u/maven-settings-action@v4.0.0
         with:
@@ -69,9 +86,6 @@ jobs:
           # This will generate settings.xml with:
           # - Profile with auto-generated ID (doesn't matter because this ID never referenced by others)
           # - Make the profile enable by default (`<activeByDefault>true</activeByDefault>`)
-          #
-          # (At the time of writing) The "username" actually not required for downloading artifact from Cloudsmith.
-          # The only reason why "username" set as "-" because it is required by s4u/maven-settings-action.
           #
           # The "cloudsmith" need to be declared here, and will be referenced by <distributionManagement/> during
           # deploying/uploading artifact to get the username and password.
@@ -82,8 +96,8 @@ jobs:
           # `configuration: {}` is a hack for maven-settings-action validation (it requires id + (username or configuration)).
           servers: |
             [
-              {"id": "central", "username": "-", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
-              {"id": "killbill-maven-repository", "username": "-", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"},
+              {"id": "central", "username": "token", "password": "${{ secrets.CLOUDSMITH_CENTRAL_PASSWORD }}"},
+              {"id": "killbill-maven-repository", "username": "token", "password": "${{ secrets.CLOUDSMITH_KILLBILL_MAVEN_REPO_PASSWORD }}"},
               {"id": "cloudsmith", "username": "${{ secrets.CLOUDSMITH_DISTRIBUTION_MAN_USERNAME }}", "password": "${{ secrets.CLOUDSMITH_DISTRIBUTION_MAN_PASSWORD }}"},
               {"id": "gpg.passphrase", "passphrase": "${env.GPG_PASSPHRASE}", "configuration": {}}
             ]
