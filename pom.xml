@@ -112,7 +112,7 @@
         <derby.version>10.17.1.0</derby.version>
         <ehcache.version>3.11.1</ehcache.version>
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
-        <guava.version>33.6.0-jre</guava.version>
+        <guava.version>33.7.1-jre</guava.version>
         <guice.version>7.0.0</guice.version>
         <hk2.version>3.0.6</hk2.version>
         <jackson.version>2.22.1</jackson.version>
