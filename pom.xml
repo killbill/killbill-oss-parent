@@ -132,7 +132,7 @@
         <jersey.version>3.1.11</jersey.version>
         <jetty.version>11.0.26</jetty.version>
         <jjwt.version>0.11.5</jjwt.version>
-        <joda-time.version>2.12.7</joda-time.version>
+        <joda-time.version>2.14.4</joda-time.version>
         <!-- We cannot upgrade to 3.16.x, yet. See
              https://github.com/killbill/killbill-oss-parent/issues/557
              https://github.com/killbill/killbill-oss-parent/pull/411 -->
