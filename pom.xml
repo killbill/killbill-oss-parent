@@ -114,7 +114,7 @@
         <embedded-postgres.version>2.0.4</embedded-postgres.version>
         <guava.version>33.6.0-jre</guava.version>
         <guice.version>7.0.0</guice.version>
-        <hk2.version>3.0.6</hk2.version>
+        <hk2.version>4.0.2</hk2.version>
         <jackson.version>2.22.1</jackson.version>
         <jakarta.activation-api.version>2.1.4</jakarta.activation-api.version>
         <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
