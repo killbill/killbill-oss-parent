@@ -881,7 +881,7 @@
                 <!-- http://hamcrest.org/JavaHamcrest/distributables#maven-upgrade-example -->
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-core</artifactId>
-                <version>2.2</version>
+                <version>3.0</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
